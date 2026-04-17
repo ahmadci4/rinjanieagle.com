@@ -1,66 +1,46 @@
 <!DOCTYPE html>
 <!-- SEO -->
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Rinjani Eagle Trekking | Paket Pendakian Gunung Rinjani Lombok</title>
-
 <meta name="description" content="Paket trekking Gunung Rinjani Lombok terbaik. Guide profesional, harga terjangkau, pelayanan premium. Booking sekarang!">
-
 <meta name="keywords" content="rinjani trekking, paket rinjani, rinjani lombok, hiking rinjani, rinjani tour">
-
 <meta name="author" content="Rinjani Eagle">
 
-<!-- Open Graph (biar bagus di share WA/FB) -->
-<meta property="og:title" content="Rinjani Eagle Trekking">
-<meta property="og:description" content="Trekking Rinjani terbaik dengan guide profesional">
-<meta property="og:image" content="images/1.jpeg">
-<meta property="og:type" content="website">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "TouristTrip",
-  "name": "Rinjani Eagle Trekking",
-  "description": "Paket trekking Gunung Rinjani Lombok",
-  "image": "images/1.jpeg",
-  "touristType": "Adventure travelers",
-  "provider": {
-    "@type": "Organization",
-    "name": "Rinjani Eagle"
-  }
-}
-</script>
 
-<title>Paket Trekking Gunung Rinjani Lombok | Rinjani Eagle</title>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="description" content="Paket trekking Gunung Rinjani Lombok dengan guide profesional, harga terbaik dan pengalaman premium.">
+<title>Rinjani Eagle Trekking</title>
 
-<!-- Google Font -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-<!-- Font Awesome -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-<!-- Tailwind -->
 <script src="https://cdn.tailwindcss.com"></script>
 
 <style>
 body {
     font-family: 'Poppins', sans-serif;
-    scroll-behavior: smooth;
+}
+
+/* COLOR THEME */
+:root {
+    --primary: #2ecc71;
+    --secondary: #3498db;
 }
 
 /* ANIMATION */
 .fade-up {
     opacity: 0;
     transform: translateY(40px);
-    transition: all 0.8s ease;
+    transition: 0.8s;
 }
 .fade-up.show {
     opacity: 1;
     transform: translateY(0);
-}
-
-/* SHADOW */
-.card {
-    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
 }
 
 /* HERO */
@@ -71,12 +51,17 @@ body {
 
 /* OVERLAY */
 .overlay {
-    position: absolute;
-    inset: 0;
-    background: rgba(0,0,0,0.4);
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,0.4);
 }
 
-/* WA FLOAT */
+/* CARD */
+.card {
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+/* FLOAT WA */
 .float-wa {
     position: fixed;
     bottom: 20px;
@@ -91,26 +76,67 @@ body {
     color:white;
 }
 </style>
+
+<!-- TRANSLATE SCRIPT -->
+<script>
+function changeLanguage(lang) {
+    const select = document.querySelector("select.goog-te-combo");
+    if (select) {
+        select.value = lang;
+        select.dispatchEvent(new Event("change"));
+    }
+}
+</script>
+
 </head>
 
 <body class="text-gray-800">
 
+<!-- GOOGLE TRANSLATE HIDDEN -->
+<div id="google_translate_element" style="display:none;"></div>
+
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<script>
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({
+    pageLanguage: 'id'
+  }, 'google_translate_element');
+}
+</script>
+
+
 <!-- NAVBAR -->
-<nav class="fixed w-full z-50 bg-black/70 backdrop-blur text-white">
+<nav class="fixed w-full z-50 bg-white shadow">
 <div class="max-w-6xl mx-auto flex justify-between items-center px-4 h-16">
 
-<div class="font-bold">Rinjani Eagle</div>
+<div class="font-bold text-green-600 text-xl">
+Rinjani Eagle
+</div>
 
 <div class="hidden md:flex gap-6">
 <a href="#home">Home</a>
 <a href="#about">About</a>
 <a href="#packages">Packages</a>
+<a href="#gallery">Gallery</a>
 <a href="#contact">Contact</a>
 </div>
 
-<a href="#booking" class="bg-yellow-400 text-black px-4 py-2 rounded-full font-bold">
-Book
-</a>
+<!-- TRANSLATE BUTTON -->
+<div class="flex gap-2">
+<select onchange="changeLanguage(this.value)" class="border px-2 py-1 rounded">
+<option value="">🌍</option>
+<option value="en">EN</option>
+<option value="id">ID</option>
+<option value="fr">FR</option>
+<option value="de">DE</option>
+<option value="es">ES</option>
+<option value="it">IT</option>
+<option value="ru">RU</option>
+<option value="ja">JP</option>
+<option value="ko">KR</option>
+<option value="zh-CN">CN</option>
+</select>
+</div>
 
 </div>
 </nav>
@@ -119,211 +145,323 @@ Book
 <!-- HERO -->
 <section id="home" class="hero flex items-center justify-center">
 
-<img src="images/hero.jpeg" class="absolute w-full h-full object-cover">
+<img src="images/rinjani-eagle-logo.svg"
+class="absolute w-full h-full object-cover">
 
 <div class="overlay"></div>
 
-<!-- TIDAK ADA TEXT (SUDAH DI GAMBAR) -->
 <div class="relative z-10">
 <button onclick="scrollToSection('packages')"
-class="bg-yellow-400 px-6 py-3 rounded-full font-bold hover:bg-yellow-300">
+class="bg-green-500 text-white px-6 py-3 rounded-full font-bold hover:bg-green-600 transition">
 Explore Packages
 </button>
 </div>
 
 </section>
-<!-- ================= ABOUT ================= -->
+  <!-- ================= ABOUT ================= -->
 <section id="about" class="py-20 bg-gray-50 fade-up">
-<div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center px-4">
-
-<img src="images/1.jpeg" class="rounded-2xl card">
-
-<div>
-<h2 class="text-3xl font-bold mb-4">About Rinjani Eagle</h2>
-
-<p class="text-gray-600 mb-4">
-Rinjani Eagle adalah operator trekking lokal terpercaya di Lombok yang menyediakan pengalaman pendakian Gunung Rinjani dengan standar internasional.
-</p>
-
-<p class="text-gray-600">
-Kami fokus pada keselamatan, pelayanan profesional, dan pengalaman tak terlupakan di alam.
-</p>
-
-</div>
-
-</div>
-</section>
-
-
-<!-- ================= PACKAGES ================= -->
-<section id="packages" class="py-20 fade-up">
 
 <div class="max-w-6xl mx-auto px-4">
 
 <h2 class="text-3xl font-bold text-center mb-10">
+About Rinjani Eagle
+</h2>
+
+<div class="grid md:grid-cols-2 gap-10 items-center">
+
+<img src="images/1.jpeg" class="rounded-2xl card">
+
+<div>
+<p class="text-gray-600 mb-4">
+Rinjani Eagle adalah tim lokal profesional yang berpengalaman dalam mendampingi pendakian Gunung Rinjani. Kami menghadirkan pengalaman trekking yang aman, nyaman, dan berkesan.
+</p>
+
+<p class="text-gray-600">
+Dengan guide dan porter berpengalaman, kami memastikan setiap perjalanan berjalan lancar dari awal hingga akhir.
+</p>
+</div>
+
+</div>
+
+</div>
+</section>
+
+
+<!-- ================= TEAM ================= -->
+<section class="py-20 fade-up">
+
+<div class="max-w-6xl mx-auto px-4">
+
+<h2 class="text-3xl font-bold text-center mb-10">
+Our Team (Guide & Porter)
+</h2>
+
+<div class="grid md:grid-cols-4 gap-6 text-center">
+
+<div class="card p-4 rounded-xl">
+<img src="images/2.jpeg" class="w-full h-40 object-cover rounded-lg mb-3">
+<p class="font-bold">Ari Guide</p>
+<p class="text-sm text-gray-500">Senior Mountain Guide</p>
+</div>
+
+<div class="card p-4 rounded-xl">
+<img src="images/3.jpeg" class="w-full h-40 object-cover rounded-lg mb-3">
+<p class="font-bold">Budi</p>
+<p class="text-sm text-gray-500">Professional Porter</p>
+</div>
+
+<div class="card p-4 rounded-xl">
+<img src="images/4.jpeg" class="w-full h-40 object-cover rounded-lg mb-3">
+<p class="font-bold">Rizal</p>
+<p class="text-sm text-gray-500">Trekking Guide</p>
+</div>
+
+<div class="card p-4 rounded-xl">
+<img src="images/5.jpeg" class="w-full h-40 object-cover rounded-lg mb-3">
+<p class="font-bold">Wayan</p>
+<p class="text-sm text-gray-500">Logistic Porter</p>
+</div>
+
+</div>
+
+</div>
+</section>
+
+
+<!-- ================= MAP ================= -->
+<section class="py-20 bg-gray-100 fade-up">
+
+<div class="max-w-5xl mx-auto px-4 text-center">
+
+<h2 class="text-3xl font-bold mb-8">
+Our Location
+</h2>
+
+<iframe 
+src="https://www.google.com/maps?q=Mount+Rinjani&output=embed"
+class="w-full h-96 rounded-2xl shadow">
+</iframe>
+
+</div>
+</section>
+
+
+<!-- ================= REVIEWS ================= -->
+<section class="py-20 fade-up">
+
+<div class="max-w-6xl mx-auto px-4">
+
+<h2 class="text-3xl font-bold text-center mb-12">
+What Travelers Say
+</h2>
+
+<div class="grid md:grid-cols-3 gap-6">
+
+<!-- REVIEW 1 -->
+<div class="card p-6 rounded-xl">
+<p class="mb-4">
+"Pengalaman luar biasa! Guide sangat profesional dan ramah. Highly recommended!"
+</p>
+<p class="font-bold">– Michael (Germany)</p>
+</div>
+
+<!-- REVIEW 2 -->
+<div class="card p-6 rounded-xl">
+<p class="mb-4">
+"Trekking yang sangat terorganisir dengan baik. Semua kebutuhan terpenuhi."
+</p>
+<p class="font-bold">– Sarah (UK)</p>
+</div>
+
+<!-- REVIEW 3 -->
+<div class="card p-6 rounded-xl">
+<p class="mb-4">
+"Pemandangan luar biasa dan tim sangat membantu sepanjang perjalanan."
+</p>
+<p class="font-bold">– Andi (Indonesia)</p>
+</div>
+
+</div>
+
+</div>
+</section>
+  <!-- ================= PACKAGES ================= -->
+<section id="packages" class="py-20 fade-up">
+
+<div class="max-w-6xl mx-auto px-4">
+
+<h2 class="text-3xl font-bold text-center mb-12">
 Rinjani Trekking Packages
 </h2>
 
-<p class="text-center text-gray-500 mb-12 max-w-2xl mx-auto">
-Pilih paket trekking Gunung Rinjani sesuai waktu dan kemampuan Anda.
-</p>
-
 <div class="grid md:grid-cols-3 gap-8">
 
-<!-- CARD 1 -->
-<div class="bg-white rounded-2xl card overflow-hidden flex flex-col">
-<img src="images/2.jpeg" class="h-56 w-full object-cover">
-<div class="p-6 flex flex-col flex-grow">
-<h3 class="font-bold text-xl mb-2">2D/1N Summit</h3>
-<p class="text-sm text-gray-500 mb-4">
-Pendakian cepat menuju puncak Rinjani melalui jalur Sembalun.
-</p>
-<div class="mt-auto">
-<button onclick="scrollToSection('booking')" class="w-full bg-black text-white py-2 rounded-lg">
-Book Now
-</button>
-</div>
+<!-- CARD -->
+<div onclick="toggleItinerary('p1')" class="cursor-pointer card rounded-xl overflow-hidden">
+<img src="images/6.jpeg" class="h-56 w-full object-cover">
+<div class="p-4">
+<h3 class="font-bold text-lg">2D/1N Summit</h3>
+<p class="text-sm text-gray-500">Click to see itinerary</p>
 </div>
 </div>
 
-<!-- CARD 2 -->
-<div class="bg-white rounded-2xl card overflow-hidden flex flex-col">
-<img src="images/3.jpeg" class="h-56 w-full object-cover">
-<div class="p-6 flex flex-col flex-grow">
-<h3 class="font-bold text-xl mb-2">3D/2N Summit & Lake</h3>
-<p class="text-sm text-gray-500 mb-4">
-Pengalaman lengkap: summit, danau, dan pemandian air panas.
-</p>
-<div class="mt-auto">
-<button onclick="scrollToSection('booking')" class="w-full bg-yellow-400 py-2 rounded-lg font-bold">
-Book Now
-</button>
-</div>
+<div onclick="toggleItinerary('p2')" class="cursor-pointer card rounded-xl overflow-hidden">
+<img src="images/7.jpeg" class="h-56 w-full object-cover">
+<div class="p-4">
+<h3 class="font-bold text-lg">3D/2N Summit & Lake</h3>
+<p class="text-sm text-gray-500">Click to see itinerary</p>
 </div>
 </div>
 
-<!-- CARD 3 -->
-<div class="bg-white rounded-2xl card overflow-hidden flex flex-col">
-<img src="images/4.jpeg" class="h-56 w-full object-cover">
-<div class="p-6 flex flex-col flex-grow">
-<h3 class="font-bold text-xl mb-2">4D/3N Ultimate Trek</h3>
-<p class="text-sm text-gray-500 mb-4">
-Pendakian santai menikmati semua keindahan Rinjani.
-</p>
-<div class="mt-auto">
-<button onclick="scrollToSection('booking')" class="w-full bg-black text-white py-2 rounded-lg">
-Book Now
-</button>
-</div>
+<div onclick="toggleItinerary('p3')" class="cursor-pointer card rounded-xl overflow-hidden">
+<img src="images/8.jpeg" class="h-56 w-full object-cover">
+<div class="p-4">
+<h3 class="font-bold text-lg">4D/3N Ultimate Trek</h3>
+<p class="text-sm text-gray-500">Click to see itinerary</p>
 </div>
 </div>
 
 </div>
+
+<!-- ITINERARY -->
+<div id="itinerary-box" class="mt-12 hidden bg-gray-100 p-6 rounded-xl"></div>
+
 </div>
 </section>
+  const itineraries = {
 
+p1: `
+<h3 class="font-bold text-xl mb-3">2D/1N Summit Trek</h3>
+<p class="mb-4 text-gray-600">
+Program ini dirancang untuk pendaki dengan waktu terbatas namun tetap ingin mencapai puncak Rinjani.
+</p>
+<ul class="text-sm space-y-2">
+<li><b>Day 1:</b> Transfer ke Sembalun, registrasi, trekking melalui savana luas menuju crater rim. Camping.</li>
+<li><b>Day 2:</b> Summit attack pukul 2 pagi, menikmati sunrise di puncak, lalu turun kembali.</li>
+</ul>
+`,
 
-<!-- ================= ITINERARY ================= -->
-<section class="py-20 bg-gray-100 fade-up">
+p2: `
+<h3 class="font-bold text-xl mb-3">3D/2N Summit & Lake</h3>
+<p class="mb-4 text-gray-600">
+Paket paling populer yang mencakup summit, danau Segara Anak, dan hot spring alami.
+</p>
+<ul class="text-sm space-y-2">
+<li><b>Day 1:</b> Trek ke crater rim Senaru.</li>
+<li><b>Day 2:</b> Turun ke danau, mandi air panas, lalu naik ke crater rim Sembalun.</li>
+<li><b>Day 3:</b> Summit sunrise dan turun.</li>
+</ul>
+`,
+
+p3: `
+<h3 class="font-bold text-xl mb-3">4D/3N Ultimate Trek</h3>
+<p class="mb-4 text-gray-600">
+Pendakian santai untuk menikmati semua keindahan Rinjani tanpa terburu-buru.
+</p>
+<ul class="text-sm space-y-2">
+<li><b>Day 1:</b> Trek ke crater rim.</li>
+<li><b>Day 2:</b> Eksplorasi danau dan hot spring.</li>
+<li><b>Day 3:</b> Trek ke sisi lain gunung.</li>
+<li><b>Day 4:</b> Summit dan turun.</li>
+</ul>
+`
+};
+  <!-- ================= GALLERY ================= -->
+<section id="gallery" class="py-20 bg-gray-50 fade-up">
+
+<h2 class="text-3xl font-bold text-center mb-10">Gallery</h2>
+
+<div class="max-w-6xl mx-auto px-4 grid grid-cols-2 md:grid-cols-5 gap-3">
+
+<script>
+for(let i=1;i<=30;i++){
+document.write(`
+<div class="overflow-hidden rounded-xl">
+<img src="images/${i}.jpeg" class="w-full h-40 object-cover hover:scale-110 transition">
+</div>
+`)
+}
+</script>
+
+</div>
+
+</section>
+  <!-- ================= ARTICLES ================= -->
+<section class="py-20 fade-up">
 
 <div class="max-w-5xl mx-auto px-4">
 
-<h2 class="text-3xl font-bold text-center mb-12">
-Itinerary Trekking
+<h2 class="text-3xl font-bold text-center mb-10">
+Travel Articles
 </h2>
 
-<!-- 2D1N -->
-<div class="mb-10">
-<h3 class="font-bold text-xl mb-3">2D/1N Summit Trek</h3>
-<ul class="text-gray-600 space-y-2 text-sm">
-<li><b>Day 1:</b> Transfer ke Sembalun dan trekking menuju crater rim.</li>
-<li><b>Day 2:</b> Summit attack dini hari lalu turun kembali.</li>
-</ul>
+<div class="space-y-6">
+
+<div class="card p-6 rounded-xl">
+<h3 class="font-bold text-xl mb-2">Tips Mendaki Gunung Rinjani untuk Pemula</h3>
+<p class="text-gray-600">
+Pelajari persiapan penting sebelum mendaki Rinjani agar perjalanan lebih aman dan nyaman.
+</p>
 </div>
 
-<!-- 3D2N -->
-<div class="mb-10">
-<h3 class="font-bold text-xl mb-3">3D/2N Summit & Lake</h3>
-<ul class="text-gray-600 space-y-2 text-sm">
-<li><b>Day 1:</b> Trek ke crater rim Senaru.</li>
-<li><b>Day 2:</b> Turun ke danau & hot spring.</li>
-<li><b>Day 3:</b> Summit dan turun ke Sembalun.</li>
-</ul>
+<div class="card p-6 rounded-xl">
+<h3 class="font-bold text-xl mb-2">Waktu Terbaik Mendaki Rinjani</h3>
+<p class="text-gray-600">
+Musim kemarau adalah waktu terbaik untuk trekking dengan cuaca yang stabil.
+</p>
 </div>
 
-<!-- 4D3N -->
-<div>
-<h3 class="font-bold text-xl mb-3">4D/3N Ultimate Trek</h3>
-<ul class="text-gray-600 space-y-2 text-sm">
-<li><b>Day 1:</b> Trek awal ke crater rim.</li>
-<li><b>Day 2:</b> Eksplorasi danau.</li>
-<li><b>Day 3:</b> Trek lanjutan.</li>
-<li><b>Day 4:</b> Summit & turun.</li>
-</ul>
+<div class="card p-6 rounded-xl">
+<h3 class="font-bold text-xl mb-2">Kenapa Rinjani Jadi Favorit Pendaki Dunia</h3>
+<p class="text-gray-600">
+Keindahan danau Segara Anak dan panorama gunung menjadikan Rinjani destinasi kelas dunia.
+</p>
+</div>
+
 </div>
 
 </div>
 </section>
-<!-- ================= BOOKING ================= -->
-<section id="booking" class="py-20 fade-up">
+  <!-- ================= BOOKING ================= -->
+<section id="contact" class="py-20 bg-gray-100 fade-up">
 
-<div class="max-w-3xl mx-auto bg-white p-8 rounded-2xl card">
+<div class="max-w-3xl mx-auto px-4 text-center">
 
-<h2 class="text-2xl font-bold mb-6 text-center">Booking Form</h2>
+<h2 class="text-3xl font-bold mb-6">Booking & Contact</h2>
 
-<form onsubmit="sendBooking(event)" class="space-y-4">
+<p class="text-gray-600 mb-8">
+Hubungi kami sekarang untuk reservasi trekking Gunung Rinjani.
+</p>
 
-<input id="name" type="text" placeholder="Nama Lengkap" required class="w-full border p-3 rounded-lg">
+<div class="bg-white p-6 rounded-xl card space-y-4">
 
-<input id="wa" type="text" placeholder="Nomor WhatsApp" required class="w-full border p-3 rounded-lg">
+<input id="name" type="text" placeholder="Nama" class="w-full border p-3 rounded-lg">
+<input id="wa" type="text" placeholder="Nomor WhatsApp" class="w-full border p-3 rounded-lg">
 
 <select id="package" class="w-full border p-3 rounded-lg">
 <option value="">Pilih Paket</option>
-<option value="2D/1N Summit">2D/1N Summit</option>
-<option value="3D/2N Summit">3D/2N Summit</option>
-<option value="4D/3N Ultimate">4D/3N Ultimate</option>
+<option>2D/1N Summit</option>
+<option>3D/2N Summit & Lake</option>
+<option>4D/3N Ultimate Trek</option>
 </select>
 
 <input id="pax" type="number" value="1" class="w-full border p-3 rounded-lg">
 
-<button class="w-full bg-yellow-400 py-3 rounded-lg font-bold">
-Booking Sekarang
+<button onclick="sendWA()" 
+class="w-full bg-green-500 text-white py-3 rounded-lg font-bold hover:bg-green-600">
+Booking via WhatsApp
 </button>
 
-</form>
-
 </div>
-</section>
 
-
-<!-- ================= CONTACT ================= -->
-<section id="contact" class="py-20 bg-gray-100 fade-up">
-
-<div class="text-center max-w-xl mx-auto px-4">
-
-<h2 class="text-3xl font-bold mb-6">Contact Us</h2>
-
-<p class="text-gray-600 mb-6">
-Hubungi kami untuk informasi dan reservasi trekking Rinjani.
-</p>
-
-<div class="space-y-3">
-
-<p><b>WhatsApp:</b> 085956684081</p>
+<p class="mt-6"><b>WhatsApp:</b> 085956684081</p>
 <p><b>Email:</b> rinjanieagle@gmail.com</p>
 
 </div>
-
-<a href="https://wa.me/6285956684081"
-class="inline-block mt-6 bg-green-500 text-white px-6 py-3 rounded-lg">
-Chat via WhatsApp
-</a>
-
-</div>
 </section>
 
 
-<!-- ================= FOOTER ================= -->
+<!-- FOOTER -->
 <footer class="bg-black text-white text-center py-6">
 © 2026 Rinjani Eagle
 </footer>
@@ -332,22 +470,38 @@ Chat via WhatsApp
 <!-- FLOAT WA -->
 <a href="https://wa.me/6285956684081"
 class="float-wa">
-<i class="fa-brands fa-whatsapp"></i>
+💬
 </a>
 
 
 <!-- ================= SCRIPT ================= -->
 <script>
 
-// SCROLL TO SECTION
+// SCROLL
 function scrollToSection(id){
     document.getElementById(id).scrollIntoView({behavior:'smooth'});
 }
 
-// BOOKING WA
-function sendBooking(e){
-    e.preventDefault();
 
+// ================= ITINERARY =================
+function toggleItinerary(id){
+    let box = document.getElementById("itinerary-box");
+
+    if(box.style.display === "block" && box.dataset.open === id){
+        box.style.display = "none";
+        return;
+    }
+
+    box.innerHTML = itineraries[id];
+    box.style.display = "block";
+    box.dataset.open = id;
+
+    box.scrollIntoView({behavior:'smooth'});
+}
+
+
+// ================= WHATSAPP =================
+function sendWA(){
     let name = document.getElementById("name").value;
     let wa = document.getElementById("wa").value;
     let pkg = document.getElementById("package").value;
@@ -363,7 +517,7 @@ function sendBooking(e){
 }
 
 
-// ANIMASI SCROLL
+// ================= ANIMATION =================
 const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
         if(entry.isIntersecting){
