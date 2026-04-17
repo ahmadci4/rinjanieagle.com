@@ -2,92 +2,112 @@
 <html lang="id" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rinjani Eagle | Premium Trekking Experience</title>
     
+    <!-- Responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Title -->
+    <title>Rinjani Eagle | Premium Trekking Experience</title>
+
+    <!-- SEO Basic -->
+    <meta name="description" content="Rinjani Eagle menyediakan pengalaman trekking premium ke Gunung Rinjani dengan guide profesional dan pelayanan terbaik.">
+
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Tailwind CSS -->
+
+    <!-- ✅ Tailwind WAJIB ADA -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            blue: '#3ABEFF',
+                            green: '#2ECC71',
+                            gold: '#F4C542',
+                            dark: '#1a1a1a',
+                            light: '#f8f9fa'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom CSS -->
     <style>
-body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #f8f9fa;
-}
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8f9fa;
+        }
 
-.parallax-hero {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)),
-                      url('https://images.unsplash.com/photo-1559093010-88002df35c75?auto=format&fit=crop&w=1920&q=80');
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
+        .parallax-hero {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)),
+                              url('https://images.unsplash.com/photo-1559093010-88002df35c75?auto=format&fit=crop&w=1920&q=80');
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
 
-/* FIX mobile parallax (biar ga patah di HP) */
-@media (max-width: 768px) {
-    .parallax-hero {
-        background-attachment: scroll;
-    }
-}
+        /* FIX mobile parallax */
+        @media (max-width: 768px) {
+            .parallax-hero {
+                background-attachment: scroll;
+            }
+        }
 
-.view-section {
-    display: none;
-    animation: fadeIn 0.4s ease-out forwards;
-}
-.view-section.active {
-    display: block;
-}
+        .view-section {
+            display: none;
+            animation: fadeIn 0.4s ease-out forwards;
+        }
+        .view-section.active {
+            display: block;
+        }
 
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(15px); }
-    to { opacity: 1; transform: translateY(0); }
-}
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
 
-.hover-zoom {
-    overflow: hidden;
-}
-.hover-zoom img {
-    transition: transform 0.5s ease;
-}
-.hover-zoom:hover img {
-    transform: scale(1.1);
-}
+        .hover-zoom {
+            overflow: hidden;
+        }
+        .hover-zoom img {
+            transition: transform 0.5s ease;
+        }
+        .hover-zoom:hover img {
+            transform: scale(1.1);
+        }
 
-.float-wa {
-    position: fixed;
-    width: 60px;
-    height: 60px;
-    bottom: 40px;
-    right: 40px;
-    background-color: #25d366;
-    color: #FFF;
-    border-radius: 50px;
-    font-size: 30px;
-    box-shadow: 2px 2px 15px rgba(0,0,0,0.2);
-    z-index: 100;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-}
-.float-wa:hover {
-    transform: scale(1.1);
-}
-
-.premium-shadow {
-    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.08);
-    transition: all 0.3s ease;
-}
-.premium-shadow:hover {
-    box-shadow: 0 20px 40px -5px rgba(0, 0, 0, 0.12);
-    transform: translateY(-5px);
-}
-</style>
-</head>
+        .float-wa {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            font-size: 30px;
+            box-shadow: 2px 2px 15px rgba(0,0,0,0.2);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        .float-wa:hover {
+            transform: scale(1.1
 <body class="text-gray-800 antialiased overflow-x-hidden">
 
     <!-- Navbar -->
