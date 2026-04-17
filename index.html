@@ -12,112 +12,81 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        brand: {
-                            blue: '#3ABEFF',
-                            green: '#2ECC71',
-                            gold: '#F4C542',
-                            dark: '#1a1a1a',
-                            light: '#f8f9fa'
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['Poppins', 'sans-serif'],
-                    }
-                }
-            }
-        }
-    </script>
-
-    <!-- Custom CSS -->
     <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #f8f9fa;
-        }
-        
-        .parallax-hero {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1559093010-88002df35c75?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
-            background-attachment: fixed;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8f9fa;
+}
 
-        .view-section {
-            display: none;
-            animation: fadeIn 0.4s ease-out forwards;
-        }
-        .view-section.active {
-            display: block;
-        }
+.parallax-hero {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)),
+                      url('https://images.unsplash.com/photo-1559093010-88002df35c75?auto=format&fit=crop&w=1920&q=80');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(15px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+/* FIX mobile parallax (biar ga patah di HP) */
+@media (max-width: 768px) {
+    .parallax-hero {
+        background-attachment: scroll;
+    }
+}
 
-        /* Hover Zoom Effect */
-        .hover-zoom {
-            overflow: hidden;
-        }
-        .hover-zoom img {
-            transition: transform 0.5s ease;
-        }
-        .hover-zoom:hover img {
-            transform: scale(1.1);
-        }
+.view-section {
+    display: none;
+    animation: fadeIn 0.4s ease-out forwards;
+}
+.view-section.active {
+    display: block;
+}
 
-        /* Floating WA */
-        .float-wa {
-            position: fixed;
-            width: 60px;
-            height: 60px;
-            bottom: 40px;
-            right: 40px;
-            background-color: #25d366;
-            color: #FFF;
-            border-radius: 50px;
-            text-align: center;
-            font-size: 30px;
-            box-shadow: 2px 2px 15px rgba(0,0,0,0.2);
-            z-index: 100;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-        }
-        .float-wa:hover {
-            transform: scale(1.1);
-            box-shadow: 2px 2px 20px rgba(37, 211, 102, 0.5);
-        }
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
 
-        /* Card Shadow */
-        .premium-shadow {
-            box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.08);
-            transition: all 0.3s ease;
-        }
-        .premium-shadow:hover {
-            box-shadow: 0 20px 40px -5px rgba(0, 0, 0, 0.12);
-            transform: translateY(-5px);
-        }
-        <section class="min-h-screen bg-[url('images/rinjani-eagfle-logo.svg')] bg-cover bg-center flex items-center justify-center text-center">
-  <div>
-    <img src="images/rinjani-eagle-logo.svg" 
-         alt="Rinjani Eagle Logo" 
-         class="rounded-full w-32 md:w-48 mb-8 shadow-xl mx-auto">
-    
-    <h1 class="text-white text-3xl md:text-5xl font-bold">
-      Welcome to Rinjani Eagle
-    </h1>
-  </div>
-</section>
-    </style>
+.hover-zoom {
+    overflow: hidden;
+}
+.hover-zoom img {
+    transition: transform 0.5s ease;
+}
+.hover-zoom:hover img {
+    transform: scale(1.1);
+}
+
+.float-wa {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    right: 40px;
+    background-color: #25d366;
+    color: #FFF;
+    border-radius: 50px;
+    font-size: 30px;
+    box-shadow: 2px 2px 15px rgba(0,0,0,0.2);
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+.float-wa:hover {
+    transform: scale(1.1);
+}
+
+.premium-shadow {
+    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+.premium-shadow:hover {
+    box-shadow: 0 20px 40px -5px rgba(0, 0, 0, 0.12);
+    transform: translateY(-5px);
+}
+</style>
 </head>
 <body class="text-gray-800 antialiased overflow-x-hidden">
 
