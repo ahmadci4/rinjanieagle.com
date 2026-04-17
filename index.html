@@ -1,835 +1,425 @@
 <!DOCTYPE html>
-<html lang="id" class="scroll-smooth">
-<head>
-    <meta charset="UTF-8">
-    
-    <!-- Responsive -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- Title -->
-    <title>Rinjani Eagle | Premium Trekking Experience</title>
+<!-- SEO -->
+<title>Rinjani Eagle Trekking | Paket Pendakian Gunung Rinjani Lombok</title>
 
-    <!-- SEO Basic -->
-    <meta name="description" content="Rinjani Eagle menyediakan pengalaman trekking premium ke Gunung Rinjani dengan guide profesional dan pelayanan terbaik.">
+<meta name="description" content="Paket trekking Gunung Rinjani Lombok terbaik. Guide profesional, harga terjangkau, pelayanan premium. Booking sekarang!">
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<meta name="keywords" content="rinjani trekking, paket rinjani, rinjani lombok, hiking rinjani, rinjani tour">
 
-    <!-- ✅ Tailwind WAJIB ADA -->
-    <script src="https://cdn.tailwindcss.com"></script>
+<meta name="author" content="Rinjani Eagle">
 
-    <!-- Tailwind Config -->
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        brand: {
-                            blue: '#3ABEFF',
-                            green: '#2ECC71',
-                            gold: '#F4C542',
-                            dark: '#1a1a1a',
-                            light: '#f8f9fa'
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['Poppins', 'sans-serif'],
-                    }
+<!-- Open Graph (biar bagus di share WA/FB) -->
+<meta property="og:title" content="Rinjani Eagle Trekking">
+<meta property="og:description" content="Trekking Rinjani terbaik dengan guide profesional">
+<meta property="og:image" content="images/1.jpeg">
+<meta property="og:type" content="website">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TouristTrip",
+  "name": "Rinjani Eagle Trekking",
+  "description": "Paket trekking Gunung Rinjani Lombok",
+  "image": "images/1.jpeg",
+  "touristType": "Adventure travelers",
+  "provider": {
+    "@type": "Organization",
+    "name": "Rinjani Eagle"
+  }
+}
+</script>
+
+<title>Rinjani Eagle | Premium Trekking</title>
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<!-- Tailwind -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<script>
+tailwind.config = {
+    theme: {
+        extend: {
+            colors: {
+                brand: {
+                    blue: '#3ABEFF',
+                    green: '#2ECC71',
+                    gold: '#F4C542',
+                    dark: '#1a1a1a',
+                    light: '#f8f9fa'
                 }
             }
         }
-    </script>
+    }
+}
+</script>
 
-    <!-- Custom CSS -->
-    <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #f8f9fa;
-        }
+<style>
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #f8f9fa;
+}
 
-        .parallax-hero {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)),
-                              url('https://images.unsplash.com/photo-1559093010-88002df35c75?auto=format&fit=crop&w=1920&q=80');
-            background-attachment: fixed;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
+/* FIX SHADOW */
+.premium-shadow {
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
 
-        /* FIX mobile parallax */
-        @media (max-width: 768px) {
-            .parallax-hero {
-                background-attachment: scroll;
-            }
-        }
+/* IMAGE HOVER */
+.hover-zoom {
+    overflow: hidden;
+}
+.hover-zoom img {
+    transition: 0.4s;
+}
+.hover-zoom:hover img {
+    transform: scale(1.1);
+}
 
-        .view-section {
-            display: none;
-            animation: fadeIn 0.4s ease-out forwards;
-        }
-        .view-section.active {
-            display: block;
-        }
+/* FLOAT WA FIX */
+.float-wa {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 55px;
+    height: 55px;
+    background: #25d366;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.float-wa:hover {
+    transform: scale(1.1);
+}
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(15px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+/* SECTION SPACING */
+section {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+</style>
+</head>
 
-        .hover-zoom {
-            overflow: hidden;
-        }
-        .hover-zoom img {
-            transition: transform 0.5s ease;
-        }
-        .hover-zoom:hover img {
-            transform: scale(1.1);
-        }
+<body class="text-gray-800">
 
-        .float-wa {
-            position: fixed;
-            width: 60px;
-            height: 60px;
-            bottom: 40px;
-            right: 40px;
-            background-color: #25d366;
-            color: #FFF;
-            border-radius: 50px;
-            font-size: 30px;
-            box-shadow: 2px 2px 15px rgba(0,0,0,0.2);
-            z-index: 100;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-        }
-        .float-wa:hover {
-            transform: scale(1.1
-<body class="text-gray-800 antialiased overflow-x-hidden">
+<!-- NAVBAR -->
+<nav class="fixed w-full bg-black/70 backdrop-blur z-50">
+    <div class="max-w-7xl mx-auto flex justify-between items-center px-4 h-16">
 
-    <!-- Navbar -->
-    <nav class="fixed w-full z-50 transition-all duration-300" id="navbar">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                <!-- Logo -->
-                <div class="flex-shrink-0 flex items-center cursor-pointer" onclick="navigate('home')">
-                    <i class="fa-solid fa-eagle text-brand-gold text-3xl mr-2"></i>
-                    <span class="font-bold text-2xl tracking-wider text-white" id="nav-logo-text">RINJANI <span class="text-brand-gold">EAGLE</span></span>
-                </div>
-                <!-- Desktop Menu -->
-                <div class="hidden md:flex space-x-8 items-center">
-                    <a href="#" onclick="navigate('home')" class="nav-link text-white hover:text-brand-gold transition font-medium">Home</a>
-                    <a href="#" onclick="navigate('about')" class="nav-link text-white hover:text-brand-gold transition font-medium">About</a>
-                    <a href="#" onclick="navigate('packages')" class="nav-link text-white hover:text-brand-gold transition font-medium">Packages</a>
-                    <a href="#" onclick="navigate('gallery')" class="nav-link text-white hover:text-brand-gold transition font-medium">Gallery</a>
-                    <a href="#" onclick="navigate('contact')" class="nav-link text-white hover:text-brand-gold transition font-medium">Contact</a>
-                    <button onclick="navigate('booking')" class="bg-brand-gold text-brand-dark px-6 py-2 rounded-full font-bold hover:bg-yellow-400 transition shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">BOOK NOW</button>
-                </div>
-                <!-- Mobile Menu Button -->
-                <div class="md:hidden flex items-center">
-                    <button id="mobile-menu-btn" class="text-white hover:text-brand-gold focus:outline-none">
-                        <i class="fa-solid fa-bars text-2xl"></i>
-                    </button>
-                </div>
-            </div>
+        <div class="flex items-center gap-2 text-white font-bold text-xl">
+            <i class="fa-solid fa-eagle text-brand-gold"></i>
+            Rinjani Eagle
         </div>
-        <!-- Mobile Menu Panel -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-xl absolute w-full left-0 top-20">
-            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 text-center">
-                <a href="#" onclick="navigate('home'); closeMobileMenu()" class="block px-3 py-2 text-gray-800 hover:text-brand-blue font-medium">Home</a>
-                <a href="#" onclick="navigate('about'); closeMobileMenu()" class="block px-3 py-2 text-gray-800 hover:text-brand-blue font-medium">About</a>
-                <a href="#" onclick="navigate('packages'); closeMobileMenu()" class="block px-3 py-2 text-gray-800 hover:text-brand-blue font-medium">Packages</a>
-                <a href="#" onclick="navigate('gallery'); closeMobileMenu()" class="block px-3 py-2 text-gray-800 hover:text-brand-blue font-medium">Gallery</a>
-                <a href="#" onclick="navigate('contact'); closeMobileMenu()" class="block px-3 py-2 text-gray-800 hover:text-brand-blue font-medium">Contact</a>
-                <button onclick="navigate('booking'); closeMobileMenu()" class="w-full mt-2 bg-brand-gold text-brand-dark px-6 py-3 rounded-full font-bold hover:bg-yellow-400 transition">BOOK NOW</button>
-            </div>
-        </div>
-    </nav>
 
-    <!-- Main Content Container -->
-    <main id="app-container">
-
-        <!-- ================= HOME PAGE ================= -->
-        <section id="view-home" class="view-section active">
-            <!-- Hero -->
-            <div class="parallax-hero h-screen w-full flex items-center justify-center relative">
-    <div class="text-center px-4 z-10 w-full flex flex-col items-center">
-        
-                 
-            <img src="images/rinjani-eagle-logo.svg" 
-                 alt="Rinjani Eagle Logo" 
-                 class="rounded-full w-32 md:w-48 mb-8 shadow-xl">
-            <h1 class="text-white text-3xl md:text-5xl font-bold">
-              Welcome to Rinjani Eagle
-            </h1>
-       
-        
-        <div class="inline-block bg-brand-blue/20 backdrop-blur-md border border-brand-blue/30 text-white px-4 py-1 rounded-full text-sm font-semibold tracking-widest mb-6 border-white/50">
-            <i class="fa-solid fa-star text-brand-gold mr-1"></i> TRUSTED BY INTERNATIONAL TRAVELERS
+        <div class="hidden md:flex gap-6 text-white">
+            <a href="#" onclick="navigate('home')">Home</a>
+            <a href="#" onclick="navigate('about')">About</a>
+            <a href="#" onclick="navigate('packages')">Packages</a>
+            <a href="#" onclick="navigate('gallery')">Gallery</a>
+            <a href="#" onclick="navigate('contact')">Contact</a>
         </div>
-        
+
+        <button onclick="navigate('booking')" 
+        class="bg-brand-gold px-4 py-2 rounded-full font-bold hidden md:block">
+            Book
+        </button>
+
     </div>
-    
-    <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce text-white">
-        <i class="fa-solid fa-chevron-down text-2xl"></i>
+</nav>
+
+<!-- MAIN -->
+<main id="app-container">
+
+<!-- ================= HOME ================= -->
+<section id="view-home" class="pt-16">
+
+<!-- HERO -->
+<div class="h-screen flex items-center justify-center bg-gray-900 relative">
+
+    <!-- background -->
+    <img src="images/rinjani-eagle-logo.svg"
+         class="absolute w-full h-full object-cover opacity-20">
+
+    <div class="text-center z-10 px-4">
+
+        <img src="images/rinjani-eagle-logo.svg"
+             class="w-28 md:w-40 mx-auto mb-6">
+
+        <h1 class="text-white text-3xl md:text-5xl font-bold mb-4">
+            Rinjani Eagle Trekking
+        </h1>
+
+        <p class="text-gray-300 mb-6 max-w-xl mx-auto">
+            Premium trekking experience to Mount Rinjani with professional guide & best service.
+        </p>
+
+        <button onclick="navigate('packages')"
+        class="bg-brand-gold px-6 py-3 rounded-full font-bold hover:bg-yellow-400">
+            Explore Packages
+        </button>
+
     </div>
 </div>
-            <!-- Featured Badges -->
-            <div class="bg-white py-10 shadow-sm relative z-20 -mt-5 rounded-t-3xl border-b border-gray-100">
-                <div class="max-w-7xl mx-auto px-4 flex flex-wrap justify-center gap-8 md:gap-16">
-                    <div class="flex items-center text-gray-600 font-medium">
-                        <i class="fa-solid fa-award text-brand-gold text-3xl mr-3"></i> Best Trekking Experience
-                    </div>
-                    <div class="flex items-center text-gray-600 font-medium">
-                        <i class="fa-solid fa-shield-halved text-brand-green text-3xl mr-3"></i> 100% Safety Guarantee
-                    </div>
-                    <div class="flex items-center text-gray-600 font-medium">
-                        <i class="fa-solid fa-leaf text-brand-green text-3xl mr-3"></i> Eco-Friendly Tours
-                    </div>
-                </div>
-            </div>
 
-            <!-- Featured Packages -->
-            <div class="py-20 bg-brand-light">
-                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div class="text-center mb-16">
-                        <h2 class="text-3xl md:text-4xl font-bold text-brand-dark mb-4">Our Premium Packages</h2>
-                        <div class="w-24 h-1 bg-brand-blue mx-auto rounded"></div>
-                    </div>
+<!-- FEATURE -->
+<div class="bg-white py-10 text-center grid md:grid-cols-3 gap-6 premium-shadow">
+    <div><i class="fa-solid fa-award text-2xl text-brand-gold"></i><p>Best Experience</p></div>
+    <div><i class="fa-solid fa-shield text-2xl text-brand-green"></i><p>Safety First</p></div>
+    <div><i class="fa-solid fa-leaf text-2xl text-brand-green"></i><p>Eco Friendly</p></div>
+</div>
 
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-                        <!-- Card 1 -->
-                        <div class="bg-white rounded-2xl premium-shadow overflow-hidden group">
-                            <div class="relative hover-zoom h-64">
-                                <img src="https://images.unsplash.com/photo-1588668214407-6ea9a6d8c272?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="2D1N Summit" class="w-full h-full object-cover">
-                                <div class="absolute top-4 right-4 bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">Limited Offer - 10% OFF</div>
-                                <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/80 to-transparent p-4">
-                                    <h3 class="text-2xl font-bold text-white">2D/1N Summit</h3>
-                                </div>
-                            </div>
-                            <div class="p-6">
-                                <p class="text-gray-600 mb-4 text-sm line-clamp-2">The fastest way to reach the majestic peak of Mount Rinjani. Perfect for experienced hikers with limited time.</p>
-                                <div class="flex justify-between items-center mb-6">
-                                    <div>
-                                        <span class="text-sm text-gray-400 line-through block">$220</span>
-                                        <span class="text-2xl font-bold text-brand-blue">$200<span class="text-sm text-gray-500 font-normal">/pax</span></span>
-                                    </div>
-                                    <div class="flex text-brand-gold text-sm">
-                                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                                    </div>
-                                </div>
-                                <button onclick="bookPackage('2D/1N Summit')" class="w-full bg-brand-dark text-white py-3 rounded-xl font-semibold hover:bg-brand-blue transition">Book Now</button>
-                            </div>
-                        </div>
+<!-- PACKAGES -->
+<div class="py-16">
+<h2 class="text-3xl font-bold text-center mb-10">Packages</h2>
 
-                        <!-- Card 2 -->
-                        <div class="bg-white rounded-2xl premium-shadow overflow-hidden group border-2 border-brand-gold relative">
-                            <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-brand-gold text-brand-dark px-4 py-1 rounded-full text-sm font-bold shadow-md z-10 whitespace-nowrap">
-                                <i class="fa-solid fa-crown mr-1"></i> MOST POPULAR
-                            </div>
-                            <div class="relative hover-zoom h-64 mt-2">
-                                <img src="https://images.unsplash.com/photo-1522362372344-9d587f16f393?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="3D2N Summit" class="w-full h-full object-cover">
-                                <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/80 to-transparent p-4">
-                                    <h3 class="text-2xl font-bold text-white">3D/2N Summit & Lake</h3>
-                                </div>
-                            </div>
-                            <div class="p-6">
-                                <p class="text-gray-600 mb-4 text-sm line-clamp-2">Our highly recommended package. Experience the summit, Segara Anak Lake, and natural hot springs.</p>
-                                <div class="flex justify-between items-center mb-6">
-                                    <div>
-                                        <span class="text-2xl font-bold text-brand-blue">$256<span class="text-sm text-gray-500 font-normal">/pax</span></span>
-                                    </div>
-                                    <div class="flex text-brand-gold text-sm">
-                                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
-                                    </div>
-                                </div>
-                                <button onclick="bookPackage('3D/2N Summit')" class="w-full bg-brand-gold text-brand-dark py-3 rounded-xl font-semibold hover:bg-yellow-400 transition">Book Now</button>
-                            </div>
-                        </div>
+<div class="grid md:grid-cols-3 gap-8">
 
-                        <!-- Card 3 -->
-                        <div class="bg-white rounded-2xl premium-shadow overflow-hidden group">
-                            <div class="relative hover-zoom h-64">
-                                <img src="https://images.unsplash.com/photo-1506197603052-3cc9c3a201bd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="4D3N Summit" class="w-full h-full object-cover">
-                                <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/80 to-transparent p-4">
-                                    <h3 class="text-2xl font-bold text-white">4D/3N Summit Ultimate</h3>
-                                </div>
-                            </div>
-                            <div class="p-6">
-                                <p class="text-gray-600 mb-4 text-sm line-clamp-2">The most relaxed and complete journey. Enjoy every scenic spot without rushing. Perfect for nature lovers.</p>
-                                <div class="flex justify-between items-center mb-6">
-                                    <div>
-                                        <span class="text-2xl font-bold text-brand-blue">$275<span class="text-sm text-gray-500 font-normal">/pax</span></span>
-                                    </div>
-                                    <div class="flex text-brand-gold text-sm">
-                                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                                    </div>
-                                </div>
-                                <button onclick="bookPackage('4D/3N Summit')" class="w-full bg-brand-dark text-white py-3 rounded-xl font-semibold hover:bg-brand-blue transition">Book Now</button>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="text-center mt-12">
-                        <button onclick="navigate('packages')" class="text-brand-blue font-bold hover:underline">View All Packages <i class="fa-solid fa-arrow-right ml-1"></i></button>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ================= ABOUT PAGE ================= -->
-        <section id="view-about" class="view-section pt-24 pb-20">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-16">
-                    <h2 class="text-3xl md:text-5xl font-bold text-brand-dark mb-4">About Rinjani Eagle</h2>
-                    <div class="w-24 h-1 bg-brand-green mx-auto rounded"></div>
-                </div>
-                
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                    <div class="rounded-2xl overflow-hidden premium-shadow">
-                        <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="About Team" class="w-full h-full object-cover">
-                    </div>
-                    <div>
-                        <h3 class="text-2xl font-bold mb-4 text-brand-blue">Your Trusted Trekking Partner</h3>
-                        <p class="text-gray-600 mb-6 leading-relaxed">
-                            Founded by experienced local guides, Rinjani Eagle provides world-class trekking experiences with a focus on safety, comfort, and environmental sustainability. We treat our guests like family and the mountain like our home.
-                        </p>
-                        <div class="space-y-4">
-                            <div class="flex items-start">
-                                <div class="bg-brand-blue/10 p-3 rounded-lg text-brand-blue mr-4">
-                                    <i class="fa-solid fa-eye text-xl"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-bold text-gray-800">Vision</h4>
-                                    <p class="text-sm text-gray-500">To be the most reliable and eco-friendly trekking operator in Mount Rinjani.</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start">
-                                <div class="bg-brand-green/10 p-3 rounded-lg text-brand-green mr-4">
-                                    <i class="fa-solid fa-bullseye text-xl"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-bold text-gray-800">Mission</h4>
-                                    <p class="text-sm text-gray-500">Empowering local communities while delivering unforgettable adventures with high international standards.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ================= PACKAGES PAGE ================= -->
-        <section id="view-packages" class="view-section pt-24 pb-20 bg-brand-light">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-16">
-                    <h2 class="text-3xl md:text-5xl font-bold text-brand-dark mb-4">Tour Packages</h2>
-                    <p class="text-gray-500 max-w-2xl mx-auto">Choose the journey that fits your time and physical condition. All packages include guide, porter, meals, and equipment.</p>
-                    <div class="w-24 h-1 bg-brand-blue mx-auto rounded mt-6"></div>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <!-- Crater Rim -->
-                    <div class="bg-white rounded-2xl premium-shadow overflow-hidden flex flex-col h-full">
-                        <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Crater Rim" class="w-full h-48 object-cover">
-                        <div class="p-6 flex flex-col flex-grow">
-                            <h3 class="text-xl font-bold text-gray-800 mb-2">2D/1N Crater Rim</h3>
-                            <p class="text-gray-500 text-sm mb-4 flex-grow">A gentle hike perfect for beginners or families. Enjoy the spectacular view of the lake from Senaru crater rim.</p>
-                            <div class="text-2xl font-bold text-brand-blue mb-4">$50<span class="text-sm text-gray-500 font-normal">/pax</span></div>
-                            <button onclick="bookPackage('Crater Rim')" class="w-full bg-gray-100 text-brand-dark py-2 rounded-lg font-semibold hover:bg-brand-blue hover:text-white transition">Book Now</button>
-                        </div>
-                    </div>
-                    <!-- 2D1N -->
-                    <div class="bg-white rounded-2xl premium-shadow overflow-hidden flex flex-col h-full relative">
-                        <div class="absolute top-2 right-2 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded shadow">10% OFF</div>
-                        <img src="https://images.unsplash.com/photo-1588668214407-6ea9a6d8c272?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="2D1N" class="w-full h-48 object-cover">
-                        <div class="p-6 flex flex-col flex-grow">
-                            <h3 class="text-xl font-bold text-gray-800 mb-2">2D/1N Summit</h3>
-                            <p class="text-gray-500 text-sm mb-4 flex-grow">Fast-paced hike to the summit. Requires good fitness level.</p>
-                            <div class="text-2xl font-bold text-brand-blue mb-4">$200<span class="text-sm text-gray-500 font-normal">/pax</span></div>
-                            <button onclick="bookPackage('2D/1N Summit')" class="w-full bg-gray-100 text-brand-dark py-2 rounded-lg font-semibold hover:bg-brand-blue hover:text-white transition">Book Now</button>
-                        </div>
-                    </div>
-                    <!-- 3D2N -->
-                    <div class="bg-white rounded-2xl premium-shadow overflow-hidden flex flex-col h-full border-2 border-brand-gold">
-                        <div class="bg-brand-gold text-center py-1 text-xs font-bold text-brand-dark">RECOMMENDED</div>
-                        <img src="https://images.unsplash.com/photo-1522362372344-9d587f16f393?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="3D2N" class="w-full h-48 object-cover">
-                        <div class="p-6 flex flex-col flex-grow">
-                            <h3 class="text-xl font-bold text-gray-800 mb-2">3D/2N Summit</h3>
-                            <p class="text-gray-500 text-sm mb-4 flex-grow">Complete experience: Summit, Lake, and Hot Springs.</p>
-                            <div class="text-2xl font-bold text-brand-blue mb-4">$256<span class="text-sm text-gray-500 font-normal">/pax</span></div>
-                            <button onclick="bookPackage('3D/2N Summit')" class="w-full bg-brand-gold text-brand-dark py-2 rounded-lg font-semibold hover:bg-yellow-400 transition">Book Now</button>
-                        </div>
-                    </div>
-                    <!-- 4D3N -->
-                    <div class="bg-white rounded-2xl premium-shadow overflow-hidden flex flex-col h-full">
-                        <img src="https://images.unsplash.com/photo-1506197603052-3cc9c3a201bd?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="4D3N" class="w-full h-48 object-cover">
-                        <div class="p-6 flex flex-col flex-grow">
-                            <h3 class="text-xl font-bold text-gray-800 mb-2">4D/3N Summit</h3>
-                            <p class="text-gray-500 text-sm mb-4 flex-grow">Ultimate relaxed journey covering all spots at a comfortable pace.</p>
-                            <div class="text-2xl font-bold text-brand-blue mb-4">$275<span class="text-sm text-gray-500 font-normal">/pax</span></div>
-                            <button onclick="bookPackage('4D/3N Summit')" class="w-full bg-gray-100 text-brand-dark py-2 rounded-lg font-semibold hover:bg-brand-blue hover:text-white transition">Book Now</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ================= GALLERY PAGE ================= -->
-        <section id="view-gallery" class="view-section pt-24 pb-20">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-16">
-                    <h2 class="text-3xl md:text-5xl font-bold text-brand-dark mb-4">Our Gallery</h2>
-                    <div class="w-24 h-1 bg-brand-blue mx-auto rounded"></div>
-                </div>
-                <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-                    <div class="rounded-xl overflow-hidden hover-zoom h-48 md:h-64"><img src="https://images.unsplash.com/photo-1522362372344-9d587f16f393?w=500&q=80" class="w-full h-full object-cover"></div>
-                    <div class="rounded-xl overflow-hidden hover-zoom h-48 md:h-64"><img src="https://images.unsplash.com/photo-1559093010-88002df35c75?w=500&q=80" class="w-full h-full object-cover"></div>
-                    <div class="rounded-xl overflow-hidden hover-zoom h-48 md:h-64"><img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=500&q=80" class="w-full h-full object-cover"></div>
-                    <div class="rounded-xl overflow-hidden hover-zoom h-48 md:h-64"><img src="https://images.unsplash.com/photo-1506197603052-3cc9c3a201bd?w=500&q=80" class="w-full h-full object-cover"></div>
-                    <div class="rounded-xl overflow-hidden hover-zoom h-48 md:h-64"><img src="https://images.unsplash.com/photo-1588668214407-6ea9a6d8c272?w=500&q=80" class="w-full h-full object-cover"></div>
-                    <div class="rounded-xl overflow-hidden hover-zoom h-48 md:h-64 bg-gray-200 flex items-center justify-center text-gray-500 font-bold">More on Instagram <i class="fab fa-instagram ml-2"></i></div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ================= CONTACT PAGE ================= -->
-        <section id="view-contact" class="view-section pt-24 pb-20 bg-brand-light">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-16">
-                    <h2 class="text-3xl md:text-5xl font-bold text-brand-dark mb-4">Contact Us</h2>
-                    <div class="w-24 h-1 bg-brand-green mx-auto rounded"></div>
-                </div>
-                <div class="max-w-3xl mx-auto bg-white rounded-2xl premium-shadow p-8 text-center">
-                    <i class="fa-solid fa-headset text-5xl text-brand-blue mb-4"></i>
-                    <h3 class="text-2xl font-bold mb-4">We are here to help!</h3>
-                    <p class="text-gray-600 mb-8">Have any questions before booking? Feel free to reach out to our team.</p>
-                    <div class="flex flex-col md:flex-row justify-center gap-6">
-                        <a href="mailto:info@rinjanieagle.com" class="flex items-center justify-center bg-gray-100 px-6 py-3 rounded-lg hover:bg-gray-200 transition">
-                            <i class="fa-solid fa-envelope text-brand-blue mr-2"></i> info@rinjanieagle.com
-                        </a>
-                        <a href="https://wa.me/6281234567890" target="_blank" class="flex items-center justify-center bg-brand-green text-white px-6 py-3 rounded-lg hover:bg-green-600 transition shadow-md">
-                            <i class="fa-brands fa-whatsapp text-xl mr-2"></i> +62 812-3456-7890
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ================= BOOKING PAGE ================= -->
-        <section id="view-booking" class="view-section pt-24 pb-20">
-            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-10">
-                    <h2 class="text-3xl md:text-4xl font-bold text-brand-dark mb-4">Formulir Booking</h2>
-                    <p class="text-gray-500">Silakan lengkapi data diri Anda untuk melanjutkan pemesanan.</p>
-                </div>
-                
-                <div class="bg-white rounded-3xl premium-shadow p-8 md:p-10 border border-gray-100">
-                    <form id="booking-form" onsubmit="handleBookingSubmit(event)">
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                            <!-- Nama -->
-                            <div>
-                                <label class="block text-gray-700 font-semibold mb-2" for="b-name">Nama Lengkap *</label>
-                                <input type="text" id="b-name" required class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/20 outline-none transition" placeholder="John Doe">
-                            </div>
-                            <!-- Email -->
-                            <div>
-                                <label class="block text-gray-700 font-semibold mb-2" for="b-email">Email *</label>
-                                <input type="email" id="b-email" required class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/20 outline-none transition" placeholder="john@example.com">
-                            </div>
-                            <!-- WhatsApp -->
-                            <div>
-                                <label class="block text-gray-700 font-semibold mb-2" for="b-wa">Nomor WhatsApp *</label>
-                                <input type="tel" id="b-wa" required class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/20 outline-none transition" placeholder="+628123456789">
-                            </div>
-                            <!-- Tanggal -->
-                            <div>
-                                <label class="block text-gray-700 font-semibold mb-2" for="b-date">Tanggal Keberangkatan *</label>
-                                <input type="date" id="b-date" required class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/20 outline-none transition">
-                            </div>
-                            <!-- Pilih Paket -->
-                            <div>
-                                <label class="block text-gray-700 font-semibold mb-2" for="b-package">Pilih Paket *</label>
-                                <select id="b-package" required class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/20 outline-none transition bg-white" onchange="calculatePreviewPrice()">
-                                    <option value="" disabled selected>-- Pilih Paket Trekking --</option>
-                                    <option value="2D/1N Summit">2D/1N Summit ($200)</option>
-                                    <option value="3D/2N Summit">3D/2N Summit ($256)</option>
-                                    <option value="4D/3N Summit">4D/3N Summit ($275)</option>
-                                    <option value="Crater Rim">Crater Rim ($50)</option>
-                                </select>
-                            </div>
-                            <!-- Jumlah Peserta -->
-                            <div>
-                                <label class="block text-gray-700 font-semibold mb-2" for="b-pax">Jumlah Peserta (Orang) *</label>
-                                <input type="number" id="b-pax" min="1" max="20" value="1" required class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/20 outline-none transition" onchange="calculatePreviewPrice()">
-                            </div>
-                        </div>
-                        
-                        <!-- Catatan -->
-                        <div class="mb-8">
-                            <label class="block text-gray-700 font-semibold mb-2" for="b-notes">Catatan Tambahan (Opsional)</label>
-                            <textarea id="b-notes" rows="3" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/20 outline-none transition" placeholder="Contoh: Alergi makanan, butuh penjemputan di bandara..."></textarea>
-                        </div>
-
-                        <!-- Price Preview -->
-                        <div class="bg-blue-50 p-4 rounded-xl mb-8 flex justify-between items-center border border-blue-100">
-                            <span class="text-gray-600 font-medium">Estimasi Total:</span>
-                            <span class="text-2xl font-bold text-brand-blue" id="preview-total">$0</span>
-                        </div>
-
-                        <button type="submit" class="w-full bg-brand-gold text-brand-dark py-4 rounded-xl font-bold text-lg hover:bg-yellow-400 transition shadow-lg flex justify-center items-center">
-                            Lanjut ke Pembayaran <i class="fa-solid fa-arrow-right ml-2"></i>
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </section>
-
-        <!-- ================= PAYMENT PAGE ================= -->
-        <section id="view-payment" class="view-section pt-24 pb-20 bg-brand-light">
-            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-10">
-                    <h2 class="text-3xl md:text-4xl font-bold text-brand-dark mb-2">Pembayaran</h2>
-                    <p class="text-gray-500">Selesaikan pembayaran untuk mengonfirmasi booking Anda.</p>
-                </div>
-
-                <div class="flex flex-col lg:flex-row gap-8">
-                    <!-- Kiri: Info Pembayaran -->
-                    <div class="w-full lg:w-2/3 space-y-6">
-                        
-                        <!-- Metode 1: Transfer -->
-                        <div class="bg-white rounded-2xl premium-shadow p-6">
-                            <h3 class="text-xl font-bold text-gray-800 mb-4 flex items-center"><i class="fa-solid fa-building-columns text-brand-blue mr-3"></i> 1. Transfer Bank Manual</h3>
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                <!-- BRI -->
-                                <div class="border border-gray-200 rounded-xl p-4 hover:border-brand-blue transition">
-                                    <div class="flex justify-between items-center mb-2">
-                                        <span class="font-bold text-lg text-blue-800">Bank BRI</span>
-                                        <i class="fa-solid fa-credit-card text-gray-400"></i>
-                                    </div>
-                                    <div class="text-2xl font-mono tracking-wider text-gray-800 mb-1">1234 5678 90</div>
-                                    <div class="text-sm text-gray-500">A/N: Rinjani Eagle</div>
-                                </div>
-                                <!-- BCA -->
-                                <div class="border border-gray-200 rounded-xl p-4 hover:border-brand-blue transition">
-                                    <div class="flex justify-between items-center mb-2">
-                                        <span class="font-bold text-lg text-blue-600">Bank BCA</span>
-                                        <i class="fa-solid fa-credit-card text-gray-400"></i>
-                                    </div>
-                                    <div class="text-2xl font-mono tracking-wider text-gray-800 mb-1">9876 5432 10</div>
-                                    <div class="text-sm text-gray-500">A/N: Rinjani Eagle</div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Metode 2: QRIS -->
-                        <div class="bg-white rounded-2xl premium-shadow p-6">
-                            <h3 class="text-xl font-bold text-gray-800 mb-4 flex items-center"><i class="fa-solid fa-qrcode text-brand-blue mr-3"></i> 2. Bayar via QRIS</h3>
-                            <div class="flex flex-col items-center justify-center p-4 border border-dashed border-gray-300 rounded-xl bg-gray-50">
-                                <!-- Dummy QRIS Image -->
-                                <div class="w-48 h-48 bg-white border border-gray-200 p-2 shadow-sm rounded-lg mb-3 flex items-center justify-center">
-                                    <img src="https://upload.wikimedia.org/wikipedia/commons/d/d0/QR_code_for_mobile_English_Wikipedia.svg" alt="QRIS" class="w-full h-full opacity-80 mix-blend-multiply">
-                                </div>
-                                <p class="text-gray-600 font-medium">Scan QRIS untuk pembayaran cepat</p>
-                                <p class="text-xs text-gray-400 text-center mt-1">Mendukung GoPay, OVO, Dana, ShopeePay, m-Banking.</p>
-                            </div>
-                        </div>
-
-                        <!-- Metode 3: Cash/DP -->
-                        <div class="bg-white rounded-2xl premium-shadow p-6">
-                            <h3 class="text-xl font-bold text-gray-800 mb-2 flex items-center"><i class="fa-solid fa-money-bill-wave text-brand-green mr-3"></i> 3. DP & Cash On Arrival</h3>
-                            <div class="bg-green-50 text-green-800 p-4 rounded-xl text-sm">
-                                <i class="fa-solid fa-circle-info mr-1"></i> <strong>Info:</strong> Pembayaran DP minimal 30% dari total harga diwajibkan untuk mengamankan slot booking Anda. Sisa pembayaran dapat dilakukan secara tunai di lokasi (Basecamp Rinjani Eagle).
-                            </div>
-                        </div>
-
-                        <!-- Upload Bukti (Visual Form) -->
-                        <div class="bg-white rounded-2xl premium-shadow p-6">
-                            <h3 class="text-xl font-bold text-gray-800 mb-4">📤 Upload Bukti Transfer</h3>
-                            <form id="upload-form" class="space-y-4">
-                                <div>
-                                    <label class="block text-sm text-gray-600 mb-1">Nama Pengirim Rekening</label>
-                                    <input type="text" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-brand-blue" placeholder="Nama di Rekening/E-Wallet">
-                                </div>
-                                <div>
-                                    <label class="block text-sm text-gray-600 mb-1">Tanggal Transfer</label>
-                                    <input type="date" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-brand-blue">
-                                </div>
-                                <div>
-                                    <label class="block text-sm text-gray-600 mb-1">Foto Bukti (Opsional di Web, Wajib via WA)</label>
-                                    <input type="file" accept="image/*" class="w-full px-4 py-2 border rounded-lg focus:outline-none text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-brand-blue hover:file:bg-blue-100">
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-
-                    <!-- Kanan: Ringkasan Pesanan -->
-                    <div class="w-full lg:w-1/3">
-                        <div class="bg-brand-dark text-white rounded-2xl premium-shadow p-6 sticky top-28">
-                            <h3 class="text-xl font-bold mb-4 border-b border-gray-700 pb-4">🧾 Ringkasan Pesanan</h3>
-                            
-                            <div class="space-y-3 mb-6 text-gray-300">
-                                <div class="flex justify-between">
-                                    <span class="text-sm">Nama:</span>
-                                    <span class="font-medium text-white text-right" id="sum-name">-</span>
-                                </div>
-                                <div class="flex justify-between">
-                                    <span class="text-sm">Paket:</span>
-                                    <span class="font-medium text-brand-gold text-right" id="sum-pkg">-</span>
-                                </div>
-                                <div class="flex justify-between">
-                                    <span class="text-sm">Tanggal:</span>
-                                    <span class="font-medium text-white text-right" id="sum-date">-</span>
-                                </div>
-                                <div class="flex justify-between">
-                                    <span class="text-sm">Peserta:</span>
-                                    <span class="font-medium text-white text-right" id="sum-pax">-</span>
-                                </div>
-                            </div>
-                            
-                            <div class="border-t border-gray-700 pt-4 mb-6">
-                                <div class="flex justify-between items-center mb-1">
-                                    <span class="text-gray-400">Total Harga</span>
-                                    <span class="text-3xl font-bold text-brand-gold" id="sum-total">$0</span>
-                                </div>
-                                <div class="flex justify-between items-center text-sm">
-                                    <span class="text-gray-400">Minimal DP (30%)</span>
-                                    <span class="text-brand-green font-bold" id="sum-dp">$0</span>
-                                </div>
-                            </div>
-
-                            <button onclick="confirmPaymentWA()" class="w-full bg-brand-green text-white py-4 rounded-xl font-bold text-lg hover:bg-green-600 transition shadow-lg flex justify-center items-center">
-                                <i class="fa-brands fa-whatsapp text-2xl mr-2"></i> Konfirmasi via WA
-                            </button>
-                            <p class="text-xs text-center text-gray-400 mt-4">Anda akan diarahkan ke WhatsApp untuk mengirim bukti secara langsung ke admin kami.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-gray-300 py-12 border-t border-gray-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div>
-                <div class="flex items-center mb-4">
-                    <i class="fa-solid fa-eagle text-brand-gold text-2xl mr-2"></i>
-                    <span class="font-bold text-xl text-white">RINJANI <span class="text-brand-gold">EAGLE</span></span>
-                </div>
-                <p class="text-sm text-gray-500 mb-4">Premium Mt. Rinjani Trekking Organizer. Experience the beauty of nature with safety, comfort, and professional service.</p>
-                <div class="flex space-x-4">
-                    <a href="#" class="text-gray-400 hover:text-white transition"><i class="fa-brands fa-instagram text-xl"></i></a>
-                    <a href="#" class="text-gray-400 hover:text-white transition"><i class="fa-brands fa-facebook text-xl"></i></a>
-                    <a href="#" class="text-gray-400 hover:text-white transition"><i class="fa-brands fa-tripadvisor text-xl"></i></a>
-                </div>
-            </div>
-            <div>
-                <h4 class="text-white font-bold mb-4">Quick Links</h4>
-                <ul class="space-y-2 text-sm">
-                    <li><a href="#" onclick="navigate('home')" class="hover:text-brand-gold transition">Home</a></li>
-                    <li><a href="#" onclick="navigate('about')" class="hover:text-brand-gold transition">About Us</a></li>
-                    <li><a href="#" onclick="navigate('packages')" class="hover:text-brand-gold transition">Trekking Packages</a></li>
-                    <li><a href="#" onclick="navigate('contact')" class="hover:text-brand-gold transition">Contact</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="text-white font-bold mb-4">Contact</h4>
-                <ul class="space-y-2 text-sm">
-                    <li><i class="fa-solid fa-location-dot mr-2 text-brand-blue"></i> Senaru, North Lombok, Indonesia</li>
-                    <li><i class="fa-brands fa-whatsapp mr-2 text-brand-green"></i> +62 812-3456-7890</li>
-                    <li><i class="fa-solid fa-envelope mr-2 text-brand-gold"></i> info@rinjanieagle.com</li>
-                </ul>
-            </div>
+<!-- CARD -->
+<div class="bg-white rounded-2xl premium-shadow flex flex-col">
+    <div class="hover-zoom h-56">
+        <img src="images/1.jpeg" class="w-full h-full object-cover">
+    </div>
+    <div class="p-6 flex flex-col flex-grow">
+        <h3 class="font-bold text-xl mb-2">2D/1N Summit</h3>
+        <p class="text-sm text-gray-500 mb-4">Fast hike to summit</p>
+        <div class="mt-auto">
+            <p class="font-bold text-brand-blue">$200</p>
+            <button onclick="bookPackage('2D/1N Summit')" class="w-full mt-3 bg-black text-white py-2 rounded-lg">
+                Book
+            </button>
         </div>
-        <div class="text-center text-xs text-gray-600 mt-12">
-            &copy; 2026 Rinjani Eagle. All rights reserved.
+    </div>
+</div>
+
+<div class="bg-white rounded-2xl premium-shadow flex flex-col">
+    <div class="hover-zoom h-56">
+        <img src="images/2.jpeg" class="w-full h-full object-cover">
+    </div>
+    <div class="p-6 flex flex-col flex-grow">
+        <h3 class="font-bold text-xl mb-2">3D/2N Summit</h3>
+        <p class="text-sm text-gray-500 mb-4">Most popular trip</p>
+        <div class="mt-auto">
+            <p class="font-bold text-brand-blue">$256</p>
+            <button onclick="bookPackage('3D/2N Summit')" class="w-full mt-3 bg-brand-gold py-2 rounded-lg">
+                Book
+            </button>
         </div>
-    </footer>
+    </div>
+</div>
 
-    <!-- Floating WhatsApp -->
-    <a href="https://wa.me/6281234567890" target="_blank" class="float-wa" title="Chat on WhatsApp">
-        <i class="fa-brands fa-whatsapp"></i>
-    </a>
+<div class="bg-white rounded-2xl premium-shadow flex flex-col">
+    <div class="hover-zoom h-56">
+        <img src="images/3.jpeg" class="w-full h-full object-cover">
+    </div>
+    <div class="p-6 flex flex-col flex-grow">
+        <h3 class="font-bold text-xl mb-2">4D/3N Summit</h3>
+        <p class="text-sm text-gray-500 mb-4">Full experience</p>
+        <div class="mt-auto">
+            <p class="font-bold text-brand-blue">$275</p>
+            <button onclick="bookPackage('4D/3N Summit')" class="w-full mt-3 bg-black text-white py-2 rounded-lg">
+                Book
+            </button>
+        </div>
+    </div>
+</div>
 
-    <!-- JavaScript Application Logic -->
-    <script>
-        // Data Harga Paket
-        const packagePrices = {
-            "2D/1N Summit": 200,
-            "3D/2N Summit": 256,
-            "4D/3N Summit": 275,
-            "Crater Rim": 50
-        };
+</div>
+</div>
 
-        // --- SPA Routing System ---
-        function navigate(viewId) {
-            // Hide all views
-            document.querySelectorAll('.view-section').forEach(section => {
-                section.classList.remove('active');
-            });
-            // Show target view
-            const target = document.getElementById(`view-${viewId}`);
-            if(target) {
-                target.classList.add('active');
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            }
+</section>
+<!-- ================= ABOUT ================= -->
+<section id="view-about" class="py-16">
+<div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center">
 
-            // Update Payment Summary if navigating to payment
-            if(viewId === 'payment') {
-                renderPaymentSummary();
-            }
-        }
+    <img src="images/4.jpeg" class="rounded-2xl shadow-lg">
 
-        // Navbar Scroll Effect
-        window.addEventListener('scroll', () => {
-            const nav = document.getElementById('navbar');
-            const logoText = document.getElementById('nav-logo-text');
-            if (window.scrollY > 50) {
-                nav.classList.add('bg-white', 'shadow-md');
-                nav.classList.remove('bg-transparent');
-                logoText.classList.remove('text-white');
-                logoText.classList.add('text-brand-dark');
-                document.querySelectorAll('.nav-link').forEach(link => {
-                    link.classList.remove('text-white');
-                    link.classList.add('text-gray-800');
-                });
-            } else {
-                nav.classList.remove('bg-white', 'shadow-md');
-                nav.classList.add('bg-transparent');
-                logoText.classList.add('text-white');
-                logoText.classList.remove('text-brand-dark');
-                document.querySelectorAll('.nav-link').forEach(link => {
-                    link.classList.add('text-white');
-                    link.classList.remove('text-gray-800');
-                });
-            }
-        });
+    <div>
+        <h2 class="text-3xl font-bold mb-4">About Us</h2>
+        <p class="text-gray-600 mb-4">
+            Rinjani Eagle adalah penyedia jasa trekking profesional di Gunung Rinjani.
+            Kami mengutamakan keselamatan, kenyamanan, dan pengalaman terbaik.
+        </p>
 
-        // Mobile Menu Toggle
-        document.getElementById('mobile-menu-btn').addEventListener('click', () => {
-            const menu = document.getElementById('mobile-menu');
-            menu.classList.toggle('hidden');
-        });
+        <div class="space-y-3">
+            <p>✔ Guide Profesional</p>
+            <p>✔ Safety Terjamin</p>
+            <p>✔ Pengalaman Terbaik</p>
+        </div>
+    </div>
 
-        function closeMobileMenu() {
-            document.getElementById('mobile-menu').classList.add('hidden');
-        }
+</div>
+</section>
 
-        // --- Booking System ---
-        function bookPackage(packageName) {
-            navigate('booking');
-            const select = document.getElementById('b-package');
-            select.value = packageName;
-            calculatePreviewPrice();
-        }
 
-        function calculatePreviewPrice() {
-            const pkg = document.getElementById('b-package').value;
-            const pax = parseInt(document.getElementById('b-pax').value) || 1;
-            const priceLabel = document.getElementById('preview-total');
-            
-            if (pkg && packagePrices[pkg]) {
-                const total = packagePrices[pkg] * pax;
-                priceLabel.innerText = `$${total}`;
-            } else {
-                priceLabel.innerText = `$0`;
-            }
-        }
+<!-- ================= GALLERY ================= -->
+<section id="view-gallery" class="py-16 bg-gray-100">
 
-        function handleBookingSubmit(e) {
-            e.preventDefault();
-            
-            // Get Data
-            const name = document.getElementById('b-name').value;
-            const email = document.getElementById('b-email').value;
-            const wa = document.getElementById('b-wa').value;
-            const date = document.getElementById('b-date').value;
-            const pkg = document.getElementById('b-package').value;
-            const pax = parseInt(document.getElementById('b-pax').value);
-            const notes = document.getElementById('b-notes').value;
+<h2 class="text-3xl font-bold text-center mb-10">Gallery</h2>
 
-            // Validate
-            if (!pkg) {
-                alert("Silakan pilih paket trekking terlebih dahulu!");
-                return;
-            }
+<div class="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4">
 
-            // Calculate
-            const total = packagePrices[pkg] * pax;
-            const dp = total * 0.3;
+    <div class="hover-zoom"><img src="images/1.jpeg" class="rounded-xl w-full h-48 object-cover"></div>
+    <div class="hover-zoom"><img src="images/2.jpeg" class="rounded-xl w-full h-48 object-cover"></div>
+    <div class="hover-zoom"><img src="images/3.jpeg" class="rounded-xl w-full h-48 object-cover"></div>
+    <div class="hover-zoom"><img src="images/4.jpeg" class="rounded-xl w-full h-48 object-cover"></div>
+    <div class="hover-zoom"><img src="images/5.jpeg" class="rounded-xl w-full h-48 object-cover"></div>
+    <div class="hover-zoom"><img src="images/6.jpeg" class="rounded-xl w-full h-48 object-cover"></div>
+    <div class="hover-zoom"><img src="images/7.jpeg" class="rounded-xl w-full h-48 object-cover"></div>
+    <div class="hover-zoom"><img src="images/8.jpeg" class="rounded-xl w-full h-48 object-cover"></div>
 
-            // Save to LocalStorage (or memory)
-            const orderData = {
-                name, email, wa, date, pkg, pax, notes, total, dp
-            };
-            localStorage.setItem('rinjaniOrder', JSON.stringify(orderData));
+</div>
 
-            // Redirect to Payment
-            navigate('payment');
-        }
+</section>
 
-        // --- Payment System ---
-        function renderPaymentSummary() {
-            const orderStr = localStorage.getItem('rinjaniOrder');
-            if (orderStr) {
-                const order = JSON.parse(orderStr);
-                
-                document.getElementById('sum-name').innerText = order.name;
-                document.getElementById('sum-pkg').innerText = order.pkg;
-                document.getElementById('sum-date').innerText = order.date;
-                document.getElementById('sum-pax').innerText = `${order.pax} Orang`;
-                document.getElementById('sum-total').innerText = `$${order.total}`;
-                document.getElementById('sum-dp').innerText = `$${order.dp.toFixed(2)}`;
-            } else {
-                // If accessed directly without booking
-                document.getElementById('sum-name').innerText = "-";
-                document.getElementById('sum-pkg').innerText = "-";
-                document.getElementById('sum-date').innerText = "-";
-                document.getElementById('sum-pax').innerText = "-";
-                document.getElementById('sum-total').innerText = "$0";
-                document.getElementById('sum-dp').innerText = "$0";
-            }
-        }
 
-        function confirmPaymentWA() {
-            const orderStr = localStorage.getItem('rinjaniOrder');
-            if (!orderStr) {
-                alert("Data pesanan tidak ditemukan. Silakan booking ulang.");
-                navigate('booking');
-                return;
-            }
+<!-- ================= CONTACT ================= -->
+<section id="view-contact" class="py-16">
 
-            const order = JSON.parse(orderStr);
-            const adminWA = "6281234567890"; // Ganti dengan nomor WA Admin asli
-            
-            // Format Pesan
-            let message = `*Halo Rinjani Eagle, saya sudah melakukan pembayaran/booking:*%0A%0A`;
-            message += `👤 *Nama:* ${order.name}%0A`;
-            message += `🎒 *Paket:* ${order.pkg}%0A`;
-            message += `📅 *Tanggal:* ${order.date}%0A`;
-            message += `👥 *Jumlah Orang:* ${order.pax} Pax%0A`;
-            message += `💰 *Total Harga:* $${order.total}%0A`;
-            message += `💵 *Minimal DP (30%):* $${order.dp.toFixed(2)}%0A`;
-            if (order.notes) {
-                message += `📝 *Catatan:* ${order.notes}%0A`;
-            }
-            message += `%0A_Berikut saya lampirkan bukti transfernya (Silakan upload gambar):_`;
+<div class="max-w-4xl mx-auto text-center">
 
-            // Redirect to WA
-            window.open(`https://wa.me/${adminWA}?text=${message}`, '_blank');
-        }
+    <h2 class="text-3xl font-bold mb-6">Contact Us</h2>
 
-        // Initialize App on load
-        window.onload = () => {
-            // Check if URL has hash (e.g. #booking) to support direct linking later if needed
-            // Default to home
-            navigate('home');
-        };
-    </script>
+    <p class="text-gray-600 mb-8">
+        Hubungi kami untuk booking atau pertanyaan lebih lanjut
+    </p>
+
+    <div class="flex flex-col md:flex-row gap-4 justify-center">
+
+        <a href="mailto:info@rinjanieagle.com"
+        class="bg-gray-200 px-6 py-3 rounded-lg">
+            Email
+        </a>
+
+        <a href="https://wa.me/6281234567890"
+        class="bg-green-500 text-white px-6 py-3 rounded-lg">
+            WhatsApp
+        </a>
+
+    </div>
+
+</div>
+
+</section>
+<!-- ================= BOOKING ================= -->
+<section id="view-booking" class="py-16 bg-gray-100">
+
+<div class="max-w-3xl mx-auto bg-white p-8 rounded-2xl premium-shadow">
+
+<h2 class="text-2xl font-bold mb-6 text-center">Booking Form</h2>
+
+<form onsubmit="handleBooking(event)" class="space-y-4">
+
+<input id="name" type="text" placeholder="Nama" required class="w-full border p-3 rounded-lg">
+<input id="wa" type="text" placeholder="WhatsApp" required class="w-full border p-3 rounded-lg">
+
+<select id="package" class="w-full border p-3 rounded-lg">
+<option value="">Pilih Paket</option>
+<option value="2D/1N Summit">2D/1N Summit</option>
+<option value="3D/2N Summit">3D/2N Summit</option>
+<option value="4D/3N Summit">4D/3N Summit</option>
+</select>
+
+<input id="pax" type="number" value="1" class="w-full border p-3 rounded-lg">
+
+<button class="w-full bg-brand-gold py-3 rounded-lg font-bold">
+Lanjut Pembayaran
+</button>
+
+</form>
+
+</div>
+</section>
+
+
+<!-- ================= PAYMENT ================= -->
+<section id="view-payment" class="py-16">
+
+<div class="max-w-4xl mx-auto text-center">
+
+<h2 class="text-3xl font-bold mb-6">Payment</h2>
+
+<p class="mb-6">Transfer ke rekening berikut:</p>
+
+<div class="bg-white p-6 rounded-xl shadow mb-6">
+<p><b>Bank BCA</b></p>
+<p>1234567890</p>
+<p>a.n Rinjani Eagle</p>
+</div>
+
+<button onclick="sendWA()" class="bg-green-500 text-white px-6 py-3 rounded-lg">
+Konfirmasi via WhatsApp
+</button>
+
+</div>
+</section>
+
+</main>
+
+
+<!-- ================= FOOTER ================= -->
+<footer class="bg-black text-white text-center py-6">
+© 2026 Rinjani Eagle
+</footer>
+
+
+<!-- FLOAT WA -->
+<a href="https://wa.me/6281234567890"
+class="float-wa">
+<i class="fa-brands fa-whatsapp"></i>
+</a>
+
+
+<!-- ================= JAVASCRIPT ================= -->
+<script>
+
+// NAVIGATION SYSTEM
+function navigate(id){
+    document.querySelectorAll("section").forEach(sec=>{
+        sec.style.display="none";
+    });
+    document.getElementById("view-"+id).style.display="block";
+    window.scrollTo(0,0);
+}
+
+// DEFAULT
+navigate("home");
+
+
+// BOOKING
+let bookingData = {};
+
+function bookPackage(name){
+    navigate("booking");
+    document.getElementById("package").value = name;
+}
+
+function handleBooking(e){
+    e.preventDefault();
+
+    bookingData = {
+        name: document.getElementById("name").value,
+        wa: document.getElementById("wa").value,
+        package: document.getElementById("package").value,
+        pax: document.getElementById("pax").value
+    };
+
+    navigate("payment");
+}
+
+
+// WHATSAPP CONFIRM
+function sendWA(){
+    let text = `Halo Rinjani Eagle\n\nNama: ${bookingData.name}\nPaket: ${bookingData.package}\nJumlah: ${bookingData.pax}`;
+
+    window.open(`https://wa.me/6281234567890?text=${encodeURIComponent(text)}`);
+}
+
+</script>
+
 </body>
 </html>
