@@ -28,9 +28,11 @@
 }
 </script>
 
-<title>Rinjani Eagle | Premium Trekking</title>
+<title>Paket Trekking Gunung Rinjani Lombok | Rinjani Eagle</title>
 
-<!-- Fonts -->
+<meta name="description" content="Paket trekking Gunung Rinjani Lombok dengan guide profesional, harga terbaik dan pengalaman premium.">
+
+<!-- Google Font -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <!-- Font Awesome -->
@@ -39,68 +41,54 @@
 <!-- Tailwind -->
 <script src="https://cdn.tailwindcss.com"></script>
 
-<script>
-tailwind.config = {
-    theme: {
-        extend: {
-            colors: {
-                brand: {
-                    blue: '#3ABEFF',
-                    green: '#2ECC71',
-                    gold: '#F4C542',
-                    dark: '#1a1a1a',
-                    light: '#f8f9fa'
-                }
-            }
-        }
-    }
-}
-</script>
-
 <style>
 body {
     font-family: 'Poppins', sans-serif;
-    background: #f8f9fa;
+    scroll-behavior: smooth;
 }
 
-/* FIX SHADOW */
-.premium-shadow {
+/* ANIMATION */
+.fade-up {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease;
+}
+.fade-up.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* SHADOW */
+.card {
     box-shadow: 0 10px 30px rgba(0,0,0,0.08);
 }
 
-/* IMAGE HOVER */
-.hover-zoom {
-    overflow: hidden;
-}
-.hover-zoom img {
-    transition: 0.4s;
-}
-.hover-zoom:hover img {
-    transform: scale(1.1);
+/* HERO */
+.hero {
+    height: 100vh;
+    position: relative;
 }
 
-/* FLOAT WA FIX */
+/* OVERLAY */
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+}
+
+/* WA FLOAT */
 .float-wa {
     position: fixed;
-    bottom: 25px;
-    right: 25px;
+    bottom: 20px;
+    right: 20px;
+    background: #25d366;
     width: 55px;
     height: 55px;
-    background: #25d366;
-    color: white;
     border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.float-wa:hover {
-    transform: scale(1.1);
-}
-
-/* SECTION SPACING */
-section {
-    padding-left: 1rem;
-    padding-right: 1rem;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:white;
 }
 </style>
 </head>
@@ -108,226 +96,198 @@ section {
 <body class="text-gray-800">
 
 <!-- NAVBAR -->
-<nav class="fixed w-full bg-black/70 backdrop-blur z-50">
-    <div class="max-w-7xl mx-auto flex justify-between items-center px-4 h-16">
+<nav class="fixed w-full z-50 bg-black/70 backdrop-blur text-white">
+<div class="max-w-6xl mx-auto flex justify-between items-center px-4 h-16">
 
-        <div class="flex items-center gap-2 text-white font-bold text-xl">
-            <i class="fa-solid fa-eagle text-brand-gold"></i>
-            Rinjani Eagle
-        </div>
+<div class="font-bold">Rinjani Eagle</div>
 
-        <div class="hidden md:flex gap-6 text-white">
-            <a href="#" onclick="navigate('home')">Home</a>
-            <a href="#" onclick="navigate('about')">About</a>
-            <a href="#" onclick="navigate('packages')">Packages</a>
-            <a href="#" onclick="navigate('gallery')">Gallery</a>
-            <a href="#" onclick="navigate('contact')">Contact</a>
-        </div>
+<div class="hidden md:flex gap-6">
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#packages">Packages</a>
+<a href="#contact">Contact</a>
+</div>
 
-        <button onclick="navigate('booking')" 
-        class="bg-brand-gold px-4 py-2 rounded-full font-bold hidden md:block">
-            Book
-        </button>
+<a href="#booking" class="bg-yellow-400 text-black px-4 py-2 rounded-full font-bold">
+Book
+</a>
 
-    </div>
+</div>
 </nav>
 
-<!-- MAIN -->
-<main id="app-container">
-
-<!-- ================= HOME ================= -->
-<section id="view-home" class="pt-16">
 
 <!-- HERO -->
-<div class="h-screen flex items-center justify-center bg-gray-900 relative">
+<section id="home" class="hero flex items-center justify-center">
 
-    <!-- background -->
-    <img src="images/rinjani-eagle-logo.svg"
-         class="absolute w-full h-full object-cover opacity-20">
+<img src="images/hero.jpeg" class="absolute w-full h-full object-cover">
 
-    <div class="text-center z-10 px-4">
+<div class="overlay"></div>
 
-        <img src="images/rinjani-eagle-logo.svg"
-             class="w-28 md:w-40 mx-auto mb-6">
-
-        <h1 class="text-white text-3xl md:text-5xl font-bold mb-4">
-            Rinjani Eagle Trekking
-        </h1>
-
-        <p class="text-gray-300 mb-6 max-w-xl mx-auto">
-            Premium trekking experience to Mount Rinjani with professional guide & best service.
-        </p>
-
-        <button onclick="navigate('packages')"
-        class="bg-brand-gold px-6 py-3 rounded-full font-bold hover:bg-yellow-400">
-            Explore Packages
-        </button>
-
-    </div>
-</div>
-
-<!-- FEATURE -->
-<div class="bg-white py-10 text-center grid md:grid-cols-3 gap-6 premium-shadow">
-    <div><i class="fa-solid fa-award text-2xl text-brand-gold"></i><p>Best Experience</p></div>
-    <div><i class="fa-solid fa-shield text-2xl text-brand-green"></i><p>Safety First</p></div>
-    <div><i class="fa-solid fa-leaf text-2xl text-brand-green"></i><p>Eco Friendly</p></div>
-</div>
-
-<!-- PACKAGES -->
-<div class="py-16">
-<h2 class="text-3xl font-bold text-center mb-10">Packages</h2>
-
-<div class="grid md:grid-cols-3 gap-8">
-
-<!-- CARD -->
-<div class="bg-white rounded-2xl premium-shadow flex flex-col">
-    <div class="hover-zoom h-56">
-        <img src="images/1.jpeg" class="w-full h-full object-cover">
-    </div>
-    <div class="p-6 flex flex-col flex-grow">
-        <h3 class="font-bold text-xl mb-2">2D/1N Summit</h3>
-        <p class="text-sm text-gray-500 mb-4">Fast hike to summit</p>
-        <div class="mt-auto">
-            <p class="font-bold text-brand-blue">$200</p>
-            <button onclick="bookPackage('2D/1N Summit')" class="w-full mt-3 bg-black text-white py-2 rounded-lg">
-                Book
-            </button>
-        </div>
-    </div>
-</div>
-
-<div class="bg-white rounded-2xl premium-shadow flex flex-col">
-    <div class="hover-zoom h-56">
-        <img src="images/2.jpeg" class="w-full h-full object-cover">
-    </div>
-    <div class="p-6 flex flex-col flex-grow">
-        <h3 class="font-bold text-xl mb-2">3D/2N Summit</h3>
-        <p class="text-sm text-gray-500 mb-4">Most popular trip</p>
-        <div class="mt-auto">
-            <p class="font-bold text-brand-blue">$256</p>
-            <button onclick="bookPackage('3D/2N Summit')" class="w-full mt-3 bg-brand-gold py-2 rounded-lg">
-                Book
-            </button>
-        </div>
-    </div>
-</div>
-
-<div class="bg-white rounded-2xl premium-shadow flex flex-col">
-    <div class="hover-zoom h-56">
-        <img src="images/3.jpeg" class="w-full h-full object-cover">
-    </div>
-    <div class="p-6 flex flex-col flex-grow">
-        <h3 class="font-bold text-xl mb-2">4D/3N Summit</h3>
-        <p class="text-sm text-gray-500 mb-4">Full experience</p>
-        <div class="mt-auto">
-            <p class="font-bold text-brand-blue">$275</p>
-            <button onclick="bookPackage('4D/3N Summit')" class="w-full mt-3 bg-black text-white py-2 rounded-lg">
-                Book
-            </button>
-        </div>
-    </div>
-</div>
-
-</div>
+<!-- TIDAK ADA TEXT (SUDAH DI GAMBAR) -->
+<div class="relative z-10">
+<button onclick="scrollToSection('packages')"
+class="bg-yellow-400 px-6 py-3 rounded-full font-bold hover:bg-yellow-300">
+Explore Packages
+</button>
 </div>
 
 </section>
 <!-- ================= ABOUT ================= -->
-<section id="view-about" class="py-16">
-<div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center">
+<section id="about" class="py-20 bg-gray-50 fade-up">
+<div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center px-4">
 
-    <img src="images/4.jpeg" class="rounded-2xl shadow-lg">
+<img src="images/1.jpeg" class="rounded-2xl card">
 
-    <div>
-        <h2 class="text-3xl font-bold mb-4">About Us</h2>
-        <p class="text-gray-600 mb-4">
-            Rinjani Eagle adalah penyedia jasa trekking profesional di Gunung Rinjani.
-            Kami mengutamakan keselamatan, kenyamanan, dan pengalaman terbaik.
-        </p>
+<div>
+<h2 class="text-3xl font-bold mb-4">About Rinjani Eagle</h2>
 
-        <div class="space-y-3">
-            <p>✔ Guide Profesional</p>
-            <p>✔ Safety Terjamin</p>
-            <p>✔ Pengalaman Terbaik</p>
-        </div>
-    </div>
+<p class="text-gray-600 mb-4">
+Rinjani Eagle adalah operator trekking lokal terpercaya di Lombok yang menyediakan pengalaman pendakian Gunung Rinjani dengan standar internasional.
+</p>
+
+<p class="text-gray-600">
+Kami fokus pada keselamatan, pelayanan profesional, dan pengalaman tak terlupakan di alam.
+</p>
+
+</div>
 
 </div>
 </section>
 
 
-<!-- ================= GALLERY ================= -->
-<section id="view-gallery" class="py-16 bg-gray-100">
+<!-- ================= PACKAGES ================= -->
+<section id="packages" class="py-20 fade-up">
 
-<h2 class="text-3xl font-bold text-center mb-10">Gallery</h2>
+<div class="max-w-6xl mx-auto px-4">
 
-<div class="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4">
+<h2 class="text-3xl font-bold text-center mb-10">
+Rinjani Trekking Packages
+</h2>
 
-    <div class="hover-zoom"><img src="images/1.jpeg" class="rounded-xl w-full h-48 object-cover"></div>
-    <div class="hover-zoom"><img src="images/2.jpeg" class="rounded-xl w-full h-48 object-cover"></div>
-    <div class="hover-zoom"><img src="images/3.jpeg" class="rounded-xl w-full h-48 object-cover"></div>
-    <div class="hover-zoom"><img src="images/4.jpeg" class="rounded-xl w-full h-48 object-cover"></div>
-    <div class="hover-zoom"><img src="images/5.jpeg" class="rounded-xl w-full h-48 object-cover"></div>
-    <div class="hover-zoom"><img src="images/6.jpeg" class="rounded-xl w-full h-48 object-cover"></div>
-    <div class="hover-zoom"><img src="images/7.jpeg" class="rounded-xl w-full h-48 object-cover"></div>
-    <div class="hover-zoom"><img src="images/8.jpeg" class="rounded-xl w-full h-48 object-cover"></div>
+<p class="text-center text-gray-500 mb-12 max-w-2xl mx-auto">
+Pilih paket trekking Gunung Rinjani sesuai waktu dan kemampuan Anda.
+</p>
 
+<div class="grid md:grid-cols-3 gap-8">
+
+<!-- CARD 1 -->
+<div class="bg-white rounded-2xl card overflow-hidden flex flex-col">
+<img src="images/2.jpeg" class="h-56 w-full object-cover">
+<div class="p-6 flex flex-col flex-grow">
+<h3 class="font-bold text-xl mb-2">2D/1N Summit</h3>
+<p class="text-sm text-gray-500 mb-4">
+Pendakian cepat menuju puncak Rinjani melalui jalur Sembalun.
+</p>
+<div class="mt-auto">
+<button onclick="scrollToSection('booking')" class="w-full bg-black text-white py-2 rounded-lg">
+Book Now
+</button>
+</div>
+</div>
 </div>
 
+<!-- CARD 2 -->
+<div class="bg-white rounded-2xl card overflow-hidden flex flex-col">
+<img src="images/3.jpeg" class="h-56 w-full object-cover">
+<div class="p-6 flex flex-col flex-grow">
+<h3 class="font-bold text-xl mb-2">3D/2N Summit & Lake</h3>
+<p class="text-sm text-gray-500 mb-4">
+Pengalaman lengkap: summit, danau, dan pemandian air panas.
+</p>
+<div class="mt-auto">
+<button onclick="scrollToSection('booking')" class="w-full bg-yellow-400 py-2 rounded-lg font-bold">
+Book Now
+</button>
+</div>
+</div>
+</div>
+
+<!-- CARD 3 -->
+<div class="bg-white rounded-2xl card overflow-hidden flex flex-col">
+<img src="images/4.jpeg" class="h-56 w-full object-cover">
+<div class="p-6 flex flex-col flex-grow">
+<h3 class="font-bold text-xl mb-2">4D/3N Ultimate Trek</h3>
+<p class="text-sm text-gray-500 mb-4">
+Pendakian santai menikmati semua keindahan Rinjani.
+</p>
+<div class="mt-auto">
+<button onclick="scrollToSection('booking')" class="w-full bg-black text-white py-2 rounded-lg">
+Book Now
+</button>
+</div>
+</div>
+</div>
+
+</div>
+</div>
 </section>
 
 
-<!-- ================= CONTACT ================= -->
-<section id="view-contact" class="py-16">
+<!-- ================= ITINERARY ================= -->
+<section class="py-20 bg-gray-100 fade-up">
 
-<div class="max-w-4xl mx-auto text-center">
+<div class="max-w-5xl mx-auto px-4">
 
-    <h2 class="text-3xl font-bold mb-6">Contact Us</h2>
+<h2 class="text-3xl font-bold text-center mb-12">
+Itinerary Trekking
+</h2>
 
-    <p class="text-gray-600 mb-8">
-        Hubungi kami untuk booking atau pertanyaan lebih lanjut
-    </p>
-
-    <div class="flex flex-col md:flex-row gap-4 justify-center">
-
-        <a href="mailto:info@rinjanieagle.com"
-        class="bg-gray-200 px-6 py-3 rounded-lg">
-            Email
-        </a>
-
-        <a href="https://wa.me/6281234567890"
-        class="bg-green-500 text-white px-6 py-3 rounded-lg">
-            WhatsApp
-        </a>
-
-    </div>
-
+<!-- 2D1N -->
+<div class="mb-10">
+<h3 class="font-bold text-xl mb-3">2D/1N Summit Trek</h3>
+<ul class="text-gray-600 space-y-2 text-sm">
+<li><b>Day 1:</b> Transfer ke Sembalun dan trekking menuju crater rim.</li>
+<li><b>Day 2:</b> Summit attack dini hari lalu turun kembali.</li>
+</ul>
 </div>
 
+<!-- 3D2N -->
+<div class="mb-10">
+<h3 class="font-bold text-xl mb-3">3D/2N Summit & Lake</h3>
+<ul class="text-gray-600 space-y-2 text-sm">
+<li><b>Day 1:</b> Trek ke crater rim Senaru.</li>
+<li><b>Day 2:</b> Turun ke danau & hot spring.</li>
+<li><b>Day 3:</b> Summit dan turun ke Sembalun.</li>
+</ul>
+</div>
+
+<!-- 4D3N -->
+<div>
+<h3 class="font-bold text-xl mb-3">4D/3N Ultimate Trek</h3>
+<ul class="text-gray-600 space-y-2 text-sm">
+<li><b>Day 1:</b> Trek awal ke crater rim.</li>
+<li><b>Day 2:</b> Eksplorasi danau.</li>
+<li><b>Day 3:</b> Trek lanjutan.</li>
+<li><b>Day 4:</b> Summit & turun.</li>
+</ul>
+</div>
+
+</div>
 </section>
 <!-- ================= BOOKING ================= -->
-<section id="view-booking" class="py-16 bg-gray-100">
+<section id="booking" class="py-20 fade-up">
 
-<div class="max-w-3xl mx-auto bg-white p-8 rounded-2xl premium-shadow">
+<div class="max-w-3xl mx-auto bg-white p-8 rounded-2xl card">
 
 <h2 class="text-2xl font-bold mb-6 text-center">Booking Form</h2>
 
-<form onsubmit="handleBooking(event)" class="space-y-4">
+<form onsubmit="sendBooking(event)" class="space-y-4">
 
-<input id="name" type="text" placeholder="Nama" required class="w-full border p-3 rounded-lg">
-<input id="wa" type="text" placeholder="WhatsApp" required class="w-full border p-3 rounded-lg">
+<input id="name" type="text" placeholder="Nama Lengkap" required class="w-full border p-3 rounded-lg">
+
+<input id="wa" type="text" placeholder="Nomor WhatsApp" required class="w-full border p-3 rounded-lg">
 
 <select id="package" class="w-full border p-3 rounded-lg">
 <option value="">Pilih Paket</option>
 <option value="2D/1N Summit">2D/1N Summit</option>
 <option value="3D/2N Summit">3D/2N Summit</option>
-<option value="4D/3N Summit">4D/3N Summit</option>
+<option value="4D/3N Ultimate">4D/3N Ultimate</option>
 </select>
 
 <input id="pax" type="number" value="1" class="w-full border p-3 rounded-lg">
 
-<button class="w-full bg-brand-gold py-3 rounded-lg font-bold">
-Lanjut Pembayaran
+<button class="w-full bg-yellow-400 py-3 rounded-lg font-bold">
+Booking Sekarang
 </button>
 
 </form>
@@ -336,29 +296,31 @@ Lanjut Pembayaran
 </section>
 
 
-<!-- ================= PAYMENT ================= -->
-<section id="view-payment" class="py-16">
+<!-- ================= CONTACT ================= -->
+<section id="contact" class="py-20 bg-gray-100 fade-up">
 
-<div class="max-w-4xl mx-auto text-center">
+<div class="text-center max-w-xl mx-auto px-4">
 
-<h2 class="text-3xl font-bold mb-6">Payment</h2>
+<h2 class="text-3xl font-bold mb-6">Contact Us</h2>
 
-<p class="mb-6">Transfer ke rekening berikut:</p>
+<p class="text-gray-600 mb-6">
+Hubungi kami untuk informasi dan reservasi trekking Rinjani.
+</p>
 
-<div class="bg-white p-6 rounded-xl shadow mb-6">
-<p><b>Bank BCA</b></p>
-<p>1234567890</p>
-<p>a.n Rinjani Eagle</p>
+<div class="space-y-3">
+
+<p><b>WhatsApp:</b> 085956684081</p>
+<p><b>Email:</b> rinjanieagle@gmail.com</p>
+
 </div>
 
-<button onclick="sendWA()" class="bg-green-500 text-white px-6 py-3 rounded-lg">
-Konfirmasi via WhatsApp
-</button>
+<a href="https://wa.me/6285956684081"
+class="inline-block mt-6 bg-green-500 text-white px-6 py-3 rounded-lg">
+Chat via WhatsApp
+</a>
 
 </div>
 </section>
-
-</main>
 
 
 <!-- ================= FOOTER ================= -->
@@ -368,56 +330,51 @@ Konfirmasi via WhatsApp
 
 
 <!-- FLOAT WA -->
-<a href="https://wa.me/6281234567890"
+<a href="https://wa.me/6285956684081"
 class="float-wa">
 <i class="fa-brands fa-whatsapp"></i>
 </a>
 
 
-<!-- ================= JAVASCRIPT ================= -->
+<!-- ================= SCRIPT ================= -->
 <script>
 
-// NAVIGATION SYSTEM
-function navigate(id){
-    document.querySelectorAll("section").forEach(sec=>{
-        sec.style.display="none";
-    });
-    document.getElementById("view-"+id).style.display="block";
-    window.scrollTo(0,0);
+// SCROLL TO SECTION
+function scrollToSection(id){
+    document.getElementById(id).scrollIntoView({behavior:'smooth'});
 }
 
-// DEFAULT
-navigate("home");
-
-
-// BOOKING
-let bookingData = {};
-
-function bookPackage(name){
-    navigate("booking");
-    document.getElementById("package").value = name;
-}
-
-function handleBooking(e){
+// BOOKING WA
+function sendBooking(e){
     e.preventDefault();
 
-    bookingData = {
-        name: document.getElementById("name").value,
-        wa: document.getElementById("wa").value,
-        package: document.getElementById("package").value,
-        pax: document.getElementById("pax").value
-    };
+    let name = document.getElementById("name").value;
+    let wa = document.getElementById("wa").value;
+    let pkg = document.getElementById("package").value;
+    let pax = document.getElementById("pax").value;
 
-    navigate("payment");
+    let text = `Halo Rinjani Eagle%0A%0A` +
+               `Nama: ${name}%0A` +
+               `WA: ${wa}%0A` +
+               `Paket: ${pkg}%0A` +
+               `Jumlah: ${pax}`;
+
+    window.open(`https://wa.me/6285956684081?text=${text}`);
 }
 
 
-// WHATSAPP CONFIRM
-function sendWA(){
-    let text = `Halo Rinjani Eagle\n\nNama: ${bookingData.name}\nPaket: ${bookingData.package}\nJumlah: ${bookingData.pax}`;
+// ANIMASI SCROLL
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting){
+            entry.target.classList.add('show');
+        }
+    });
+});
 
-    window.open(`https://wa.me/6281234567890?text=${encodeURIComponent(text)}`);
-}
+document.querySelectorAll('.fade-up').forEach(el => {
+    observer.observe(el);
+});
 
 </script>
 
