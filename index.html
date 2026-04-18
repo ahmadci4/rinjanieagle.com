@@ -1,615 +1,695 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="id" class="scroll-smooth">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Rinjani Eagle Trekking | Mount Rinjani Lombok</title>
+    <title>Rinjani Eagle Trekking | Mount Rinjani Lombok</title>
 
-<!-- SEO -->
-<meta name="description" content="Paket trekking Gunung Rinjani Lombok dengan guide profesional dan layanan premium.">
+    <!-- SEO -->
+    <meta name="description" content="Paket trekking Gunung Rinjani Lombok dengan guide profesional dan layanan premium.">
 
-<!-- FONT -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- FONT -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
-<!-- TAILWIND -->
-<script src="https://cdn.tailwindcss.com"></script>
+    <!-- TAILWIND -->
+    <script src="https://cdn.tailwindcss.com"></script>
 
-<style>
+    <style>
+        /* ================= GLOBAL ================= */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #fdfbf7; 
+            position: relative;
+        }
 
-/* ================= GLOBAL ================= */
-body {
-    font-family: 'Poppins', sans-serif;
-    background: #f8f9fa;
-}
+        /* ================= BACKGROUND WATERMARK ================= */
+        .bg-watermark {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80vw;
+            max-width: 600px;
+            opacity: 0.04; /* Sangat rendah agar elegan */
+            z-index: -1;
+            pointer-events: none; /* Tidak mengganggu klik */
+        }
 
-/* ================= COLOR ================= */
-:root {
-    --green: #2ecc71;
-    --blue: #3498db;
-}
+        /* ================= ANIMATION ================= */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s ease;
+        }
 
-/* ================= ANIMATION ================= */
-.fade-up {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: all 0.8s ease;
-}
+        .fade-up.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
 
-.fade-up.show {
-    opacity: 1;
-    transform: translateY(0);
-}
+        /* ================= HERO PARALLAX (SVG LOGO) ================= */
+        .parallax-hero {
+            background-image: url('images/rinjani-eagle-logo.svg');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-color: #1a1a1a;
+            background-attachment: fixed;
+            width: 100%;
+        }
 
-/* ================= CARD ================= */
-.card {
-    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-    transition: 0.3s;
-}
-.card:hover {
-    transform: translateY(-5px);
-}
+        @media (max-width: 768px) {
+            .parallax-hero {
+                background-attachment: scroll;
+            }
+        }
 
-/* ================= IMAGE ================= */
-.img-hover {
-    overflow: hidden;
-}
-.img-hover img {
-    transition: 0.4s;
-}
-.img-hover:hover img {
-    transform: scale(1.1);
-}
+        /* ================= CARD & IMAGE HOVER ================= */
+        .img-hover {
+            overflow: hidden;
+        }
+        .img-hover img {
+            transition: 0.5s ease;
+        }
+        .img-hover:hover img {
+            transform: scale(1.1);
+        }
 
-/* ================= FLOAT WA ================= */
-.float-wa {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 55px;
-    height: 55px;
-    background: #25d366;
-    color: white;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+        /* ================= FLOAT WA ================= */
+        .float-wa {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background: #25d366;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            z-index: 100;
+            font-size: 30px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+        .float-wa:hover {
+            transform: scale(1.15);
+        }
 
-/* ================= NAVBAR ================= */
-.navbar {
-    transition: 0.3s;
-}
-
-/* ================= BUTTON ================= */
-.btn-primary {
-    background: var(--green);
-    color: white;
-    padding: 12px 24px;
-    border-radius: 999px;
-    font-weight: bold;
-}
-
-</style>
-
+        /* Kustom scrollbar untuk estetika */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #f97316; 
+            border-radius: 5px;
+        }
+    </style>
 </head>
 
 <body>
 
-<!-- ================= NAVBAR ================= -->
-<nav class="navbar fixed w-full z-50 bg-white shadow">
+    <!-- LOGO SEBAGAI WATERMARK DI SELURUH HALAMAN -->
+    <img src="images/logo.jpg" alt="Watermark" class="bg-watermark">
 
-<div class="max-w-7xl mx-auto flex justify-between items-center px-4 h-16">
+    <!-- ================= NAVBAR ================= -->
+    <nav class="fixed w-full z-50 bg-white shadow-md transition-all h-20 flex items-center">
+        <div class="max-w-7xl mx-auto w-full flex justify-between items-center px-4">
+            <div class="flex items-center">
+                <img src="images/logo.jpg" alt="Rinjani Eagle Logo" class="h-12 w-12 md:h-14 md:w-14 object-cover rounded-full border-2 border-orange-500 shadow-sm mr-3">
+                <span class="font-bold text-xl md:text-2xl text-orange-600 tracking-wide">Rinjani Eagle</span>
+            </div>
 
-<!-- LOGO -->
-<div class="font-bold text-xl text-green-600">
-Rinjani Eagle
-</div>
+            <div class="hidden md:flex gap-8 items-center">
+                <a href="#home" class="hover:text-orange-500 font-bold text-gray-800 transition">Home</a>
+                <a href="#about" class="hover:text-orange-500 font-bold text-gray-800 transition">About</a>
+                <a href="#packages" class="hover:text-orange-500 font-bold text-gray-800 transition">Trekking</a>
+                <a href="#extensions" class="hover:text-orange-500 font-bold text-gray-800 transition">Tours</a>
+                <a href="#contact" class="hover:text-orange-500 font-bold text-gray-800 transition">Booking</a>
+            </div>
 
-<!-- MENU -->
-<div class="hidden md:flex gap-8">
-<a href="#home">Home</a>
-<a href="#about">About</a>
-<a href="#packages">Packages</a>
-<a href="#gallery">Gallery</a>
-<a href="#contact">Contact</a>
-<a href="blog.html">Blog</a>
-</div>
-
-<!-- TRANSLATE -->
-<select onchange="changeLanguage(this.value)" class="border px-2 py-1 rounded">
-<option value="">🌍</option>
-<option value="en">EN</option>
-<option value="id">ID</option>
-<option value="fr">FR</option>
-<option value="de">DE</option>
-<option value="es">ES</option>
-<option value="it">IT</option>
-<option value="ru">RU</option>
-<option value="ja">JP</option>
-<option value="ko">KR</option>
-<option value="zh-CN">CN</option>
-</select>
-
-</div>
-</nav>
-
-
-<!-- ================= HERO ================= -->
-<section id="home" class="h-screen">
-
-<!-- FULL BACKGROUND TANPA APAPUN -->
-<img src="images/rinjani-eagle-logo.svg"
-class="w-full h-full object-cover">
-
-</section>
-<!-- ================= ABOUT ================= -->
-<section id="about" class="py-20 bg-white fade-up">
-
-<div class="max-w-7xl mx-auto px-4">
-
-<div class="text-center mb-12">
-<h2 class="text-3xl md:text-4xl font-bold mb-4">
-About Rinjani Eagle
-</h2>
-<p class="text-gray-500 max-w-2xl mx-auto">
-Professional trekking organizer in Lombok with international service standards.
-</p>
-</div>
-
-<div class="grid md:grid-cols-2 gap-12 items-center">
-
-<!-- IMAGE -->
-<div class="img-hover rounded-2xl overflow-hidden">
-<img src="images/1.jpeg" alt="Rinjani trekking">
-</div>
-
-<!-- TEXT -->
-<div>
-<h3 class="text-2xl font-bold mb-4 text-green-600">
-Your Trusted Trekking Partner
-</h3>
-
-<p class="text-gray-600 mb-4">
-Rinjani Eagle is a local trekking operator based in Lombok, specializing in Mount Rinjani expeditions with safety, comfort, and premium service.
-</p>
-
-<p class="text-gray-600 mb-6">
-Our team consists of experienced guides and professional porters who are dedicated to providing unforgettable trekking experiences.
-</p>
-
-<!-- POINT -->
-<div class="space-y-3">
-
-<div class="flex items-center gap-3">
-<div class="w-3 h-3 bg-green-500 rounded-full"></div>
-<p>Experienced certified guides</p>
-</div>
-
-<div class="flex items-center gap-3">
-<div class="w-3 h-3 bg-green-500 rounded-full"></div>
-<p>High quality camping equipment</p>
-</div>
-
-<div class="flex items-center gap-3">
-<div class="w-3 h-3 bg-green-500 rounded-full"></div>
-<p>Safety first priority</p>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-</section>
-
-
-
-<!-- ================= TEAM ================= -->
-<section class="py-20 bg-gray-50 fade-up">
-
-<div class="max-w-7xl mx-auto px-4">
-
-<div class="text-center mb-12">
-<h2 class="text-3xl md:text-4xl font-bold">
-Our Team (Guide & Porter)
-</h2>
-</div>
-
-<div class="grid md:grid-cols-4 gap-8">
-
-<!-- CARD -->
-<div class="card p-4 rounded-2xl text-center">
-<img src="images/2.jpeg" class="w-full h-40 object-cover rounded-xl mb-3">
-<h4 class="font-bold">Ari Saputra</h4>
-<p class="text-sm text-gray-500">Senior Mountain Guide</p>
-</div>
-
-<div class="card p-4 rounded-2xl text-center">
-<img src="images/3.jpeg" class="w-full h-40 object-cover rounded-xl mb-3">
-<h4 class="font-bold">Budi Santoso</h4>
-<p class="text-sm text-gray-500">Head Porter</p>
-</div>
-
-<div class="card p-4 rounded-2xl text-center">
-<img src="images/4.jpeg" class="w-full h-40 object-cover rounded-xl mb-3">
-<h4 class="font-bold">Rizal Hidayat</h4>
-<p class="text-sm text-gray-500">Trekking Guide</p>
-</div>
-
-<div class="card p-4 rounded-2xl text-center">
-<img src="images/5.jpeg" class="w-full h-40 object-cover rounded-xl mb-3">
-<h4 class="font-bold">Wayan Putra</h4>
-<p class="text-sm text-gray-500">Logistic Porter</p>
-</div>
-
-</div>
-
-</div>
-</section>
-
-
-
-<!-- ================= MAP ================= -->
-<section class="py-20 fade-up">
-
-<div class="max-w-6xl mx-auto px-4">
-
-<div class="text-center mb-10">
-<h2 class="text-3xl md:text-4xl font-bold">
-Our Location
-</h2>
-</div>
-
-<div class="rounded-2xl overflow-hidden shadow-lg">
-<iframe 
-src="https://www.google.com/maps?q=Mount+Rinjani&output=embed"
-class="w-full h-[400px] border-0">
-</iframe>
-</div>
-
-</div>
-</section>
-
-
-
-<!-- ================= REVIEW ================= -->
-<section class="py-20 bg-gray-50 fade-up">
-
-<div class="max-w-7xl mx-auto px-4">
-
-<div class="text-center mb-12">
-<h2 class="text-3xl md:text-4xl font-bold">
-Traveler Reviews
-</h2>
-</div>
-
-<div class="grid md:grid-cols-3 gap-8">
-
-<!-- REVIEW -->
-<div class="card p-6 rounded-2xl">
-<p class="text-gray-600 mb-4">
-"One of the best trekking experiences I've ever had. The guide was amazing and very professional."
-</p>
-<h4 class="font-bold">– Michael (Germany)</h4>
-</div>
-
-<div class="card p-6 rounded-2xl">
-<p class="text-gray-600 mb-4">
-"Everything was well organized. Food, tents, and service were excellent!"
-</p>
-<h4 class="font-bold">– Sarah (UK)</h4>
-</div>
-
-<div class="card p-6 rounded-2xl">
-<p class="text-gray-600 mb-4">
-"Highly recommended! Beautiful views and great team."
-</p>
-<h4 class="font-bold">– Andi (Indonesia)</h4>
-</div>
-
-</div>
-
-</div>
-</section>
-<!-- ================= PACKAGES ================= -->
-<section id="packages" class="py-20 bg-white fade-up">
-    <div class="max-w-7xl mx-auto px-4">
-        <div class="text-center mb-12">
-            <h2 class="text-3xl md:text-4xl font-bold mb-4">Our Trekking Packages</h2>
-            <p class="text-gray-500 max-w-2xl mx-auto">
-                Choose the Mount Rinjani trekking program that matches your time, fitness level, and travel style.
-            </p>
+            <select class="border-2 border-orange-300 font-bold px-2 py-1 rounded bg-orange-50 text-orange-900 text-sm outline-none">
+                <option value="en">EN 🇬🇧</option>
+                <option value="id">ID 🇮🇩</option>
+            </select>
         </div>
+    </nav>
 
-        <div class="grid md:grid-cols-3 gap-8">
 
-            <!-- Package 1 -->
-            <div onclick="toggleItinerary('p1')" class="card rounded-2xl overflow-hidden cursor-pointer bg-white">
-                <div class="img-hover h-64">
-                    <img src="images/6.jpeg" alt="2D 1N Summit Trek" class="w-full h-full object-cover">
+    <!-- ================= HERO ================= -->
+    <section id="home" class="h-screen parallax-hero flex items-center justify-center relative">
+        <div class="text-center px-4 z-10 w-full flex flex-col items-center">
+            
+            <!-- Posisi tombol lebih ke bawah -->
+            <a href="#packages" class="mt-[45vh] bg-orange-500 hover:bg-orange-600 border-2 border-white text-white px-10 py-4 rounded-full font-extrabold text-lg transition shadow-2xl transform hover:-translate-y-1">
+                EXPLORE PACKAGES
+            </a>
+            
+        </div>
+    </section>
+
+
+    <!-- ================= ABOUT & TEAM ================= -->
+    <section id="about" class="py-20 bg-white/80 backdrop-blur-sm fade-up">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-extrabold mb-4 text-orange-900">About Rinjani Eagle</h2>
+                <div class="w-24 h-1 bg-orange-500 mx-auto rounded"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 items-center mb-20">
+                <div class="img-hover rounded-2xl overflow-hidden shadow-xl border-4 border-orange-100">
+                    <img src="images/pelawangan-sembalun.jpeg" alt="Rinjani trekking" class="w-full h-full object-cover">
                 </div>
-                <div class="p-6">
-                    <div class="flex items-center justify-between mb-3">
-                        <h3 class="text-xl font-bold">2D/1N Summit Trek</h3>
-                        <span class="text-sm bg-green-100 text-green-700 px-3 py-1 rounded-full">Fast Track</span>
-                    </div>
-                    <p class="text-gray-500 text-sm mb-4">
-                        Ideal for experienced hikers who want to reach the summit in a shorter time.
+
+                <div>
+                    <h3 class="text-3xl font-extrabold mb-4 text-orange-600">Your Premium Trekking Partner</h3>
+                    <p class="font-bold text-gray-700 mb-4 text-lg">
+                        Rinjani Eagle is a highly professional trekking organizer in Lombok, providing international standard services for your Mount Rinjani expedition.
                     </p>
-                    <div class="flex justify-between items-center">
-                        <span class="font-semibold text-green-600">Click to view itinerary</span>
-                        <span class="text-gray-400">01</span>
+                    <p class="font-bold text-gray-600 mb-6">
+                        Keselamatan dan kenyamanan Anda adalah prioritas utama kami. Kami menjamin peralatan kemah premium, makanan bernutrisi tinggi, dan layanan kelas satu di atas awan.
+                    </p>
+                </div>
+            </div>
+
+            <!-- TEAM SECTION -->
+            <div class="text-center mb-10">
+                <h3 class="text-3xl font-extrabold text-orange-900">Our Professional Team</h3>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <div class="bg-orange-50 border-2 border-orange-300 p-6 rounded-2xl text-center shadow-lg hover:shadow-xl transition transform hover:-translate-y-2">
+                    <img src="images/logo.jpg" alt="Rinjani Eagle Logo" class="h-16 w-16 mx-auto rounded-full border-2 border-orange-500 mb-4 shadow-md">
+                    <h4 class="font-extrabold text-2xl text-orange-900 mb-1">Rudi</h4>
+                    <p class="font-bold text-orange-600">Professional Trekking Guide</p>
+                    <p class="font-bold text-sm text-gray-600 mt-3">Telah memandu ratusan wisatawan internasional dengan standar keselamatan tinggi dan penguasaan rute yang sempurna.</p>
+                </div>
+                <div class="bg-orange-50 border-2 border-orange-300 p-6 rounded-2xl text-center shadow-lg hover:shadow-xl transition transform hover:-translate-y-2">
+                    <img src="images/porter1.jpeg" alt="Porter" class="h-16 w-16 mx-auto rounded-full object-cover border-2 border-orange-500 mb-4 shadow-md">
+                    <h4 class="font-extrabold text-2xl text-orange-900 mb-1">Tim Porter</h4>
+                    <p class="font-bold text-orange-600">Professional Super-Porters</p>
+                    <p class="font-bold text-sm text-gray-600 mt-3">Para ahli logistik gunung yang siap memasak hidangan lezat dan mendirikan tenda sebelum Anda tiba di kemah.</p>
+                </div>
+                <div class="bg-orange-50 border-2 border-orange-300 p-6 rounded-2xl text-center shadow-lg hover:shadow-xl transition transform hover:-translate-y-2">
+                    <img src="images/logo.jpg" alt="Basecamp" class="h-16 w-16 mx-auto rounded-full border-2 border-orange-500 mb-4 shadow-md">
+                    <h4 class="font-extrabold text-2xl text-orange-900 mb-1">Basecamp Team</h4>
+                    <p class="font-bold text-orange-600">Customer Support</p>
+                    <p class="font-bold text-sm text-gray-600 mt-3">Mempersiapkan akomodasi, transportasi, dan peralatan Anda agar sempurna sebelum pendakian dimulai.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ================= 1. TREKKING PACKAGES (ONLY MOUNTAIN) ================= -->
+    <section id="packages" class="py-20 bg-orange-50 fade-up border-t-2 border-b-2 border-orange-200">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-extrabold mb-4 text-orange-900">Rinjani Trekking Packages</h2>
+                <p class="font-bold text-gray-600 max-w-2xl mx-auto">
+                    Pilih ekspedisi gunung Anda. Dipandu oleh guide profesional dengan peralatan perkemahan VIP.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Package 1: 2D1N -->
+                <div onclick="toggleItinerary('p1')" class="bg-white rounded-3xl overflow-hidden cursor-pointer border-2 border-orange-500 shadow-xl hover:shadow-2xl transition transform hover:scale-105 flex flex-col">
+                    <div class="bg-orange-100 py-3 border-b-2 border-orange-500 flex justify-center">
+                        <img src="images/logo.jpg" alt="Logo" class="h-12 w-12 rounded-full border-2 border-orange-400 shadow-sm">
+                    </div>
+                    <div class="img-hover h-56 relative">
+                        <img src="images/puncak-rinjani.jpeg" alt="2D1N" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow bg-orange-50">
+                        <h3 class="text-2xl font-extrabold text-orange-900 mb-1">2D/1N Summit Trek</h3>
+                        <p class="text-3xl font-extrabold text-green-700 mb-4">$200 <span class="text-lg text-gray-600">USD</span></p>
+                        <p class="font-bold text-gray-700 text-sm mb-6 flex-grow">Jalur cepat menuju puncak Gunung Rinjani. Sangat cocok untuk pendaki berpengalaman yang memiliki waktu terbatas namun ingin melihat keindahan Rinjani dari titik tertinggi.</p>
+                        <button class="w-full bg-orange-500 text-white font-extrabold py-3 rounded-xl hover:bg-orange-600 transition">LIHAT DETAIL ITINERARY</button>
+                    </div>
+                </div>
+
+                <!-- Package 2: 3D2N -->
+                <div onclick="toggleItinerary('p2')" class="bg-white rounded-3xl overflow-hidden cursor-pointer border-4 border-orange-500 shadow-2xl hover:shadow-2xl transition transform hover:scale-105 flex flex-col relative">
+                    <div class="absolute top-16 right-0 bg-red-600 text-white font-extrabold px-4 py-1 rounded-l-lg z-10 shadow-lg">MOST POPULAR</div>
+                    <div class="bg-orange-100 py-3 border-b-2 border-orange-500 flex justify-center">
+                        <img src="images/logo.jpg" alt="Logo" class="h-12 w-12 rounded-full border-2 border-orange-400 shadow-sm">
+                    </div>
+                    <div class="img-hover h-56 relative">
+                        <img src="images/danau.jpeg" alt="3D2N" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow bg-orange-50">
+                        <h3 class="text-2xl font-extrabold text-orange-900 mb-1">3D/2N Summit & Lake</h3>
+                        <p class="text-3xl font-extrabold text-green-700 mb-4">$250 <span class="text-lg text-gray-600">USD</span></p>
+                        <p class="font-bold text-gray-700 text-sm mb-6 flex-grow">Paket favorit internasional! Mencakup ekspedisi lengkap ke Puncak, Danau Segara Anak yang memukau, dan relaksasi di sumber Air Panas Alami.</p>
+                        <button class="w-full bg-orange-500 text-white font-extrabold py-3 rounded-xl hover:bg-orange-600 transition">LIHAT DETAIL ITINERARY</button>
+                    </div>
+                </div>
+
+                <!-- Package 3: 4D3N -->
+                <div onclick="toggleItinerary('p3')" class="bg-white rounded-3xl overflow-hidden cursor-pointer border-2 border-orange-500 shadow-xl hover:shadow-2xl transition transform hover:scale-105 flex flex-col">
+                    <div class="bg-orange-100 py-3 border-b-2 border-orange-500 flex justify-center">
+                        <img src="images/logo.jpg" alt="Logo" class="h-12 w-12 rounded-full border-2 border-orange-400 shadow-sm">
+                    </div>
+                    <div class="img-hover h-56 relative">
+                        <img src="images/rinjani.jpeg" alt="4D3N" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow bg-orange-50">
+                        <h3 class="text-2xl font-extrabold text-orange-900 mb-1">4D/3N Ultimate Trek</h3>
+                        <p class="text-3xl font-extrabold text-green-700 mb-4">$280 <span class="text-lg text-gray-600">USD</span></p>
+                        <p class="font-bold text-gray-700 text-sm mb-6 flex-grow">Perjalanan santai untuk menikmati setiap sudut Gunung Rinjani. Sempurna bagi Anda yang mengutamakan kenyamanan, durasi panjang, dan eksplorasi foto.</p>
+                        <button class="w-full bg-orange-500 text-white font-extrabold py-3 rounded-xl hover:bg-orange-600 transition">LIHAT DETAIL ITINERARY</button>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- ITINERARY DETAILS BOX FOR TREKKING -->
+            <div id="itinerary-box" class="hidden mt-10 bg-white border-4 border-orange-400 shadow-2xl rounded-3xl p-8 md:p-12 relative">
+                <!-- isi dari JS -->
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ================= 2. EXTRA TOURS (GILI, WATERFALL, SEMBALUN, SASAK) ================= -->
+    <section id="extensions" class="py-20 relative bg-gray-900 fade-up">
+        <!-- Background Gelap Elegan untuk Glassmorphism -->
+        <div class="absolute inset-0" style="background-image: url('images/diatas-awan.jpeg'); background-size: cover; background-attachment: fixed; background-position: center;"></div>
+        <div class="absolute inset-0 bg-black/70 backdrop-blur-sm"></div> <!-- Efek blur -->
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-extrabold mb-4 text-white">Explore More of Lombok</h2>
+                <p class="font-bold text-gray-300 max-w-2xl mx-auto">
+                    Selain mendaki gunung, kami menyiapkan rangkaian perjalanan elegan mengelilingi pulau. Tekan kotak di bawah untuk melihat rincian paketnya.
+                </p>
+            </div>
+
+            <!-- BLUR BUTTON CARDS -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+                <!-- Tombol 3 Gili -->
+                <div onclick="toggleExtension('gili')" class="cursor-pointer bg-white/10 backdrop-blur-md border-2 border-white/30 p-6 rounded-3xl text-center hover:bg-orange-500/80 transition transform hover:-translate-y-2 shadow-2xl">
+                    <h3 class="text-2xl font-extrabold text-white mb-2">3 Gili Islands</h3>
+                    <p class="text-sm font-bold text-gray-200">Snorkeling & Relax</p>
+                </div>
+                
+                <!-- Tombol Waterfalls -->
+                <div onclick="toggleExtension('waterfall')" class="cursor-pointer bg-white/10 backdrop-blur-md border-2 border-white/30 p-6 rounded-3xl text-center hover:bg-orange-500/80 transition transform hover:-translate-y-2 shadow-2xl">
+                    <h3 class="text-2xl font-extrabold text-white mb-2">Lombok Waterfalls</h3>
+                    <p class="text-sm font-bold text-gray-200">Sindang Gile & Tiu Kelep</p>
+                </div>
+
+                <!-- Tombol Sembalun -->
+                <div onclick="toggleExtension('sembalun')" class="cursor-pointer bg-white/10 backdrop-blur-md border-2 border-white/30 p-6 rounded-3xl text-center hover:bg-orange-500/80 transition transform hover:-translate-y-2 shadow-2xl">
+                    <h3 class="text-2xl font-extrabold text-white mb-2">Panorama Sembalun</h3>
+                    <p class="text-sm font-bold text-gray-200">Sawah & Bukit Eksotis</p>
+                </div>
+
+                <!-- Tombol Sasak -->
+                <div onclick="toggleExtension('sasak')" class="cursor-pointer bg-white/10 backdrop-blur-md border-2 border-white/30 p-6 rounded-3xl text-center hover:bg-orange-500/80 transition transform hover:-translate-y-2 shadow-2xl">
+                    <h3 class="text-2xl font-extrabold text-white mb-2">Desa Sasak</h3>
+                    <p class="text-sm font-bold text-gray-200">Culture & Homestay</p>
+                </div>
+            </div>
+
+            <!-- KONTEN GILI (Akan Terbuka Jika Diklik) -->
+            <div id="ext-gili" class="ext-content hidden fade-up grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="col-span-1 md:col-span-3 text-center mb-2">
+                    <h3 class="text-3xl font-extrabold text-white">3 Gili Island Tour (Harga: $70 USD / Pax)</h3>
+                    <p class="text-orange-300 font-bold mt-2">Menyembuhkan penat setelah mendaki Rinjani dengan bersantai di hamparan pasir putih.</p>
+                </div>
+                <!-- Trawangan -->
+                <div class="bg-orange-50 rounded-3xl overflow-hidden border-2 border-orange-500 shadow-xl flex flex-col">
+                    <img src="images/gili-trawangan.jpeg" alt="Gili Trawangan" class="h-48 w-full object-cover">
+                    <div class="p-6 flex-grow">
+                        <h4 class="text-xl font-extrabold text-orange-900 mb-2">Gili Trawangan</h4>
+                        <p class="font-bold text-sm text-gray-700">Pulau terbesar yang terkenal dengan pesta pinggir pantai, kafe-kafe cantik, dan bersepeda keliling pulau tanpa polusi motor.</p>
+                    </div>
+                </div>
+                <!-- Air -->
+                <div class="bg-orange-50 rounded-3xl overflow-hidden border-2 border-orange-500 shadow-xl flex flex-col">
+                    <img src="images/gili-air.jpeg" alt="Gili Air" class="h-48 w-full object-cover">
+                    <div class="p-6 flex-grow">
+                        <h4 class="text-xl font-extrabold text-orange-900 mb-2">Gili Air</h4>
+                        <p class="font-bold text-sm text-gray-700">Perpaduan sempurna antara ketenangan alam dan fasilitas yang memadai. Spot terbaik untuk bersantai santap seafood menanti senja.</p>
+                    </div>
+                </div>
+                <!-- Meno -->
+                <div class="bg-orange-50 rounded-3xl overflow-hidden border-2 border-orange-500 shadow-xl flex flex-col">
+                    <img src="images/gili-meno.jpeg" alt="Gili Meno" class="h-48 w-full object-cover">
+                    <div class="p-6 flex-grow">
+                        <h4 class="text-xl font-extrabold text-orange-900 mb-2">Gili Meno</h4>
+                        <p class="font-bold text-sm text-gray-700">Paling tenang! Lokasi utama bagi Anda yang ingin snorkeling bersama penyu laut raksasa dan berfoto di patung bawah laut yang ikonik.</p>
                     </div>
                 </div>
             </div>
 
-            <!-- Package 2 -->
-            <div onclick="toggleItinerary('p2')" class="card rounded-2xl overflow-hidden cursor-pointer bg-white">
-                <div class="img-hover h-64">
-                    <img src="images/7.jpeg" alt="3D 2N Summit and Lake" class="w-full h-full object-cover">
+            <!-- KONTEN WATERFALL -->
+            <div id="ext-waterfall" class="ext-content hidden fade-up grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="col-span-1 md:col-span-2 text-center mb-2">
+                    <h3 class="text-3xl font-extrabold text-white">Lombok Waterfalls Tour (Harga: $35 USD / Pax)</h3>
+                    <p class="text-orange-300 font-bold mt-2">Jelajahi dua air terjun paling magis dan legendaris yang mengalir dari mata air Gunung Rinjani.</p>
                 </div>
-                <div class="p-6">
-                    <div class="flex items-center justify-between mb-3">
-                        <h3 class="text-xl font-bold">3D/2N Summit & Lake</h3>
-                        <span class="text-sm bg-blue-100 text-blue-700 px-3 py-1 rounded-full">Popular</span>
-                    </div>
-                    <p class="text-gray-500 text-sm mb-4">
-                        The most popular package covering summit, Segara Anak Lake, and natural hot springs.
-                    </p>
-                    <div class="flex justify-between items-center">
-                        <span class="font-semibold text-green-600">Click to view itinerary</span>
-                        <span class="text-gray-400">02</span>
+                <!-- Sindang Gile -->
+                <div class="bg-orange-50 rounded-3xl overflow-hidden border-2 border-orange-500 shadow-xl flex flex-col">
+                    <img src="images/air-terjun-sindanggile.jpeg" alt="Sindang Gile" class="h-64 w-full object-cover">
+                    <div class="p-6">
+                        <h4 class="text-2xl font-extrabold text-orange-900 mb-2">Air Terjun Sindang Gile</h4>
+                        <p class="font-bold text-sm text-gray-700">Air terjun bertingkat yang sangat mudah diakses. Anda bisa menikmati gemuruh air dan udara segar hutan tropis langsung dari anak tangga yang telah ditata rapi.</p>
                     </div>
                 </div>
-            </div>
-
-            <!-- Package 3 -->
-            <div onclick="toggleItinerary('p3')" class="card rounded-2xl overflow-hidden cursor-pointer bg-white">
-                <div class="img-hover h-64">
-                    <img src="images/8.jpeg" alt="4D 3N Ultimate Trek" class="w-full h-full object-cover">
-                </div>
-                <div class="p-6">
-                    <div class="flex items-center justify-between mb-3">
-                        <h3 class="text-xl font-bold">4D/3N Ultimate Trek</h3>
-                        <span class="text-sm bg-emerald-100 text-emerald-700 px-3 py-1 rounded-full">Relaxed</span>
-                    </div>
-                    <p class="text-gray-500 text-sm mb-4">
-                        A slower-paced journey for travelers who want to fully enjoy every corner of Rinjani.
-                    </p>
-                    <div class="flex justify-between items-center">
-                        <span class="font-semibold text-green-600">Click to view itinerary</span>
-                        <span class="text-gray-400">03</span>
+                <!-- Tiu Kelep -->
+                <div class="bg-orange-50 rounded-3xl overflow-hidden border-2 border-orange-500 shadow-xl flex flex-col">
+                    <img src="images/air-terjun-tiukelep.jpeg" alt="Tiu Kelep" class="h-64 w-full object-cover">
+                    <div class="p-6">
+                        <h4 class="text-2xl font-extrabold text-orange-900 mb-2">Air Terjun Tiu Kelep</h4>
+                        <p class="font-bold text-sm text-gray-700">Petualangan yang lebih dalam melewati sungai kecil. Konon airnya bisa membuat Anda tampak lebih muda! Aliran airnya sangat deras membentuk kolam alami yang menyegarkan.</p>
                     </div>
                 </div>
             </div>
 
+            <!-- KONTEN SEMBALUN -->
+            <div id="ext-sembalun" class="ext-content hidden fade-up">
+                <div class="bg-orange-50 rounded-3xl overflow-hidden border-2 border-orange-500 shadow-xl max-w-4xl mx-auto flex flex-col md:flex-row">
+                    <img src="images/bangket-bayan.jpeg" alt="Sembalun" class="md:w-1/2 h-64 md:h-auto object-cover">
+                    <div class="p-8 flex flex-col justify-center">
+                        <h3 class="text-3xl font-extrabold text-orange-900 mb-2">Panorama Sembalun (1 Hari)</h3>
+                        <p class="font-bold text-green-700 text-xl mb-4">Harga: $40 USD / Pax</p>
+                        <p class="font-bold text-gray-700 mb-4">Soft trekking mengeksplorasi keindahan lembah Sembalun yang mengagumkan tanpa harus lelah memanjat Rinjani.</p>
+                        <ul class="text-sm space-y-2 text-gray-800 font-bold list-disc pl-5">
+                            <li>Soft Trekking Bukit Pergasingan/Selong untuk Sunrise</li>
+                            <li>Hamparan Sawah (Bangket) Kotak-kotak eksotis</li>
+                            <li>Memetik buah langsung di Kebun Strawberry</li>
+                            <li>Mengunjungi Desa Tenun Tradisional Lombok</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- KONTEN SASAK -->
+            <div id="ext-sasak" class="ext-content hidden fade-up">
+                <div class="bg-orange-50 rounded-3xl overflow-hidden border-2 border-orange-500 shadow-xl max-w-4xl mx-auto flex flex-col md:flex-row">
+                    <!-- Karena sasak.jpeg tidak ada di daftar screenshot, menggunakan gambar sembalun/porter sebagai representasi lokal -->
+                    <img src="images/sembalun.jpeg" alt="Desa Sasak" class="md:w-1/2 h-64 md:h-auto object-cover">
+                    <div class="p-8 flex flex-col justify-center">
+                        <h3 class="text-3xl font-extrabold text-orange-900 mb-2">Explore Desa Sasak (Homestay)</h3>
+                        <p class="font-bold text-green-700 text-xl mb-4">Harga: $60 USD / Pax</p>
+                        <p class="font-bold text-gray-700 mb-4">Menginap langsung di rumah warga! Perjalanan spiritual, mendengar legenda lokal, dan merasakan kekayaan budaya asli Suku Sasak.</p>
+                        <ul class="text-sm space-y-2 text-gray-800 font-bold list-disc pl-5">
+                            <li>Mendengarkan cerita budaya dari tetua desa.</li>
+                            <li>Keliling melihat arsitektur desa adat tradisional.</li>
+                            <li>Memasak hidangan lokal di tungku kayu bersama warga.</li>
+                            <li>Program donasi kemanusiaan untuk pendidikan desa.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
         </div>
+    </section>
 
-        <!-- Itinerary Box -->
-        <div id="itinerary-box" class="hidden mt-12 bg-gray-50 border border-gray-200 rounded-2xl p-6 md:p-8">
-            <!-- isi dari JS -->
+
+    <!-- ================= GALLERY MENGGUNAKAN NAMA FILE ASLI ================= -->
+    <section id="gallery" class="py-20 bg-white/80 backdrop-blur-sm fade-up">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-extrabold mb-4 text-orange-900">Gallery Ekspedisi</h2>
+                <div class="w-24 h-1 bg-orange-500 mx-auto rounded mb-4"></div>
+                <p class="font-bold text-gray-600 max-w-2xl mx-auto">
+                    Koleksi foto otentik perjalanan kami: Mulai dari lautan awan, tenda toilet VIP, hingga keindahan Danau Segara Anak.
+                </p>
+            </div>
+
+            <!-- Memuat file jpeg dari abang -->
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+                <div class="img-hover rounded-2xl overflow-hidden border-2 border-orange-100 shadow-md"><img src="images/diatas-awan.jpeg" class="w-full h-44 object-cover"></div>
+                <div class="img-hover rounded-2xl overflow-hidden border-2 border-orange-100 shadow-md"><img src="images/pemandian-airpanas.jpeg" class="w-full h-44 object-cover"></div>
+                <div class="img-hover rounded-2xl overflow-hidden border-2 border-orange-100 shadow-md"><img src="images/airterjun-penimbungan.jpeg" class="w-full h-44 object-cover"></div>
+                <div class="img-hover rounded-2xl overflow-hidden border-2 border-orange-100 shadow-md"><img src="images/toilet-tent.jpeg" class="w-full h-44 object-cover"></div>
+                <div class="img-hover rounded-2xl overflow-hidden border-2 border-orange-100 shadow-md"><img src="images/pelawangan-sembalun.jpeg" class="w-full h-44 object-cover"></div>
+
+                <div class="img-hover rounded-2xl overflow-hidden border-2 border-orange-100 shadow-md"><img src="images/danau.jpeg" class="w-full h-44 object-cover"></div>
+                <div class="img-hover rounded-2xl overflow-hidden border-2 border-orange-100 shadow-md"><img src="images/puncak-rinjani.jpeg" class="w-full h-44 object-cover"></div>
+                <div class="img-hover rounded-2xl overflow-hidden border-2 border-orange-100 shadow-md"><img src="images/porter1.jpeg" class="w-full h-44 object-cover"></div>
+                <div class="img-hover rounded-2xl overflow-hidden border-2 border-orange-100 shadow-md"><img src="images/sembalun.jpeg" class="w-full h-44 object-cover"></div>
+                <div class="img-hover rounded-2xl overflow-hidden border-2 border-orange-100 shadow-md"><img src="images/tangga.jpeg" class="w-full h-44 object-cover"></div>
+
+                <div class="img-hover rounded-2xl overflow-hidden border-2 border-orange-100 shadow-md"><img src="images/danau2.jpeg" class="w-full h-44 object-cover"></div>
+                <div class="img-hover rounded-2xl overflow-hidden border-2 border-orange-100 shadow-md"><img src="images/diatas-awan2.jpeg" class="w-full h-44 object-cover"></div>
+                <div class="img-hover rounded-2xl overflow-hidden border-2 border-orange-100 shadow-md"><img src="images/pelawangan-sembalun2.jpeg" class="w-full h-44 object-cover"></div>
+                <div class="img-hover rounded-2xl overflow-hidden border-2 border-orange-100 shadow-md"><img src="images/rinjani.jpeg" class="w-full h-44 object-cover"></div>
+                <div class="img-hover rounded-2xl overflow-hidden border-2 border-orange-100 shadow-md"><img src="images/bangket-bayan.jpeg" class="w-full h-44 object-cover"></div>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
 
+    <!-- ================= BOOKING FORM (ORANGE DESIGN) ================= -->
+    <section id="contact" class="py-20 bg-white fade-up border-t-2 border-orange-200">
+        <div class="max-w-5xl mx-auto px-4 text-center">
+            <h2 class="text-4xl font-extrabold mb-6 text-orange-900">Booking & Reservation</h2>
+            <p class="font-bold text-gray-600 mb-10">Lengkapi form di bawah ini untuk memulai petualangan premium Anda.</p>
 
-<!-- ================= GALLERY ================= -->
-<section id="gallery" class="py-20 bg-gray-50 fade-up">
-    <div class="max-w-7xl mx-auto px-4">
-        <div class="text-center mb-12">
-            <h2 class="text-3xl md:text-4xl font-bold mb-4">Gallery</h2>
-            <p class="text-gray-500 max-w-2xl mx-auto">
-                Moments from our Mount Rinjani trekking experiences, campsites, summit views, and lake adventures.
-            </p>
+            <!-- FORM CARD -->
+            <div class="bg-orange-50 p-8 md:p-10 rounded-3xl max-w-2xl mx-auto border-4 border-orange-500 shadow-2xl relative">
+                
+                <!-- Logo on Top of Form -->
+                <div class="absolute -top-10 left-1/2 transform -translate-x-1/2 bg-white rounded-full p-2 border-4 border-orange-500">
+                    <img src="images/logo.jpg" alt="Logo" class="h-16 w-16 rounded-full object-cover">
+                </div>
+
+                <div class="grid gap-6 mt-8">
+                    <div class="text-left">
+                        <label class="font-extrabold text-orange-900 mb-2 block">Nama Lengkap / Full Name</label>
+                        <input id="name" type="text" placeholder="John Doe" class="w-full font-bold text-gray-800 border-2 border-orange-300 p-4 rounded-xl focus:outline-none focus:border-orange-600 focus:ring-4 focus:ring-orange-200 transition">
+                    </div>
+                    
+                    <div class="text-left">
+                        <label class="font-extrabold text-orange-900 mb-2 block">Nomor WhatsApp Aktif</label>
+                        <input id="wa" type="text" placeholder="+62..." class="w-full font-bold text-gray-800 border-2 border-orange-300 p-4 rounded-xl focus:outline-none focus:border-orange-600 focus:ring-4 focus:ring-orange-200 transition">
+                    </div>
+                    
+                    <div class="text-left">
+                        <label class="font-extrabold text-orange-900 mb-2 block">Pilih Paket / Select Package</label>
+                        <select id="package" class="w-full font-bold text-gray-800 border-2 border-orange-300 p-4 rounded-xl focus:outline-none focus:border-orange-600 focus:ring-4 focus:ring-orange-200 transition bg-white">
+                            <option value="">-- Silakan Pilih --</option>
+                            <optgroup label="Trekking Gunung Rinjani">
+                                <option value="2D/1N Summit Trek ($200)">2D/1N Summit Trek ($200 USD)</option>
+                                <option value="3D/2N Summit & Lake ($250)">3D/2N Summit & Lake ($250 USD)</option>
+                                <option value="4D/3N Ultimate Trek ($280)">4D/3N Ultimate Trek ($280 USD)</option>
+                            </optgroup>
+                            <optgroup label="Lombok Extra Tours">
+                                <option value="3 Gili Island Tour ($70)">3 Gili Island Tour ($70 USD)</option>
+                                <option value="Lombok Waterfalls Tour ($35)">Lombok Waterfalls Tour ($35 USD)</option>
+                                <option value="Panorama Sembalun ($40)">Panorama Sembalun ($40 USD)</option>
+                                <option value="Explore Desa Sasak ($60)">Explore Desa Sasak ($60 USD)</option>
+                                <option value="Sewa Transportasi Lombok">Sewa Transportasi Lombok VIP</option>
+                            </optgroup>
+                        </select>
+                    </div>
+
+                    <div class="text-left">
+                        <label class="font-extrabold text-orange-900 mb-2 block">Jumlah Peserta / Total Pax</label>
+                        <input id="pax" type="number" value="1" min="1" class="w-full font-bold text-gray-800 border-2 border-orange-300 p-4 rounded-xl focus:outline-none focus:border-orange-600 focus:ring-4 focus:ring-orange-200 transition">
+                    </div>
+
+                    <button onclick="sendWA()" class="w-full bg-orange-600 text-white py-4 rounded-xl font-extrabold text-xl hover:bg-orange-700 transition shadow-lg mt-4 flex justify-center items-center gap-3">
+                        <i class="fa-brands fa-whatsapp text-2xl"></i> KIRIM VIA WHATSAPP
+                    </button>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-            <div class="img-hover rounded-2xl overflow-hidden"><img src="images/1.jpeg" alt="Gallery 1" class="w-full h-44 object-cover"></div>
-            <div class="img-hover rounded-2xl overflow-hidden"><img src="images/2.jpeg" alt="Gallery 2" class="w-full h-44 object-cover"></div>
-            <div class="img-hover rounded-2xl overflow-hidden"><img src="images/3.jpeg" alt="Gallery 3" class="w-full h-44 object-cover"></div>
-            <div class="img-hover rounded-2xl overflow-hidden"><img src="images/4.jpeg" alt="Gallery 4" class="w-full h-44 object-cover"></div>
-            <div class="img-hover rounded-2xl overflow-hidden"><img src="images/5.jpeg" alt="Gallery 5" class="w-full h-44 object-cover"></div>
 
-            <div class="img-hover rounded-2xl overflow-hidden"><img src="images/6.jpeg" alt="Gallery 6" class="w-full h-44 object-cover"></div>
-            <div class="img-hover rounded-2xl overflow-hidden"><img src="images/7.jpeg" alt="Gallery 7" class="w-full h-44 object-cover"></div>
-            <div class="img-hover rounded-2xl overflow-hidden"><img src="images/8.jpeg" alt="Gallery 8" class="w-full h-44 object-cover"></div>
-            <div class="img-hover rounded-2xl overflow-hidden"><img src="images/9.jpeg" alt="Gallery 9" class="w-full h-44 object-cover"></div>
-            <div class="img-hover rounded-2xl overflow-hidden"><img src="images/10.jpeg" alt="Gallery 10" class="w-full h-44 object-cover"></div>
-
-            <div class="img-hover rounded-2xl overflow-hidden"><img src="images/11.jpeg" alt="Gallery 11" class="w-full h-44 object-cover"></div>
-            <div class="img-hover rounded-2xl overflow-hidden"><img src="images/12.jpeg" alt="Gallery 12" class="w-full h-44 object-cover"></div>
-            <div class="img-hover rounded-2xl overflow-hidden"><img src="images/13.jpeg" alt="Gallery 13" class="w-full h-44 object-cover"></div>
-            <div class="img-hover rounded-2xl overflow-hidden"><img src="images/14.jpeg" alt="Gallery 14" class="w-full h-44 object-cover"></div>
-            <div class="img-hover rounded-2xl overflow-hidden"><img src="images/15.jpeg" alt="Gallery 15" class="w-full h-44 object-cover"></div>
-
-            <div class="img-hover rounded-2xl overflow-hidden"><img src="images/16.jpeg" alt="Gallery 16" class="w-full h-44 object-cover"></div>
-            <div class="img-hover rounded-2xl overflow-hidden"><img src="images/17.jpeg" alt="Gallery 17" class="w-full h-44 object-cover"></div>
-            <div class="img-hover rounded-2xl overflow-hidden"><img src="images/18.jpeg" alt="Gallery 18" class="w-full h-44 object-cover"></div>
-            <div class="img-hover rounded-2xl overflow-hidden"><img src="images/19.jpeg" alt="Gallery 19" class="w-full h-44 object-cover"></div>
-            <div class="img-hover rounded-2xl overflow-hidden"><img src="images/20.jpeg" alt="Gallery 20" class="w-full h-44 object-cover"></div>
-
-            <div class="img-hover rounded-2xl overflow-hidden"><img src="images/21.jpeg" alt="Gallery 21" class="w-full h-44 object-cover"></div>
-            <div class="img-hover rounded-2xl overflow-hidden"><img src="images/22.jpeg" alt="Gallery 22" class="w-full h-44 object-cover"></div>
-            <div class="img-hover rounded-2xl overflow-hidden"><img src="images/23.jpeg" alt="Gallery 23" class="w-full h-44 object-cover"></div>
-            <div class="img-hover rounded-2xl overflow-hidden"><img src="images/24.jpeg" alt="Gallery 24" class="w-full h-44 object-cover"></div>
-            <div class="img-hover rounded-2xl overflow-hidden"><img src="images/25.jpeg" alt="Gallery 25" class="w-full h-44 object-cover"></div>
-
-            <div class="img-hover rounded-2xl overflow-hidden"><img src="images/26.jpeg" alt="Gallery 26" class="w-full h-44 object-cover"></div>
-            <div class="img-hover rounded-2xl overflow-hidden"><img src="images/27.jpeg" alt="Gallery 27" class="w-full h-44 object-cover"></div>
-            <div class="img-hover rounded-2xl overflow-hidden"><img src="images/28.jpeg" alt="Gallery 28" class="w-full h-44 object-cover"></div>
-            <div class="img-hover rounded-2xl overflow-hidden"><img src="images/29.jpeg" alt="Gallery 29" class="w-full h-44 object-cover"></div>
-            <div class="img-hover rounded-2xl overflow-hidden"><img src="images/30.jpeg" alt="Gallery 30" class="w-full h-44 object-cover"></div>
+    <!-- ================= TRIPADVISOR REVIEWS ================= -->
+    <section id="reviews" class="py-20 bg-orange-50 fade-up border-t-2 border-orange-200">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h2 class="text-4xl font-extrabold mb-8 text-orange-900">TripAdvisor Excellence</h2>
+            <div class="flex justify-center mb-6 text-green-600 text-5xl tracking-widest">
+                ★★★★★
+            </div>
+            
+            <div class="bg-white max-w-4xl mx-auto p-10 rounded-3xl shadow-xl border-2 border-orange-300 relative">
+                <!-- Quote Icon -->
+                <div class="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-orange-500 text-white w-12 h-12 flex items-center justify-center rounded-full text-2xl font-serif">"</div>
+                
+                <p class="font-extrabold text-xl md:text-2xl italic text-gray-700 mb-8 leading-relaxed">
+                    "An absolutely incredible experience with Rinjani Eagle! Rudi was a phenomenal guide, highly professional and ensuring our safety at every step. The porters were superhuman, setting up camp and cooking gourmet food at 3000m altitude. If you want a premium and safe Rinjani trek, look no further!"
+                </p>
+                <div class="flex flex-col items-center justify-center">
+                    <img src="images/logo.jpg" class="h-12 w-12 rounded-full border-2 border-orange-500 mb-2">
+                    <p class="font-extrabold text-orange-900 text-lg">- Sarah Jenkins (United Kingdom)</p>
+                    <p class="font-bold text-gray-500 text-sm">Reviewed on TripAdvisor</p>
+                </div>
+            </div>
         </div>
-    </div>
-</section>
-<!-- ================= CONTACT / BOOKING ================= -->
-<section id="contact" class="py-20 bg-white fade-up">
-
-<div class="max-w-5xl mx-auto px-4 text-center">
-
-<h2 class="text-3xl md:text-4xl font-bold mb-6">
-Booking & Contact
-</h2>
-
-<p class="text-gray-500 mb-10">
-Hubungi kami untuk reservasi trekking Gunung Rinjani.
-</p>
-
-<div class="bg-gray-50 p-8 rounded-2xl card max-w-2xl mx-auto">
-
-<div class="grid gap-4">
-
-<input id="name" type="text" placeholder="Nama Lengkap" class="border p-3 rounded-lg">
-<input id="wa" type="text" placeholder="Nomor WhatsApp" class="border p-3 rounded-lg">
-
-<select id="package" class="border p-3 rounded-lg">
-<option value="">Pilih Paket</option>
-<option value="2D/1N Summit">2D/1N Summit</option>
-<option value="3D/2N Summit & Lake">3D/2N Summit & Lake</option>
-<option value="4D/3N Ultimate Trek">4D/3N Ultimate Trek</option>
-</select>
-
-<input id="pax" type="number" value="1" class="border p-3 rounded-lg">
-
-<button onclick="sendWA()" 
-class="bg-green-500 text-white py-3 rounded-lg font-bold hover:bg-green-600">
-Booking via WhatsApp
-</button>
-
-</div>
-
-</div>
-
-<div class="mt-8">
-<p><b>WhatsApp:</b> 085956684081</p>
-<p><b>Email:</b> rinjanieagle@gmail.com</p>
-</div>
-
-</div>
-</section>
+    </section>
 
 
-<!-- ================= FOOTER ================= -->
-<footer class="bg-black text-white py-10 text-center">
-<p>&copy; 2026 Rinjani Eagle. All rights reserved.</p>
-</footer>
+    <!-- ================= MAP SECTION ================= -->
+    <section class="py-10 fade-up bg-white">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-extrabold text-orange-900">Our Basecamp Location</h2>
+            </div>
+            <div class="rounded-3xl overflow-hidden shadow-2xl border-4 border-orange-300">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126297.09062325064!2d116.38133529367121!3d-8.411685799999988!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dcdc657199c922b%3A0x86bd615a6b0c2a26!2sGn.%20Rinjani!5e0!3m2!1sid!2sid!4v1713000000000!5m2!1sid!2sid" class="w-full h-[400px] border-0" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
 
 
-<!-- ================= FLOAT WA ================= -->
-<a href="https://wa.me/6285956684081" class="float-wa">
-💬
-</a>
+    <!-- ================= FOOTER ================= -->
+    <footer class="bg-gray-900 text-gray-400 py-12 text-center text-sm border-t-4 border-orange-600">
+        <div class="flex justify-center mb-4">
+            <img src="images/logo.jpg" alt="Logo" class="h-16 w-16 rounded-full border-2 border-gray-600">
+        </div>
+        <p class="mb-2 font-extrabold text-orange-500 text-2xl tracking-widest">RINJANI EAGLE</p>
+        <p class="font-bold text-gray-500">&copy; 2026 Rinjani Eagle. Premium Trekking Mount Rinjani.</p>
+    </footer>
 
+    <!-- ================= FLOAT WA ================= -->
+    <a href="https://wa.me/6285956684081" target="_blank" class="float-wa bg-green-500 border-2 border-white" title="Chat us on WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-8 h-8" viewBox="0 0 16 16">
+          <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.004-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
+        </svg>
+    </a>
 
-<!-- ================= SCRIPT ================= -->
-<script>
+    <!-- ================= SCRIPT & ITINERARY DATA ================= -->
+    <script>
+        //////////////////////////////////////
+        // ITINERARY DATA TREKKING 
+        //////////////////////////////////////
+        const itineraries = {
+            p1: `
+                <div class="border-l-8 border-orange-500 pl-6">
+                    <h3 class="text-3xl font-extrabold text-orange-900 mb-2">2D/1N Summit Trek</h3>
+                    <p class="font-bold text-green-700 text-xl mb-4">Harga: $200 USD / Pax</p>
+                    <p class="font-bold text-gray-700 mb-6 leading-relaxed">Program eksklusif berkecepatan tinggi ini didesain bagi Anda yang memiliki fisik bugar dan ingin menaklukkan titik tertinggi Gunung Rinjani dalam waktu dua hari.</p>
+                    <ul class="text-base space-y-6 text-gray-800">
+                        <li>
+                            <b class="text-orange-600 text-xl block mb-1">HARI 1: Basecamp - Plawangan Sembalun</b>
+                            <span class="font-bold block">Pagi hari setelah sarapan, kita menuju Rinjani Trekking Center (RTC). Trekking dimulai melintasi padang savana terbuka. Tim porter akan menyiapkan makan siang hangat di Pos 2. Sore harinya mendaki tajam menuju Plawangan Sembalun untuk mendirikan tenda premium, menikmati matahari terbenam, dan makan malam sebelum beristirahat.</span>
+                        </li>
+                        <li>
+                            <b class="text-orange-600 text-xl block mb-1">HARI 2: Summit Attack - Kembali ke Desa</b>
+                            <span class="font-bold block">Pukul 02.00 dini hari memulai 'Summit Attack' melintasi pasir vulkanik. Tiba di Puncak (3.726 mdpl) bersamaan dengan momen sunrise. Kembali ke kemah untuk sarapan besar, lalu perjalanan turun kembali menuju Desa Sembalun.</span>
+                        </li>
+                    </ul>
+                </div>
+            `,
+            p2: `
+                <div class="border-l-8 border-orange-500 pl-6">
+                    <h3 class="text-3xl font-extrabold text-orange-900 mb-2">3D/2N Summit & Lake</h3>
+                    <p class="font-bold text-green-700 text-xl mb-4">Harga: $250 USD / Pax</p>
+                    <p class="font-bold text-gray-700 mb-6 leading-relaxed">Paket paling direkomendasikan! Kombinasi sempurna antara tantangan fisik menuju puncak dan relaksasi di sumber air panas alami.</p>
+                    <ul class="text-base space-y-6 text-gray-800">
+                        <li><b class="text-orange-600 text-xl block mb-1">HARI 1: Sembalun Trek - Crater Rim</b><span class="font-bold block">Memulai pendakian dari savana Sembalun dan mendaki ke Plawangan Sembalun untuk berkemah di hari pertama sambil menikmati Sunset.</span></li>
+                        <li><b class="text-orange-600 text-xl block mb-1">HARI 2: Puncak Tertinggi & Relaksasi Danau</b><span class="font-bold block">Bangun jam 2 pagi menuju puncak. Setelah kembali, turun melintasi tebing menuju Danau Segara Anak. Mandi di sumber Air Panas Alami dan berkemah malam kedua di tepi danau.</span></li>
+                        <li><b class="text-orange-600 text-xl block mb-1">HARI 3: Senaru Crater & Hutan Hujan</b><span class="font-bold block">Naik menuju Plawangan Senaru lalu turun perlahan melintasi rimbunnya hutan hujan tropis menuju Desa Senaru sebagai titik akhir.</span></li>
+                    </ul>
+                </div>
+            `,
+            p3: `
+                <div class="border-l-8 border-orange-500 pl-6">
+                    <h3 class="text-3xl font-extrabold text-orange-900 mb-2">4D/3N Ultimate Trek</h3>
+                    <p class="font-bold text-green-700 text-xl mb-4">Harga: $280 USD / Pax</p>
+                    <p class="font-bold text-gray-700 mb-6 leading-relaxed">Versi paling santai dan komprehensif. Menikmati setiap titik magis Rinjani tanpa harus terburu-buru.</p>
+                    <ul class="text-base space-y-6 text-gray-800">
+                        <li><b class="text-orange-600 text-xl block mb-1">HARI 1: Sembalun - Plawangan Sembalun</b><span class="font-bold block">Berjalan santai melintasi savana, berfoto, dan kemah malam pertama di Crater Rim dengan fasilitas bintang lima.</span></li>
+                        <li><b class="text-orange-600 text-xl block mb-1">HARI 2: Puncak - Danau Segara Anak</b><span class="font-bold block">Dini hari menaklukkan puncak Rinjani. Kemudian turun menuju danau Segara Anak untuk berkemah di malam kedua.</span></li>
+                        <li><b class="text-orange-600 text-xl block mb-1">HARI 3: Danau - Plawangan Senaru</b><span class="font-bold block">Pagi berendam di Hot Springs atau memancing. Siang mendaki menuju Plawangan Senaru. Menginap di kemah di atas awan.</span></li>
+                        <li><b class="text-orange-600 text-xl block mb-1">HARI 4: Penurunan via Hutan Senaru</b><span class="font-bold block">Turun perlahan menembus hutan tropis yang teduh. Berpeluang melihat monyet hitam liar. Perjalanan berakhir di desa Senaru.</span></li>
+                    </ul>
+                </div>
+            `
+        };
 
-//////////////////////////////////////
-// ITINERARY DATA (FIX ERROR)
-//////////////////////////////////////
-const itineraries = {
+        //////////////////////////////////////
+        // TOGGLE ITINERARY TREKKING
+        //////////////////////////////////////
+        function toggleItinerary(id) {
+            let box = document.getElementById("itinerary-box");
 
-p1: `
-<h3 class="text-xl font-bold mb-3">2D/1N Summit Trek</h3>
-<p class="text-gray-600 mb-4">
-Program ini dirancang untuk pendaki berpengalaman yang ingin mencapai puncak Gunung Rinjani dalam waktu singkat.
-</p>
-<ul class="text-sm space-y-2">
-<li><b>Day 1:</b> Transfer ke Sembalun, registrasi, trekking melalui savana menuju crater rim, camping.</li>
-<li><b>Day 2:</b> Summit attack pukul 02.00, sunrise di puncak, turun kembali.</li>
-</ul>
-`,
+            if(box.style.display === "block" && box.dataset.open === id){
+                box.style.display = "none";
+                return;
+            }
 
-p2: `
-<h3 class="text-xl font-bold mb-3">3D/2N Summit & Lake</h3>
-<p class="text-gray-600 mb-4">
-Paket paling populer dengan pengalaman lengkap: summit, danau Segara Anak, dan hot spring alami.
-</p>
-<ul class="text-sm space-y-2">
-<li><b>Day 1:</b> Trek ke crater rim Senaru.</li>
-<li><b>Day 2:</b> Turun ke danau, hot spring, naik ke crater rim Sembalun.</li>
-<li><b>Day 3:</b> Summit sunrise, turun ke desa.</li>
-</ul>
-`,
+            box.innerHTML = itineraries[id];
+            box.style.display = "block";
+            box.dataset.open = id;
+            
+            setTimeout(() => {
+                box.scrollIntoView({behavior: 'smooth', block: 'center'});
+            }, 100);
+        }
 
-p3: `
-<h3 class="text-xl font-bold mb-3">4D/3N Ultimate Trek</h3>
-<p class="text-gray-600 mb-4">
-Pendakian santai untuk menikmati seluruh keindahan Gunung Rinjani tanpa terburu-buru.
-</p>
-<ul class="text-sm space-y-2">
-<li><b>Day 1:</b> Trek ke crater rim.</li>
-<li><b>Day 2:</b> Eksplorasi danau & hot spring.</li>
-<li><b>Day 3:</b> Trek ke sisi lain gunung.</li>
-<li><b>Day 4:</b> Summit & turun.</li>
-</ul>
-`
+        //////////////////////////////////////
+        // TOGGLE EXTRA TOURS (GILI, WATERFALL, DLL)
+        //////////////////////////////////////
+        function toggleExtension(id) {
+            // Sembunyikan semua konten extension
+            document.querySelectorAll('.ext-content').forEach(el => {
+                el.classList.add('hidden');
+            });
+            
+            // Tampilkan yang diklik
+            const target = document.getElementById('ext-' + id);
+            if(target) {
+                target.classList.remove('hidden');
+                setTimeout(() => {
+                    target.scrollIntoView({behavior: 'smooth', block: 'center'});
+                }, 100);
+            }
+        }
 
-};
+        //////////////////////////////////////
+        // WHATSAPP BOOKING
+        //////////////////////////////////////
+        function sendWA() {
+            let name = document.getElementById("name").value;
+            let wa = document.getElementById("wa").value;
+            let pkg = document.getElementById("package").value;
+            let pax = document.getElementById("pax").value;
 
+            if(!name || !pkg) {
+                alert("Mohon lengkapi Nama dan Paket terlebih dahulu agar kami dapat melayani Anda dengan maksimal.");
+                return;
+            }
 
-//////////////////////////////////////
-// TOGGLE ITINERARY
-//////////////////////////////////////
-function toggleItinerary(id){
+            let text = `Halo *Rinjani Eagle*, saya ingin memesan layanan premium Anda:%0A%0A` +
+                       `👤 *Nama:* ${name}%0A` +
+                       `📱 *No. WhatsApp:* ${wa}%0A` +
+                       `🎒 *Paket Terpilih:* ${pkg}%0A` +
+                       `👥 *Jumlah Peserta:* ${pax} Orang%0A%0A` +
+                       `Mohon informasi lebih lanjut mengenai ketersediaan jadwal. Terima kasih.`;
 
-let box = document.getElementById("itinerary-box");
+            window.open(`https://wa.me/6285956684081?text=${text}`, '_blank');
+        }
 
-if(box.style.display === "block" && box.dataset.open === id){
-    box.style.display = "none";
-    return;
-}
+        //////////////////////////////////////
+        // ANIMASI SCROLL (FADE UP)
+        //////////////////////////////////////
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting){
+                    entry.target.classList.add('show');
+                }
+            });
+        }, { threshold: 0.1 });
 
-box.innerHTML = itineraries[id];
-box.style.display = "block";
-box.dataset.open = id;
-
-box.scrollIntoView({behavior:'smooth'});
-}
-
-
-//////////////////////////////////////
-// WHATSAPP BOOKING
-//////////////////////////////////////
-function sendWA(){
-
-let name = document.getElementById("name").value;
-let wa = document.getElementById("wa").value;
-let pkg = document.getElementById("package").value;
-let pax = document.getElementById("pax").value;
-
-let text = `Halo Rinjani Eagle%0A%0A` +
-           `Nama: ${name}%0A` +
-           `WA: ${wa}%0A` +
-           `Paket: ${pkg}%0A` +
-           `Jumlah: ${pax}`;
-
-window.open(`https://wa.me/6285956684081?text=${text}`);
-
-}
-
-
-//////////////////////////////////////
-// ANIMASI SCROLL
-//////////////////////////////////////
-const observer = new IntersectionObserver(entries=>{
-entries.forEach(entry=>{
-if(entry.isIntersecting){
-entry.target.classList.add('show');
-}
-});
-});
-
-document.querySelectorAll('.fade-up').forEach(el=>{
-observer.observe(el);
-});
-
-</script>
-
+        document.querySelectorAll('.fade-up').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
 </body>
 </html>
-
