@@ -42,7 +42,9 @@
         .skiptranslate iframe { display: none !important; }
         #goog-gt-tt, .goog-te-balloon-frame { display: none !important; }
         .goog-text-highlight { background-color: transparent !important; box-shadow: none !important; }
-        #google_translate_element { display: none !important; }
+        
+        /* FIX TRANSLATE: Jangan gunakan display: none, gunakan opacity 0 dan pindahkan ke luar layar agar Google API tetap jalan */
+        #google_translate_element { opacity: 0; position: absolute; left: -9999px; z-index: -999; }
 
         /* ================= ANIMATION ================= */
         .fade-up {
@@ -561,22 +563,24 @@
             new google.translate.TranslateElement({
                 pageLanguage: 'id', 
                 includedLanguages: 'en,id,zh-CN,es,fr,de,ar,ru,ja,ko',
-                layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
                 autoDisplay: false
             }, 'google_translate_element');
         }
 
         function changeLanguage(langCode) {
-            var selectField = document.querySelector(".goog-te-combo");
-            if (selectField) {
-                selectField.value = langCode;
-                selectField.dispatchEvent(new Event('change'));
-            } else {
-                var cookieString = "googtrans=/id/" + langCode;
-                document.cookie = cookieString + ";path=/;domain=" + window.location.hostname;
-                document.cookie = cookieString + ";path=/";
-                window.location.reload();
-            }
+            // Beri sedikit waktu untuk memastikan Google Translate sudah merender elemen
+            setTimeout(function() {
+                var selectField = document.querySelector(".goog-te-combo");
+                if (selectField) {
+                    selectField.value = langCode;
+                    selectField.dispatchEvent(new Event('change'));
+                } else {
+                    // Fallback menggunakan cookie jika elemen masih belum ditemukan
+                    document.cookie = "googtrans=/id/" + langCode + "; path=/;";
+                    document.cookie = "googtrans=/id/" + langCode + "; path=/; domain=" + window.location.hostname + ";";
+                    window.location.reload();
+                }
+            }, 150);
         }
     </script>
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
