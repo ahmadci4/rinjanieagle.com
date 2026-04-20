@@ -9,32 +9,40 @@
     <!-- SEO -->
     <meta name="description" content="Paket trekking Gunung Rinjani Lombok dengan guide profesional dan layanan premium.">
 
-    <!-- FONT -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <!-- FONT POPPINS -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
     <!-- TAILWIND -->
     <script src="https://cdn.tailwindcss.com"></script>
 
     <style>
-        /* ================= GLOBAL ================= */
+        /* ================= GLOBAL & BACKGROUND HUTAN ================= */
         body {
             font-family: 'Poppins', sans-serif;
-            background: #fdfbf7; 
+            /* Background hutan dari atas untuk seluruh halaman */
+            background-image: url('https://images.unsplash.com/photo-1473448912268-2022ce9509d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-attachment: fixed;
+            background-position: center;
+            background-size: cover;
+            background-color: #1a1a1a;
             position: relative;
         }
 
-        /* ================= BACKGROUND WATERMARK ================= */
-        .bg-watermark {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 80vw;
-            max-width: 600px;
-            opacity: 0.04; /* Sangat rendah agar elegan */
-            z-index: -1;
-            pointer-events: none; /* Tidak mengganggu klik */
+        /* Overlay gelap khusus untuk area Hero agar teks jelas */
+        .hero-overlay {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7));
+            z-index: 1;
         }
+
+        /* ================= GOOGLE TRANSLATE FIX ================= */
+        .goog-te-banner-frame.skiptranslate, .goog-te-gadget-icon { display: none !important; }
+        body { top: 0px !important; }
+        #google_translate_element { display: none !important; }
+        .goog-tooltip { display: none !important; }
+        .goog-tooltip:hover { display: none !important; }
+        .goog-text-highlight { background-color: transparent !important; border: none !important; box-shadow: none !important; }
 
         /* ================= ANIMATION ================= */
         .fade-up {
@@ -46,23 +54,6 @@
         .fade-up.show {
             opacity: 1;
             transform: translateY(0);
-        }
-
-        /* ================= HERO PARALLAX (SVG LOGO) ================= */
-        .parallax-hero {
-            background-image: url('images/rinjani-eagle-logo.svg');
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-color: #1a1a1a;
-            background-attachment: fixed;
-            width: 100%;
-        }
-
-        @media (max-width: 768px) {
-            .parallax-hero {
-                background-attachment: scroll;
-            }
         }
 
         /* ================= CARD & IMAGE HOVER ================= */
@@ -99,27 +90,19 @@
             transform: scale(1.15);
         }
 
-        /* Kustom scrollbar untuk estetika */
-        ::-webkit-scrollbar {
-            width: 10px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #f1f1f1; 
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #f97316; 
-            border-radius: 5px;
-        }
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #f97316; border-radius: 5px; }
     </style>
 </head>
 
 <body>
 
-    <!-- LOGO SEBAGAI WATERMARK DI SELURUH HALAMAN -->
-    <img src="images/logo.jpg" alt="Watermark" class="bg-watermark">
+    <!-- Wadah Rahasia untuk Sistem Google Translate -->
+    <div id="google_translate_element"></div>
 
     <!-- ================= NAVBAR ================= -->
-    <nav class="fixed w-full z-50 bg-white shadow-md transition-all h-20 flex items-center">
+    <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-md shadow-md transition-all h-20 flex items-center">
         <div class="max-w-7xl mx-auto w-full flex justify-between items-center px-4">
             <div class="flex items-center">
                 <img src="images/logo.jpg" alt="Rinjani Eagle Logo" class="h-12 w-12 md:h-14 md:w-14 object-cover rounded-full border-2 border-orange-500 shadow-sm mr-3">
@@ -134,20 +117,37 @@
                 <a href="#contact" class="hover:text-orange-500 font-bold text-gray-800 transition">Booking</a>
             </div>
 
-            <select class="border-2 border-orange-300 font-bold px-2 py-1 rounded bg-orange-50 text-orange-900 text-sm outline-none">
-                <option value="en">EN 🇬🇧</option>
-                <option value="id">ID 🇮🇩</option>
+            <!-- 10 BAHASA TERPOPULER DENGAN BENDERA -->
+            <select onchange="changeLanguage(this.value)" class="cursor-pointer border-2 border-orange-300 font-bold px-2 py-1.5 rounded-md bg-orange-50 text-orange-900 text-sm outline-none shadow-sm">
+                <option value="id">🇮🇩 ID - Indonesia</option>
+                <option value="en">🇬🇧 EN - English</option>
+                <option value="zh-CN">🇨🇳 CN - 中文</option>
+                <option value="es">🇪🇸 ES - Español</option>
+                <option value="fr">🇫🇷 FR - Français</option>
+                <option value="de">🇩🇪 DE - Deutsch</option>
+                <option value="ar">🇸🇦 AR - العربية</option>
+                <option value="ru">🇷🇺 RU - Русский</option>
+                <option value="ja">🇯🇵 JA - 日本語</option>
+                <option value="ko">🇰🇷 KO - 한국어</option>
             </select>
         </div>
     </nav>
 
 
     <!-- ================= HERO ================= -->
-    <section id="home" class="h-screen parallax-hero flex items-center justify-center relative">
-        <div class="text-center px-4 z-10 w-full flex flex-col items-center">
+    <section id="home" class="h-screen flex items-center justify-center relative">
+        <div class="hero-overlay"></div> <!-- Efek Gelap Transparan agar Teks Terbaca -->
+        
+        <div class="text-center px-4 z-10 w-full flex flex-col items-center mt-20">
             
-            <!-- Posisi tombol lebih ke bawah -->
-            <a href="#packages" class="mt-[45vh] bg-orange-500 hover:bg-orange-600 border-2 border-white text-white px-10 py-4 rounded-full font-extrabold text-lg transition shadow-2xl transform hover:-translate-y-1">
+            <!-- TEKS HERO BARU -->
+            <h1 class="text-3xl md:text-5xl lg:text-6xl font-extrabold text-white mb-10 drop-shadow-2xl max-w-5xl leading-tight tracking-wide" style="text-shadow: 2px 4px 10px rgba(0,0,0,0.9);">
+                Siapkan Dirimu untuk terbang Tanpa batas <br>
+                <span class="text-orange-400">Menjelajahi setiap Sudut Pulau Lombok.</span>
+            </h1>
+
+            <!-- TOMBOL DI BAWAH TEKS -->
+            <a href="#packages" class="bg-orange-500 hover:bg-orange-600 border-2 border-white text-white px-10 py-4 rounded-full font-extrabold text-lg transition shadow-2xl transform hover:-translate-y-1">
                 EXPLORE PACKAGES
             </a>
             
@@ -156,8 +156,9 @@
 
 
     <!-- ================= ABOUT & TEAM ================= -->
-    <section id="about" class="py-20 bg-white/80 backdrop-blur-sm fade-up">
-        <div class="max-w-7xl mx-auto px-4">
+    <section id="about" class="py-20 fade-up">
+        <!-- Background Semitransparan agar hutan di belakang tidak mengganggu teks -->
+        <div class="max-w-7xl mx-auto px-4 bg-white/95 backdrop-blur-md rounded-3xl p-8 md:p-12 shadow-2xl">
             <div class="text-center mb-16">
                 <h2 class="text-4xl font-extrabold mb-4 text-orange-900">About Rinjani Eagle</h2>
                 <div class="w-24 h-1 bg-orange-500 mx-auto rounded"></div>
@@ -208,8 +209,8 @@
 
 
     <!-- ================= 1. TREKKING PACKAGES (ONLY MOUNTAIN) ================= -->
-    <section id="packages" class="py-20 bg-orange-50 fade-up border-t-2 border-b-2 border-orange-200">
-        <div class="max-w-7xl mx-auto px-4">
+    <section id="packages" class="py-20 fade-up">
+        <div class="max-w-7xl mx-auto px-4 bg-orange-50/95 backdrop-blur-md rounded-3xl p-8 md:p-12 shadow-2xl border-4 border-orange-200">
             <div class="text-center mb-16">
                 <h2 class="text-4xl font-extrabold mb-4 text-orange-900">Rinjani Trekking Packages</h2>
                 <p class="font-bold text-gray-600 max-w-2xl mx-auto">
@@ -279,12 +280,9 @@
 
 
     <!-- ================= 2. EXTRA TOURS (GILI, WATERFALL, SEMBALUN, SASAK) ================= -->
-    <section id="extensions" class="py-20 relative bg-gray-900 fade-up">
-        <!-- Background Gelap Elegan untuk Glassmorphism -->
-        <div class="absolute inset-0" style="background-image: url('images/diatas-awan.jpeg'); background-size: cover; background-attachment: fixed; background-position: center;"></div>
-        <div class="absolute inset-0 bg-black/70 backdrop-blur-sm"></div> <!-- Efek blur -->
-
-        <div class="relative z-10 max-w-7xl mx-auto px-4">
+    <section id="extensions" class="py-20 relative fade-up">
+        <!-- Extra Tours tetap dibuat gelap elegan menggunakan latar awan/blur -->
+        <div class="max-w-7xl mx-auto px-4 bg-gray-900/90 backdrop-blur-md rounded-3xl p-8 md:p-12 shadow-2xl">
             <div class="text-center mb-12">
                 <h2 class="text-4xl font-extrabold mb-4 text-white">Explore More of Lombok</h2>
                 <p class="font-bold text-gray-300 max-w-2xl mx-auto">
@@ -327,7 +325,7 @@
                 </div>
                 <!-- Trawangan -->
                 <div class="bg-orange-50 rounded-3xl overflow-hidden border-2 border-orange-500 shadow-xl flex flex-col">
-                    <img src="images/gili-trawangan.jpg" alt="Gili Trawangan" class="h-48 w-full object-cover">
+                    <img src="images/gili-trawangan.jpeg" alt="Gili Trawangan" class="h-48 w-full object-cover">
                     <div class="p-6 flex-grow">
                         <h4 class="text-xl font-extrabold text-orange-900 mb-2">Gili Trawangan</h4>
                         <p class="font-bold text-sm text-gray-700">Pulau terbesar yang terkenal dengan pesta pinggir pantai, kafe-kafe cantik, dan bersepeda keliling pulau tanpa polusi motor.</p>
@@ -335,7 +333,7 @@
                 </div>
                 <!-- Air -->
                 <div class="bg-orange-50 rounded-3xl overflow-hidden border-2 border-orange-500 shadow-xl flex flex-col">
-                    <img src="images/gili-air.jpg" alt="Gili Air" class="h-48 w-full object-cover">
+                    <img src="images/gili-air.jpeg" alt="Gili Air" class="h-48 w-full object-cover">
                     <div class="p-6 flex-grow">
                         <h4 class="text-xl font-extrabold text-orange-900 mb-2">Gili Air</h4>
                         <p class="font-bold text-sm text-gray-700">Perpaduan sempurna antara ketenangan alam dan fasilitas yang memadai. Spot terbaik untuk bersantai santap seafood menanti senja.</p>
@@ -343,7 +341,7 @@
                 </div>
                 <!-- Meno -->
                 <div class="bg-orange-50 rounded-3xl overflow-hidden border-2 border-orange-500 shadow-xl flex flex-col">
-                    <img src="images/gili-meno.jpg" alt="Gili Meno" class="h-48 w-full object-cover">
+                    <img src="images/gili-meno.jpeg" alt="Gili Meno" class="h-48 w-full object-cover">
                     <div class="p-6 flex-grow">
                         <h4 class="text-xl font-extrabold text-orange-900 mb-2">Gili Meno</h4>
                         <p class="font-bold text-sm text-gray-700">Paling tenang! Lokasi utama bagi Anda yang ingin snorkeling bersama penyu laut raksasa dan berfoto di patung bawah laut yang ikonik.</p>
@@ -378,7 +376,7 @@
             <!-- KONTEN SEMBALUN -->
             <div id="ext-sembalun" class="ext-content hidden fade-up">
                 <div class="bg-orange-50 rounded-3xl overflow-hidden border-2 border-orange-500 shadow-xl max-w-4xl mx-auto flex flex-col md:flex-row">
-                    <img src="images/sembalun.jpeg" alt="Sembalun" class="md:w-1/2 h-64 md:h-auto object-cover">
+                    <img src="images/bangket-bayan.jpeg" alt="Sembalun" class="md:w-1/2 h-64 md:h-auto object-cover">
                     <div class="p-8 flex flex-col justify-center">
                         <h3 class="text-3xl font-extrabold text-orange-900 mb-2">Panorama Sembalun (1 Hari)</h3>
                         <p class="font-bold text-green-700 text-xl mb-4">Harga: $40 USD / Pax</p>
@@ -397,7 +395,7 @@
             <div id="ext-sasak" class="ext-content hidden fade-up">
                 <div class="bg-orange-50 rounded-3xl overflow-hidden border-2 border-orange-500 shadow-xl max-w-4xl mx-auto flex flex-col md:flex-row">
                     <!-- Karena sasak.jpeg tidak ada di daftar screenshot, menggunakan gambar sembalun/porter sebagai representasi lokal -->
-                    <img src="images/masjid-kuno.jpg" alt="Desa Sasak" class="md:w-1/2 h-64 md:h-auto object-cover">
+                    <img src="images/sembalun.jpeg" alt="Desa Sasak" class="md:w-1/2 h-64 md:h-auto object-cover">
                     <div class="p-8 flex flex-col justify-center">
                         <h3 class="text-3xl font-extrabold text-orange-900 mb-2">Explore Desa Sasak (Homestay)</h3>
                         <p class="font-bold text-green-700 text-xl mb-4">Harga: $60 USD / Pax</p>
@@ -417,8 +415,8 @@
 
 
     <!-- ================= GALLERY MENGGUNAKAN NAMA FILE ASLI ================= -->
-    <section id="gallery" class="py-20 bg-white/80 backdrop-blur-sm fade-up">
-        <div class="max-w-7xl mx-auto px-4">
+    <section id="gallery" class="py-20 fade-up">
+        <div class="max-w-7xl mx-auto px-4 bg-white/95 backdrop-blur-md rounded-3xl p-8 md:p-12 shadow-2xl border-4 border-orange-100">
             <div class="text-center mb-12">
                 <h2 class="text-4xl font-extrabold mb-4 text-orange-900">Gallery Ekspedisi</h2>
                 <div class="w-24 h-1 bg-orange-500 mx-auto rounded mb-4"></div>
@@ -427,9 +425,8 @@
                 </p>
             </div>
 
-            <!-- Memuat file jpeg dari abang -->
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-                <div class="img-hover rounded-2xl overflow-hidden border-2 border-orange-100 shadow-md"><img src="images/bukit-sembalun.jfif" class="w-full h-44 object-cover"></div>
+                <div class="img-hover rounded-2xl overflow-hidden border-2 border-orange-100 shadow-md"><img src="images/diatas-awan.jpeg" class="w-full h-44 object-cover"></div>
                 <div class="img-hover rounded-2xl overflow-hidden border-2 border-orange-100 shadow-md"><img src="images/pemandian-airpanas.jpeg" class="w-full h-44 object-cover"></div>
                 <div class="img-hover rounded-2xl overflow-hidden border-2 border-orange-100 shadow-md"><img src="images/airterjun-penimbungan.jpeg" class="w-full h-44 object-cover"></div>
                 <div class="img-hover rounded-2xl overflow-hidden border-2 border-orange-100 shadow-md"><img src="images/toilet-tent.jpeg" class="w-full h-44 object-cover"></div>
@@ -440,20 +437,14 @@
                 <div class="img-hover rounded-2xl overflow-hidden border-2 border-orange-100 shadow-md"><img src="images/porter1.jpeg" class="w-full h-44 object-cover"></div>
                 <div class="img-hover rounded-2xl overflow-hidden border-2 border-orange-100 shadow-md"><img src="images/sembalun.jpeg" class="w-full h-44 object-cover"></div>
                 <div class="img-hover rounded-2xl overflow-hidden border-2 border-orange-100 shadow-md"><img src="images/tangga.jpeg" class="w-full h-44 object-cover"></div>
-
-                <div class="img-hover rounded-2xl overflow-hidden border-2 border-orange-100 shadow-md"><img src="images/danau2.jpeg" class="w-full h-44 object-cover"></div>
-                <div class="img-hover rounded-2xl overflow-hidden border-2 border-orange-100 shadow-md"><img src="images/diatas-awan2.jpeg" class="w-full h-44 object-cover"></div>
-                <div class="img-hover rounded-2xl overflow-hidden border-2 border-orange-100 shadow-md"><img src="images/pelawangan-sembalun2.jpeg" class="w-full h-44 object-cover"></div>
-                <div class="img-hover rounded-2xl overflow-hidden border-2 border-orange-100 shadow-md"><img src="images/rinjani.jpeg" class="w-full h-44 object-cover"></div>
-                <div class="img-hover rounded-2xl overflow-hidden border-2 border-orange-100 shadow-md"><img src="images/bangket-bayan.jpeg" class="w-full h-44 object-cover"></div>
             </div>
         </div>
     </section>
 
 
     <!-- ================= BOOKING FORM (ORANGE DESIGN) ================= -->
-    <section id="contact" class="py-20 bg-white fade-up border-t-2 border-orange-200">
-        <div class="max-w-5xl mx-auto px-4 text-center">
+    <section id="contact" class="py-20 fade-up">
+        <div class="max-w-5xl mx-auto px-4 text-center bg-white/95 backdrop-blur-md rounded-3xl p-8 md:p-12 shadow-2xl border-4 border-orange-200">
             <h2 class="text-4xl font-extrabold mb-6 text-orange-900">Booking & Reservation</h2>
             <p class="font-bold text-gray-600 mb-10">Lengkapi form di bawah ini untuk memulai petualangan premium Anda.</p>
 
@@ -501,7 +492,7 @@
                     </div>
 
                     <button onclick="sendWA()" class="w-full bg-orange-600 text-white py-4 rounded-xl font-extrabold text-xl hover:bg-orange-700 transition shadow-lg mt-4 flex justify-center items-center gap-3">
-                        <i class="fa-brands fa-whatsapp text-2xl"></i> KIRIM VIA WHATSAPP
+                        KIRIM VIA WHATSAPP
                     </button>
                 </div>
             </div>
@@ -509,38 +500,13 @@
     </section>
 
 
-    <!-- ================= TRIPADVISOR REVIEWS ================= -->
-    <section id="reviews" class="py-20 bg-orange-50 fade-up border-t-2 border-orange-200">
-        <div class="max-w-7xl mx-auto px-4 text-center">
-            <h2 class="text-4xl font-extrabold mb-8 text-orange-900">TripAdvisor Excellence</h2>
-            <div class="flex justify-center mb-6 text-green-600 text-5xl tracking-widest">
-                ★★★★★
-            </div>
-            
-            <div class="bg-white max-w-4xl mx-auto p-10 rounded-3xl shadow-xl border-2 border-orange-300 relative">
-                <!-- Quote Icon -->
-                <div class="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-orange-500 text-white w-12 h-12 flex items-center justify-center rounded-full text-2xl font-serif">"</div>
-                
-                <p class="font-extrabold text-xl md:text-2xl italic text-gray-700 mb-8 leading-relaxed">
-                    "An absolutely incredible experience with Rinjani Eagle! Rudi was a phenomenal guide, highly professional and ensuring our safety at every step. The porters were superhuman, setting up camp and cooking gourmet food at 3000m altitude. If you want a premium and safe Rinjani trek, look no further!"
-                </p>
-                <div class="flex flex-col items-center justify-center">
-                    <img src="images/logo.jpg" class="h-12 w-12 rounded-full border-2 border-orange-500 mb-2">
-                    <p class="font-extrabold text-orange-900 text-lg">- Sarah Jenkins (United Kingdom)</p>
-                    <p class="font-bold text-gray-500 text-sm">Reviewed on TripAdvisor</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
     <!-- ================= MAP SECTION ================= -->
-    <section class="py-10 fade-up bg-white">
-        <div class="max-w-6xl mx-auto px-4">
+    <section class="py-10 fade-up">
+        <div class="max-w-6xl mx-auto px-4 bg-white/95 backdrop-blur-md rounded-3xl p-8 shadow-2xl border-4 border-orange-200">
             <div class="text-center mb-10">
                 <h2 class="text-3xl font-extrabold text-orange-900">Our Basecamp Location</h2>
             </div>
-            <div class="rounded-3xl overflow-hidden shadow-2xl border-4 border-orange-300">
+            <div class="rounded-3xl overflow-hidden shadow-xl border-4 border-orange-300">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126297.09062325064!2d116.38133529367121!3d-8.411685799999988!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dcdc657199c922b%3A0x86bd615a6b0c2a26!2sGn.%20Rinjani!5e0!3m2!1sid!2sid!4v1713000000000!5m2!1sid!2sid" class="w-full h-[400px] border-0" allowfullscreen="" loading="lazy"></iframe>
             </div>
         </div>
@@ -548,7 +514,7 @@
 
 
     <!-- ================= FOOTER ================= -->
-    <footer class="bg-gray-900 text-gray-400 py-12 text-center text-sm border-t-4 border-orange-600">
+    <footer class="bg-gray-900 text-gray-400 py-12 text-center text-sm border-t-4 border-orange-600 relative z-10">
         <div class="flex justify-center mb-4">
             <img src="images/logo.jpg" alt="Logo" class="h-16 w-16 rounded-full border-2 border-gray-600">
         </div>
@@ -562,6 +528,35 @@
           <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.004-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
         </svg>
     </a>
+
+    <!-- ================= GOOGLE TRANSLATE SCRIPT ================= -->
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'id', 
+                includedLanguages: 'en,id,zh-CN,es,fr,de,ar,ru,ja,ko',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+                autoDisplay: false
+            }, 'google_translate_element');
+        }
+
+        // Fungsi khusus agar custom dropdown kita dapat mengontrol Google Translate
+        function changeLanguage(langCode) {
+            var selectField = document.querySelector(".goog-te-combo");
+            
+            if (selectField) {
+                selectField.value = langCode;
+                selectField.dispatchEvent(new Event('change'));
+            } else {
+                // Jika skrip belum selesai memuat, set cookie secara manual dan reload
+                var cookieString = "googtrans=/id/" + langCode;
+                document.cookie = cookieString + ";path=/;domain=" + window.location.hostname;
+                document.cookie = cookieString + ";path=/";
+                window.location.reload();
+            }
+        }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
     <!-- ================= SCRIPT & ITINERARY DATA ================= -->
     <script>
