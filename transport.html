@@ -1,187 +1,396 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id" class="scroll-smooth">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- SEO -->
-<title>Rinjani Transport & Trekking Service Lombok | Airport Transfer</title>
-<meta name="description" content="Best Rinjani transport service in Lombok. Airport transfer to Senaru, Sembalun, Senggigi, Kuta Mandalika. Book now!">
-<meta name="keywords" content="rinjani transport,lombok transport,lombok airport transfer,senaru sembalun transport,rinjani trekking">
-<meta name="author" content="Rinjani Eagle">
+    <title>Transport & Transfer | Rinjani Eagle</title>
 
-<meta property="og:title" content="Rinjani Eagle Transport Lombok">
-<meta property="og:description" content="Private transport & trekking service in Lombok">
-<meta property="og:image" content="https://rinjanieagle.com/cover.jpg">
-<meta property="og:url" content="https://rinjanieagle.com">
+    <meta name="description" content="Best Rinjani transport service in Lombok. Airport transfer to Senaru, Sembalun, Senggigi, Kuta Mandalika. Book now!">
+    <meta name="keywords" content="rinjani transport,lombok transport,lombok airport transfer,senaru sembalun transport,rinjani trekking">
+    <meta name="author" content="Rinjani Eagle">
 
-<!-- TAILWIND -->
-<script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- SEO -->
+    <title>Rinjani Transport & Trekking Service Lombok | Airport Transfer</title>
+    <meta name="description" content="Best Rinjani transport service in Lombok. Airport transfer to Senaru, Sembalun, Senggigi, Kuta Mandalika. Book now!">
+    <meta name="keywords" content="rinjani transport,lombok transport,lombok airport transfer,senaru sembalun transport,rinjani trekking">
+    <meta name="author" content="Rinjani Eagle">
+    <script src="https://cdn.tailwindcss.com"></script>
 
+    <style>
+        /* ================= GLOBAL & BACKGROUND ================= */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-image: url('https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-attachment: fixed;
+            background-position: center;
+            background-size: cover;
+            background-color: #1a1a1a;
+            position: relative;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8));
+            z-index: 1;
+        }
+
+        /* ================= GOOGLE TRANSLATE SUPER HIDE ================= */
+        body { top: 0 !important; position: static !important; }
+        html { top: 0 !important; position: static !important; }
+        .goog-te-banner-frame { display: none !important; }
+        .skiptranslate iframe { display: none !important; }
+        #goog-gt-tt, .goog-te-balloon-frame { display: none !important; }
+        .goog-text-highlight { background-color: transparent !important; box-shadow: none !important; }
+        
+        #google_translate_element { opacity: 0; position: absolute; left: -9999px; z-index: -999; }
+
+        /* ================= ANIMATION ================= */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s ease;
+        }
+        .fade-up.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ================= FLOAT WA ================= */
+        .float-wa {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background: #25d366;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            z-index: 90;
+            font-size: 30px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+        .float-wa:hover { transform: scale(1.15); }
+
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #f97316; border-radius: 5px; }
+    </style>
 </head>
-<body class="bg-gray-50">
 
-<!-- HERO SEO TEXT -->
-<section class="text-center py-10">
-  <h1 class="text-3xl font-bold">Rinjani Transport Service Lombok</h1>
-  <h2 class="text-lg text-gray-600 mt-2">
-    Airport Transfer Lombok to Senaru, Sembalun, Senggigi, Bangsal, Kuta Mandalika
-  </h2>
-  <p class="mt-4 text-gray-600 max-w-xl mx-auto">
-    We provide private transport from Lombok International Airport to all tourist destinations in Lombok with professional drivers.
-  </p>
-</section>
+<body>
 
-<!-- TRANSPORT -->
-<section class="py-16">
-  <div class="max-w-6xl mx-auto px-4">
+    <div id="google_translate_element"></div>
 
-    <h2 class="text-2xl font-bold text-center mb-10">
-      Choose Your Vehicle
-    </h2>
+    <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-md shadow-md transition-all h-20 flex items-center">
+        <div class="max-w-7xl mx-auto w-full flex justify-between items-center px-4">
+            <div class="flex items-center">
+                <a href="index.html" class="flex items-center">
+                    <img src="images/logo.jpg" alt="Rinjani Eagle Logo" class="h-12 w-12 md:h-14 md:w-14 object-cover rounded-full border-2 border-orange-500 shadow-sm mr-3">
+                    <span class="font-bold text-xl md:text-2xl text-orange-600 tracking-wide">Rinjani Eagle</span>
+                </a>
+            </div>
 
-    <!-- CARS -->
-    <div class="grid md:grid-cols-2 gap-6 mb-12">
+            <div class="hidden lg:flex gap-8 items-center">
+                <a href="index.html#home" class="hover:text-orange-500 font-bold text-gray-800 transition">Home</a>
+                <a href="index.html#about" class="hover:text-orange-500 font-bold text-gray-800 transition">About</a>
+                <a href="index.html#packages" class="hover:text-orange-500 font-bold text-gray-800 transition">Trekking</a>
+                <a href="index.html#extensions" class="hover:text-orange-500 font-bold text-gray-800 transition">Tours</a>
+                <a href="#transport-hero" class="text-orange-600 border-b-2 border-orange-600 font-bold transition">Transport</a>
+            </div>
 
-      <div class="bg-white rounded-2xl shadow overflow-hidden">
-        <img src="images/Elf.jpeg">
-        <div class="p-6">
-          <h3 class="font-semibold text-lg">Elf - Minibus </h3>
-          <p class="text-sm text-gray-600">Max 10 people + luggage</p>
-          <p class="text-green-600 font-semibold mt-2">Start from IDR 300K/Person</p>
+            <select onchange="changeLanguage(this.value)" class="cursor-pointer border-2 border-orange-300 font-bold px-2 py-1.5 rounded-md bg-orange-50 text-orange-900 text-sm outline-none shadow-sm">
+                <option value="id">🇮🇩 ID</option>
+                <option value="en">🇬🇧 EN</option>
+                <option value="zh-CN">🇨🇳 CN</option>
+                <option value="es">🇪🇸 ES</option>
+                <option value="fr">🇫🇷 FR</option>
+                <option value="de">🇩🇪 DE</option>
+                <option value="ar">🇸🇦 AR</option>
+                <option value="ru">🇷🇺 RU</option>
+                <option value="ja">🇯🇵 JA</option>
+                <option value="ko">🇰🇷 KO</option>
+            </select>
         </div>
-      </div>
+    </nav>
 
-      <div class="bg-white rounded-2xl shadow overflow-hidden">
-        <img src="images/Terios.jpeg">
-        <div class="p-6">
-          <h3 class="font-semibold text-lg">Terios</h3>
-          <p class="text-sm text-gray-600">Max 4 people</p>
-          <p class="text-green-600 font-semibold mt-2">Start from IDR 800K/Person</p>
+
+    <section id="transport-hero" class="h-[60vh] flex items-center justify-center relative">
+        <div class="hero-overlay"></div>
+        <div class="text-center px-4 z-10 w-full flex flex-col items-center mt-10">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-4 drop-shadow-2xl max-w-4xl tracking-wide" style="text-shadow: 2px 4px 10px rgba(0,0,0,0.9);">
+                Lombok Premium <span class="text-orange-400">Transport</span>
+            </h1>
+            <p class="text-lg md:text-xl text-gray-200 font-bold max-w-2xl mb-8">
+                Airport Transfer Lombok to Senaru, Sembalun, Senggigi, Bangsal & Kuta Mandalika.
+            </p>
+            <a href="#booking-form" class="bg-orange-500 hover:bg-orange-600 border-2 border-white text-white px-8 py-3 rounded-full font-extrabold transition shadow-lg transform hover:-translate-y-1 inline-block">
+                BOOK NOW
+            </a>
         </div>
-      </div>
+    </section>
 
-    </div>
 
-    <!-- BOOKING -->
-    <div class="bg-white p-8 rounded-2xl shadow max-w-3xl mx-auto">
-      <h3 class="text-xl font-semibold mb-6 text-center">
-        Book Your Transport
-      </h3>
+    <section id="fleet" class="py-20 fade-up">
+        <div class="max-w-5xl mx-auto px-4">
+            
+            <div class="bg-white/95 backdrop-blur-md rounded-3xl p-8 md:p-12 shadow-2xl border-4 border-orange-100">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-extrabold mb-4 text-orange-900">Choose Your Vehicle</h2>
+                    <div class="w-24 h-1 bg-orange-500 mx-auto rounded"></div>
+                </div>
 
-      <form id="bookingForm" class="grid gap-4">
+                <div class="grid md:grid-cols-2 gap-8 mb-8">
+                    <div class="bg-orange-50 rounded-2xl overflow-hidden shadow-lg border-2 border-orange-200 hover:shadow-2xl transition transform hover:-translate-y-1 flex flex-col">
+                        <div class="h-56 bg-gray-200 overflow-hidden relative group">
+                            <img src="images/Elf.jpeg" alt="Elf Minibus" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" onerror="this.src='https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
+                            <div class="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition duration-500"></div>
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow text-center">
+                            <h3 class="text-2xl font-extrabold text-orange-900 mb-1">Elf - Minibus</h3>
+                            <p class="text-gray-600 font-bold mb-4">Max 10 people + Luggage</p>
+                            <p class="text-green-700 text-xl font-extrabold mt-auto">Start from IDR 300K <span class="text-sm text-gray-500">/ Person</span></p>
+                        </div>
+                    </div>
 
-        <input type="text" placeholder="Full Name" class="p-3 border rounded-lg" required>
-        <input type="text" placeholder="WhatsApp Number" class="p-3 border rounded-lg" required>
+                    <div class="bg-orange-50 rounded-2xl overflow-hidden shadow-lg border-2 border-orange-200 hover:shadow-2xl transition transform hover:-translate-y-1 flex flex-col">
+                        <div class="h-56 bg-gray-200 overflow-hidden relative group">
+                            <img src="images/Terios.jpeg" alt="Terios" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" onerror="this.src='https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
+                            <div class="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition duration-500"></div>
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow text-center">
+                            <h3 class="text-2xl font-extrabold text-orange-900 mb-1">Terios / SUV</h3>
+                            <p class="text-gray-600 font-bold mb-4">Max 4 people + Luggage</p>
+                            <p class="text-green-700 text-xl font-extrabold mt-auto">Start from IDR 800K <span class="text-sm text-gray-500">/ Car</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-        <select id="pickup" class="p-3 border rounded-lg" required>
-          <option value="">Pick Up Location</option>
-          <option value="bandara">Lombok Airport</option>
-          <option value="senaru">Senaru</option>
-          <option value="sembalun">Sembalun</option>
-          <option value="senggigi">Senggigi</option>
-          <option value="bangsal">Bangsal Harbor</option>
-          <option value="kuta">Kuta Lombok</option>
-          <option value="mataram">Mataram</option>
-          <option value="mandalika">Mandalika</option>
-        </select>
-
-        <select id="destination" class="p-3 border rounded-lg" required>
-          <option value="">Destination</option>
-          <option value="bandara">Lombok Airport</option>
-          <option value="senaru">Senaru</option>
-          <option value="sembalun">Sembalun</option>
-          <option value="senggigi">Senggigi</option>
-          <option value="bangsal">Bangsal Harbor</option>
-          <option value="kuta">Kuta Lombok</option>
-          <option value="mataram">Mataram</option>
-          <option value="mandalika">Mandalika</option>
-        </select>
-
-        <input type="date" class="p-3 border rounded-lg" required>
-
-        <!-- PRICE -->
-        <div id="priceBox" class="text-center font-semibold text-green-600">
-          Estimated price: -
         </div>
+    </section>
 
-        <!-- BUTTON -->
-        <div class="grid grid-cols-2 gap-3">
-          <button type="button" onclick="calculatePrice()"
-            class="bg-gray-800 text-white p-3 rounded-lg">
-            Check Availability
-          </button>
 
-          <button type="submit"
-            class="bg-green-600 text-white p-3 rounded-lg hover:bg-green-700">
-            Book via WhatsApp
-          </button>
+    <section id="booking-form" class="pb-20 fade-up">
+        <div class="max-w-4xl mx-auto px-4">
+            
+            <div class="bg-orange-50 p-8 md:p-12 rounded-3xl shadow-2xl border-4 border-orange-500 relative text-center">
+                
+                <div class="absolute -top-10 left-1/2 transform -translate-x-1/2 bg-white rounded-full p-2 border-4 border-orange-500">
+                    <img src="images/logo.jpg" alt="Logo" class="h-16 w-16 rounded-full object-cover">
+                </div>
+
+                <h3 class="text-3xl font-extrabold mb-8 text-orange-900 mt-4">Book Your Transport</h3>
+
+                <form id="bookingForm" class="grid gap-6 text-left">
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="font-extrabold text-orange-900 mb-2 block">Full Name</label>
+                            <input type="text" id="b-name" placeholder="John Doe" class="w-full font-bold text-gray-800 border-2 border-orange-300 p-4 rounded-xl focus:outline-none focus:border-orange-600 focus:ring-2 focus:ring-orange-200 transition bg-white" required>
+                        </div>
+                        <div>
+                            <label class="font-extrabold text-orange-900 mb-2 block">WhatsApp Number</label>
+                            <input type="text" id="b-wa" placeholder="+62..." class="w-full font-bold text-gray-800 border-2 border-orange-300 p-4 rounded-xl focus:outline-none focus:border-orange-600 focus:ring-2 focus:ring-orange-200 transition bg-white" required>
+                        </div>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="font-extrabold text-orange-900 mb-2 block">Pick Up Location</label>
+                            <select id="pickup" onchange="calculatePrice()" class="w-full font-bold text-gray-800 border-2 border-orange-300 p-4 rounded-xl focus:outline-none focus:border-orange-600 focus:ring-2 focus:ring-orange-200 transition bg-white cursor-pointer" required>
+                                <option value="">-- Select Pick Up --</option>
+                                <option value="bandara">Lombok Airport</option>
+                                <option value="senaru">Senaru</option>
+                                <option value="sembalun">Sembalun</option>
+                                <option value="senggigi">Senggigi</option>
+                                <option value="bangsal">Bangsal Harbor</option>
+                                <option value="kuta">Kuta Lombok</option>
+                                <option value="mataram">Mataram</option>
+                                <option value="mandalika">Mandalika</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="font-extrabold text-orange-900 mb-2 block">Destination</label>
+                            <select id="destination" onchange="calculatePrice()" class="w-full font-bold text-gray-800 border-2 border-orange-300 p-4 rounded-xl focus:outline-none focus:border-orange-600 focus:ring-2 focus:ring-orange-200 transition bg-white cursor-pointer" required>
+                                <option value="">-- Select Destination --</option>
+                                <option value="bandara">Lombok Airport</option>
+                                <option value="senaru">Senaru</option>
+                                <option value="sembalun">Sembalun</option>
+                                <option value="senggigi">Senggigi</option>
+                                <option value="bangsal">Bangsal Harbor</option>
+                                <option value="kuta">Kuta Lombok</option>
+                                <option value="mataram">Mataram</option>
+                                <option value="mandalika">Mandalika</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="font-extrabold text-orange-900 mb-2 block">Vehicle Type</label>
+                            <select id="b-vehicle" class="w-full font-bold text-gray-800 border-2 border-orange-300 p-4 rounded-xl focus:outline-none focus:border-orange-600 focus:ring-2 focus:ring-orange-200 transition bg-white cursor-pointer" required>
+                                <option value="Terios">Terios (Max 4 Pax)</option>
+                                <option value="Elf Minibus">Elf Minibus (Max 10 Pax)</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="font-extrabold text-orange-900 mb-2 block">Travel Date</label>
+                            <input type="date" id="b-date" class="w-full font-bold text-gray-800 border-2 border-orange-300 p-4 rounded-xl focus:outline-none focus:border-orange-600 focus:ring-2 focus:ring-orange-200 transition bg-white" required>
+                        </div>
+                    </div>
+
+                    <div class="bg-white border-2 border-green-500 p-6 rounded-xl text-center mt-4 shadow-inner">
+                        <p class="text-gray-600 font-extrabold mb-1">Estimated Transfer Price:</p>
+                        <div id="priceBox" class="text-3xl font-black text-green-600">
+                            IDR 0
+                        </div>
+                        <p class="text-sm text-gray-500 mt-2 italic">*Harga bisa berubah tergantung jenis mobil dan jumlah penumpang.</p>
+                    </div>
+
+                    <button type="submit" class="w-full bg-green-500 text-white py-4 rounded-xl font-extrabold text-xl hover:bg-green-600 transition shadow-xl flex justify-center items-center gap-3 mt-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-6 h-6" viewBox="0 0 16 16"><path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.004-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/></svg>
+                        BOOK VIA WHATSAPP
+                    </button>
+
+                </form>
+            </div>
+
         </div>
+    </section>
 
-      </form>
-    </div>
+    <footer class="bg-gray-900 text-gray-400 py-12 text-center text-sm border-t-4 border-orange-600 relative z-10">
+        <div class="flex justify-center mb-4">
+            <img src="images/logo.jpg" alt="Logo" class="h-16 w-16 rounded-full border-2 border-gray-600">
+        </div>
+        <p class="mb-2 font-extrabold text-orange-500 text-2xl tracking-widest">RINJANI EAGLE</p>
+        <p class="font-bold text-gray-500">&copy; 2026 Rinjani Eagle. Premium Eco-Trekking Mount Rinjani.</p>
+    </footer>
 
-  </div>
-</section>
+    <a href="https://wa.me/6285731826312" target="_blank" class="float-wa border-2 border-white" title="Chat us on WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-8 h-8" viewBox="0 0 16 16"><path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.004-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/></svg>
+    </a>
 
-<!-- SCRIPT -->
-<script>
-const prices = {
-  "bandara-senaru": 350000,
-  "bandara-sembalun": 400000,
-  "bandara-senggigi": 250000,
-  "bandara-kuta": 200000,
-  "senaru-sembalun": 250000,
-  "senggigi-bangsal": 150000,
-  "mataram-senaru": 300000,
-  "mataram-sembalun": 350000,
-  "kuta-sembalun": 450000,
-  "mandalika-senaru": 500000
-};
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'id', 
+                includedLanguages: 'en,id,zh-CN,es,fr,de,ar,ru,ja,ko',
+                autoDisplay: false
+            }, 'google_translate_element');
+        }
 
-function calculatePrice() {
-  let pickup = document.getElementById("pickup").value;
-  let dest = document.getElementById("destination").value;
+        function changeLanguage(langCode) {
+            setTimeout(function() {
+                var selectField = document.querySelector(".goog-te-combo");
+                if (selectField) {
+                    selectField.value = langCode;
+                    selectField.dispatchEvent(new Event('change'));
+                } else {
+                    document.cookie = "googtrans=/id/" + langCode + "; path=/;";
+                    document.cookie = "googtrans=/id/" + langCode + "; path=/; domain=" + window.location.hostname + ";";
+                    window.location.reload();
+                }
+            }, 150);
+        }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
-  let key1 = pickup + "-" + dest;
-  let key2 = dest + "-" + pickup;
+    <script>
+        // Data Harga (Sesuai dengan kode asli)
+        const prices = {
+            "bandara-senaru": 350000,
+            "bandara-sembalun": 400000,
+            "bandara-senggigi": 250000,
+            "bandara-kuta": 200000,
+            "senaru-sembalun": 250000,
+            "senggigi-bangsal": 150000,
+            "mataram-senaru": 300000,
+            "mataram-sembalun": 350000,
+            "kuta-sembalun": 450000,
+            "mandalika-senaru": 500000
+        };
 
-  let price = prices[key1] || prices[key2];
+        // Otomatis menghitung harga ketika lokasi dipilih
+        function calculatePrice() {
+            let pickup = document.getElementById("pickup").value;
+            let dest = document.getElementById("destination").value;
+            let priceBox = document.getElementById("priceBox");
 
-  if(price){
-    document.getElementById("priceBox").innerHTML =
-      "Estimated price: IDR " + price.toLocaleString();
-  } else {
-    document.getElementById("priceBox").innerHTML =
-      "Please contact admin";
-  }
-}
+            // Jika belum lengkap memilih, biarkan 0
+            if(!pickup || !dest) {
+                priceBox.innerHTML = "IDR 0";
+                return;
+            }
 
-document.getElementById("bookingForm").addEventListener("submit", function(e){
-  e.preventDefault();
+            // Mencegah titik yang sama
+            if(pickup === dest) {
+                priceBox.innerHTML = "<span class='text-red-500 text-xl'>Titik jemput dan tujuan sama!</span>";
+                return;
+            }
 
-  let inputs = this.querySelectorAll("input, select");
-  let data = [];
+            let key1 = pickup + "-" + dest;
+            let key2 = dest + "-" + pickup;
 
-  inputs.forEach(input => data.push(input.value));
+            let price = prices[key1] || prices[key2];
 
-  let message = `Hello Rinjani Eagle 🚐
-Booking Transport:
+            if(price){
+                priceBox.innerHTML = "IDR " + price.toLocaleString('id-ID');
+            } else {
+                priceBox.innerHTML = "<span class='text-orange-500 text-xl'>Harga menyesuaikan (Hubungi Admin)</span>";
+            }
+        }
 
-Name: ${data[0]}
-WhatsApp: ${data[1]}
-Pick Up: ${data[2]}
-Destination: ${data[3]}
-Date: ${data[4]}
+        // Script Mengirim ke WhatsApp
+        document.getElementById("bookingForm").addEventListener("submit", function(e){
+            e.preventDefault();
 
-Please confirm availability 🙏`;
+            let name = document.getElementById("b-name").value;
+            let wa = document.getElementById("b-wa").value;
+            let pickup = document.getElementById("pickup").options[document.getElementById("pickup").selectedIndex].text;
+            let dest = document.getElementById("destination").options[document.getElementById("destination").selectedIndex].text;
+            let vehicle = document.getElementById("b-vehicle").value;
+            let date = document.getElementById("b-date").value;
+            
+            // Ambil text dari pricebox
+            let priceEstimasi = document.getElementById("priceBox").innerText;
 
-  let phone = "6285729632792";
-  let url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+            let message = `Halo *Rinjani Eagle VIP* 🚐%0ASaya ingin Booking Transportasi:%0A%0A` +
+                          `👤 *Nama:* ${name}%0A` +
+                          `📱 *WhatsApp:* ${wa}%0A` +
+                          `🚙 *Kendaraan:* ${vehicle}%0A` +
+                          `📍 *Penjemputan:* ${pickup}%0A` +
+                          `🏁 *Tujuan:* ${dest}%0A` +
+                          `📅 *Tanggal:* ${date}%0A%0A` +
+                          `💵 *Estimasi Harga:* ${priceEstimasi}%0A%0A` +
+                          `Mohon konfirmasi ketersediaan armada. Terima kasih 🙏`;
 
-  window.open(url, "_blank");
-});
-</script>
+            // Gunakan Nomor WA Resmi
+            let phone = "6285731826312";
+            let url = `https://wa.me/${phone}?text=${message}`;
 
+            window.open(url, "_blank");
+        });
+
+        // Animasi Scroll
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting){
+                    entry.target.classList.add('show');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-up').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
 </body>
 </html>
