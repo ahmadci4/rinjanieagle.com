@@ -140,7 +140,7 @@
                     <option value="ko">🇰🇷 KO</option>
                 </select>
 
-                <button id="mobile-menu-button" class="lg:hidden text-orange-600 focus:outline-none p-1">
+               <button onclick="toggleMobileMenu()" class="lg:hidden text-orange-600 focus:outline-none p-1">
                     <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                     </svg>
@@ -811,6 +811,31 @@
 
         document.querySelectorAll('.fade-up').forEach(el => {
             observer.observe(el);
+        });
+    </script>
+            <script>
+        // ================= LOGIKA MENU MOBILE DROPDOWN (ANTI-GAGAL) =================
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const menuIcon = document.getElementById('menu-icon');
+            
+            // Buka atau tutup menu
+            menu.classList.toggle('hidden');
+            
+            // Ubah ikon dari garis tiga menjadi silang (X)
+            if (menu.classList.contains('hidden')) {
+                menuIcon.setAttribute('d', 'M4 6h16M4 12h16M4 18h16'); // Ikon Garis 3
+            } else {
+                menuIcon.setAttribute('d', 'M6 18L18 6M6 6l12 12'); // Ikon Silang (X)
+            }
+        }
+
+        // Tutup menu otomatis setelah salah satu link diklik
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('mobile-menu').classList.add('hidden');
+                document.getElementById('menu-icon').setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+            });
         });
     </script>
 </body>
