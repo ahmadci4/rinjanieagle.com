@@ -368,14 +368,49 @@
                         <div class="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition duration-500"></div>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-2xl font-extrabold text-orange-900 mb-2">Premium Class</h3>
+                        <h3 class="text-2xl font-extrabold text-orange-900 mb-2">Group Class</h3>
                         <p class="text-gray-600 text-sm mb-4 font-bold bg-white inline-block px-3 py-1 rounded border">Elf</p>
                         <ul class="space-y-2 mb-6">
                             <li class="flex items-center text-gray-700 text-sm font-bold">Kapasitas: Maks 10 Penumpang</li>
                             <li class="flex items-center text-gray-700 text-sm font-bold">Bagasi: 5-10 Carrier/Ransel</li>
                             <li class="flex items-center text-gray-700 text-sm font-bold">Full AC</li>
                         </ul>
-                        <button onclick="bookTransport('Elf')" class="w-full bg-orange-500 text-white font-bold py-3 rounded-lg hover:bg-orange-600 transition shadow-md">Book via WhatsApp</button>
+
+
+
+
+
+                        <section id="contact" class="py-20 fade-up">
+        <div class="max-w-5xl mx-auto px-4 text-center bg-white/95 backdrop-blur-md rounded-3xl p-8 md:p-12 shadow-2xl border-4 border-orange-200">
+            <h2 class="text-4xl font-extrabold mb-6 text-orange-900">Booking Transport</h2>
+            <div class="bg-orange-50 p-8 md:p-10 rounded-3xl max-w-2xl mx-auto border-4 border-orange-500 shadow-2xl relative">
+                <div class="absolute -top-10 left-1/2 transform -translate-x-1/2 bg-white rounded-full p-2 border-4 border-orange-500">
+                    <img src="images/logo.jpg" alt="Logo" class="h-16 w-16 rounded-full object-cover">
+                </div>
+
+                <div class="grid gap-6 mt-8">
+                    <div class="text-left">
+                        <label class="font-extrabold text-orange-900 mb-2 block">Nama Lengkap</label>
+                        <input id="name" type="text" placeholder="Masukkan nama Anda" class="w-full font-bold text-gray-800 border-2 border-orange-300 p-4 rounded-xl focus:outline-none focus:border-orange-600 focus:ring-4 focus:ring-orange-200 transition">
+                    </div>
+                    <div class="text-left">
+                        <label class="font-extrabold text-orange-900 mb-2 block">Jumlah Peserta</label>
+                        <input id="pax" type="number" value="1" min="1" class="w-full font-bold text-gray-800 border-2 border-orange-300 p-4 rounded-xl focus:outline-none focus:border-orange-600 focus:ring-4 focus:ring-orange-200 transition">
+                    </div>
+
+                    <button onclick="sendWA()" class="w-full bg-green-500 text-white py-4 rounded-xl font-extrabold text-xl hover:bg-green-600 transition shadow-lg mt-4 flex justify-center items-center gap-3">
+                        KIRIM VIA WHATSAPP
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+                        
                     </div>
                 </div>
 
@@ -386,7 +421,7 @@
                         <div class="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition duration-500"></div>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-2xl font-extrabold text-orange-900 mb-2">Executive Class</h3>
+                        <h3 class="text-2xl font-extrabold text-orange-900 mb-2">Private Class</h3>
                         <p class="text-gray-600 text-sm mb-4 font-bold bg-white inline-block px-3 py-1 rounded border">Terios</p>
                         <ul class="space-y-2 mb-6">
                             <li class="flex items-center text-gray-700 text-sm font-bold">Kapasitas: max-4 Penumpang</li>
