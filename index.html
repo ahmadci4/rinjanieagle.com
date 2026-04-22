@@ -6,13 +6,10 @@
 
     <title>Rinjani Eagle Trekking | Premium Mount Rinjani Lombok</title>
 
-    <!-- SEO -->
     <meta name="description" content="Paket trekking Gunung Rinjani Lombok dengan guide profesional, layanan premium, dan eco-friendly.">
 
-    <!-- FONT POPPINS -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <!-- TAILWIND -->
     <script src="https://cdn.tailwindcss.com"></script>
 
     <style>
@@ -89,15 +86,21 @@
 
         /* Disable scroll saat modal terbuka */
         body.modal-open { overflow: hidden; }
+
+        /* ================= HERO BACKGROUND KHUSUS (TAMBAHAN BARU) ================= */
+        #home {
+            background-image: url('images/rinjani-eagle-hero.svg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
     </style>
 </head>
 
 <body>
 
-    <!-- Wadah Rahasia untuk Sistem Google Translate -->
     <div id="google_translate_element"></div>
 
-    <!-- ================= NAVBAR ================= -->
     <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-md shadow-md transition-all h-20 flex items-center">
         <div class="max-w-7xl mx-auto w-full flex justify-between items-center px-4">
             <div class="flex items-center">
@@ -111,11 +114,10 @@
                 <a href="#about" class="hover:text-orange-500 font-bold text-gray-800 transition">About</a>
                 <a href="#packages" class="hover:text-orange-500 font-bold text-gray-800 transition">Trekking</a>
                 <a href="#extensions" class="hover:text-orange-500 font-bold text-gray-800 transition">Tours</a>
-                <a href="#transport.html" class="hover:text-orange-500 font-bold text-gray-800 transition">Transport</a>
+                <a href="transport.html" class="hover:text-orange-500 font-bold text-gray-800 transition">Transport</a>
                 <a href="#contact" class="hover:text-orange-500 font-bold text-gray-800 transition">Booking</a>
             </div>
 
-            <!-- 10 BAHASA TERPOPULER DENGAN BENDERA -->
             <select onchange="changeLanguage(this.value)" class="cursor-pointer border-2 border-orange-300 font-bold px-2 py-1.5 rounded-md bg-orange-50 text-orange-900 text-sm outline-none shadow-sm">
                 <option value="id">🇮🇩 ID</option>
                 <option value="en">🇬🇧 EN</option>
@@ -132,9 +134,7 @@
     </nav>
 
 
-    <!-- ================= FULLSCREEN MODAL (UNTUK ITINERARY & DETAIL) ================= -->
     <div id="detail-modal" class="fixed inset-0 z-[100] bg-white hidden overflow-y-auto transition-opacity duration-300 opacity-0">
-        <!-- Tombol Close Sticky -->
         <div class="sticky top-0 w-full bg-white/90 backdrop-blur-md border-b-2 border-orange-100 p-4 flex justify-between items-center z-50">
             <h2 id="modal-title" class="text-2xl font-extrabold text-orange-600">Detail Paket</h2>
             <button onclick="closeModal()" class="bg-red-100 text-red-600 hover:bg-red-500 hover:text-white rounded-full p-2 font-bold flex items-center gap-2 transition">
@@ -143,11 +143,9 @@
             </button>
         </div>
         
-        <!-- Konten Modal -->
         <div class="max-w-4xl mx-auto p-6 md:p-10 pb-32">
             <div id="modal-content" class="text-gray-800">
-                <!-- Konten dinamis masuk ke sini via JS -->
-            </div>
+                </div>
             
             <div class="mt-12 text-center border-t-2 border-gray-100 pt-8">
                 <p class="text-gray-500 mb-4 font-bold">Tertarik dengan paket ini?</p>
@@ -160,7 +158,6 @@
     </div>
 
 
-    <!-- ================= HERO ================= -->
     <section id="home" class="h-screen flex items-center justify-center relative">
         <div class="hero-overlay"></div>
         
