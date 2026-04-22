@@ -13,11 +13,11 @@
     <script src="https://cdn.tailwindcss.com"></script>
 
     <style>
-        /* ================= GLOBAL & BACKGROUND HUTAN ================= */
+       /* ================= GLOBAL & BACKGROUND HUTAN ================= */
         body {
             font-family: 'Poppins', sans-serif;
-            /* Tambahkan linear-gradient warna hitam untuk meredupkan gambar Unsplash */
-            background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            /* Tambahkan gradient hitam (0.8) untuk meredupkan background hutan Unsplash */
+            background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
             background-attachment: fixed;
             background-position: center;
             background-size: cover;
@@ -88,12 +88,18 @@
         /* Disable scroll saat modal terbuka */
         body.modal-open { overflow: hidden; }
 
-        /* ================= HERO BACKGROUND KHUSUS (TAMBAHAN BARU) ================= */
+        /* ================= HERO BACKGROUND KHUSUS ================= */
         #home {
+            /* Pastikan path gambar sesuai dengan nama file abang */
             background-image: url('images/rinjani-eagle-hero.svg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
+            /* Mengubah posisi konten ke paling bawah */
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end; 
+            padding-bottom: 60px; /* Jarak teks dari pinggir bawah layar */
         }
     </style>
 </head>
@@ -158,17 +164,16 @@
         </div>
     </div>
 
-
-    <section id="home" class="h-screen flex flex-col justify-end items-center relative pb-24 md:pb-32">
-        <div class="hero-overlay"></div>
-        
-        <div class="text-center px-4 z-10 w-full mb-4">
-            <h1 class="text-lg md:text-xl lg:text-2xl font-bold text-white drop-shadow-xl max-w-3xl mx-auto tracking-wide" style="text-shadow: 2px 2px 8px rgba(0,0,0,0.9);">
-                Siapkan Dirimu untuk terbang Tanpa batas <br>
-                <span class="text-orange-400">Menjelajahi setiap Sudut Pulau Lombok.</span>
-            </h1>
-            </div>
-    </section>
+<section id="home" class="h-screen relative">
+    <div class="hero-overlay"></div>
+    
+    <div class="text-center px-4 z-10 w-full mb-10">
+        <h1 class="text-lg md:text-xl font-bold text-white drop-shadow-2xl max-w-3xl mx-auto leading-relaxed tracking-wide" style="text-shadow: 2px 2px 8px rgba(0,0,0,1);">
+            Siapkan Dirimu untuk terbang Tanpa batas <br>
+            <span class="text-orange-400">Menjelajahi setiap Sudut Pulau Lombok.</span>
+        </h1>
+    </div>
+</section>
 
 
     <!-- ================= ABOUT & TEAM ================= -->
