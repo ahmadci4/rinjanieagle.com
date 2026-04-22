@@ -16,7 +16,8 @@
         /* ================= GLOBAL & BACKGROUND HUTAN ================= */
         body {
             font-family: 'Poppins', sans-serif;
-            background-image: url('https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            /* Tambahkan linear-gradient warna hitam untuk meredupkan gambar Unsplash */
+            background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
             background-attachment: fixed;
             background-position: center;
             background-size: cover;
@@ -158,21 +159,15 @@
     </div>
 
 
-    <section id="home" class="h-screen flex items-center justify-center relative">
+    <section id="home" class="h-screen flex flex-col justify-end items-center relative pb-24 md:pb-32">
         <div class="hero-overlay"></div>
         
-        <div class="text-center px-4 z-10 w-full flex flex-col items-center mt-20">
-            <h1 class="text-3xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 drop-shadow-2xl max-w-5xl leading-tight tracking-wide" style="text-shadow: 2px 4px 10px rgba(0,0,0,0.9);">
+        <div class="text-center px-4 z-10 w-full mb-4">
+            <h1 class="text-lg md:text-xl lg:text-2xl font-bold text-white drop-shadow-xl max-w-3xl mx-auto tracking-wide" style="text-shadow: 2px 2px 8px rgba(0,0,0,0.9);">
                 Siapkan Dirimu untuk terbang Tanpa batas <br>
                 <span class="text-orange-400">Menjelajahi setiap Sudut Pulau Lombok.</span>
             </h1>
-
-            <div class="mt-8">
-                 <a href="#packages" class="bg-orange-500 hover:bg-orange-600 border-2 border-white text-white px-10 py-4 rounded-full font-extrabold text-lg transition shadow-2xl transform hover:-translate-y-1 inline-block">
-                    EXPLORE PACKAGES
-                </a>
             </div>
-        </div>
     </section>
 
 
