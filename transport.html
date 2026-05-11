@@ -3,32 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Transport & Transfer | Rinjani Eagle</title>
-
-    <meta name="description" content="Best Rinjani transport service in Lombok. Airport transfer to Senaru, Sembalun, Senggigi, Kuta Mandalika. Book now!">
-    <meta name="keywords" content="rinjani transport,lombok transport,lombok airport transfer,senaru sembalun transport,rinjani trekking">
-    <meta name="author" content="Rinjani Eagle">
-
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <!-- SEO -->
     <title>Rinjani Transport & Trekking Service Lombok | Airport Transfer</title>
     <meta name="description" content="Best Rinjani transport service in Lombok. Airport transfer to Senaru, Sembalun, Senggigi, Kuta Mandalika. Book now!">
     <meta name="keywords" content="rinjani transport,lombok transport,lombok airport transfer,senaru sembalun transport,rinjani trekking">
     <meta name="author" content="Rinjani Eagle">
+    <link rel="icon" type="image/jpeg" href="images/logo.jpg">
+    <link rel="apple-touch-icon" href="images/logo.jpg">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
 
     <style>
-        /* ================= GLOBAL & BACKGROUND ================= */
-        
-        /* ================= HERO BACKGROUND TRANSPORT KHUSUS ================= */
-        #transport-hero {
-            background-image: url('images/transport-terios.jpeg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-        }
-        
         body {
             font-family: 'Poppins', sans-serif;
             background-image: url('https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
@@ -38,24 +22,19 @@
             background-color: #1a1a1a;
             position: relative;
         }
-
         .hero-overlay {
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
             background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8));
             z-index: 1;
         }
-        /* ================= GOOGLE TRANSLATE SUPER HIDE ================= */
         body { top: 0 !important; position: static !important; }
         html { top: 0 !important; position: static !important; }
         .goog-te-banner-frame { display: none !important; }
         .skiptranslate iframe { display: none !important; }
         #goog-gt-tt, .goog-te-balloon-frame { display: none !important; }
         .goog-text-highlight { background-color: transparent !important; box-shadow: none !important; }
-        
         #google_translate_element { opacity: 0; position: absolute; left: -9999px; z-index: -999; }
-
-        /* ================= ANIMATION ================= */
         .fade-up {
             opacity: 0;
             transform: translateY(40px);
@@ -65,8 +44,6 @@
             opacity: 1;
             transform: translateY(0);
         }
-
-        /* ================= FLOAT WA ================= */
         .float-wa {
             position: fixed;
             bottom: 20px;
@@ -86,7 +63,6 @@
             transition: 0.3s;
         }
         .float-wa:hover { transform: scale(1.15); }
-
         ::-webkit-scrollbar { width: 10px; }
         ::-webkit-scrollbar-track { background: #f1f1f1; }
         ::-webkit-scrollbar-thumb { background: #f97316; border-radius: 5px; }
@@ -94,13 +70,12 @@
 </head>
 
 <body>
-
     <div id="google_translate_element"></div>
 
     <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-md shadow-md transition-all h-20 flex items-center">
-        <div class="max-w-7xl mx-auto w-full flex justify-between items-center px-4">
+        <div class="max-w-7xl mx-auto w-full flex justify-between items-center px-4 relative">
             <div class="flex items-center">
-                <a href="index.html" class="flex items-center">
+                <a href="index.html" class="flex items-center hover:opacity-80 transition">
                     <img src="images/logo.jpg" alt="Rinjani Eagle Logo" class="h-12 w-12 md:h-14 md:w-14 object-cover rounded-full border-2 border-orange-500 shadow-sm mr-3">
                     <span class="font-bold text-xl md:text-2xl text-orange-600 tracking-wide">Rinjani Eagle</span>
                 </a>
@@ -114,38 +89,56 @@
                 <a href="#transport-hero" class="text-orange-600 border-b-2 border-orange-600 font-bold transition">Transport</a>
             </div>
 
-            <select onchange="changeLanguage(this.value)" class="cursor-pointer border-2 border-orange-300 font-bold px-2 py-1.5 rounded-md bg-orange-50 text-orange-900 text-sm outline-none shadow-sm">
-                <option value="id">🇮🇩 ID</option>
-                <option value="en">🇬🇧 EN</option>
-                <option value="zh-CN">🇨🇳 CN</option>
-                <option value="es">🇪🇸 ES</option>
-                <option value="fr">🇫🇷 FR</option>
-                <option value="de">🇩🇪 DE</option>
-                <option value="ar">🇸🇦 AR</option>
-                <option value="ru">🇷🇺 RU</option>
-                <option value="ja">🇯🇵 JA</option>
-                <option value="ko">🇰🇷 KO</option>
-            </select>
+            <div class="flex items-center gap-3">
+                <select onchange="changeLanguage(this.value)" class="cursor-pointer border-2 border-orange-300 font-bold px-2 py-1.5 rounded-md bg-orange-50 text-orange-900 text-sm outline-none shadow-sm">
+                    <option value="id">🇮🇩 ID</option>
+                    <option value="en">🇬🇧 EN</option>
+                    <option value="zh-CN">🇨🇳 CN</option>
+                    <option value="es">🇪🇸 ES</option>
+                    <option value="fr">🇫🇷 FR</option>
+                    <option value="de">🇩🇪 DE</option>
+                    <option value="ar">🇸🇦 AR</option>
+                    <option value="ru">🇷🇺 RU</option>
+                    <option value="ja">🇯🇵 JA</option>
+                    <option value="ko">🇰🇷 KO</option>
+                </select>
+
+                <button onclick="toggleMobileMenu()" class="lg:hidden text-orange-600 focus:outline-none p-1">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <div id="mobile-menu" class="hidden absolute top-20 left-0 w-full bg-white border-t-2 border-orange-100 shadow-2xl lg:hidden transition-all duration-300">
+                <div class="flex flex-col p-5 space-y-5 font-extrabold text-gray-800 text-lg">
+                    <a href="index.html#home" class="mobile-link hover:text-orange-600">Home</a>
+                    <a href="index.html#about" class="mobile-link hover:text-orange-600">About</a>
+                    <a href="index.html#packages" class="mobile-link hover:text-orange-600">Trekking</a>
+                    <a href="index.html#extensions" class="mobile-link hover:text-orange-600">Tours</a>
+                    <a href="#transport-hero" class="mobile-link text-orange-600">Transport</a>
+                </div>
+            </div>
         </div>
     </nav>
 
-
-    <section id="transport-hero" class="h-[60vh] flex items-center justify-center relative">
+    <section id="transport-hero" class="pt-32 pb-10 flex items-center justify-center relative min-h-[80vh]">
         <div class="hero-overlay"></div>
-        <div class="text-center px-4 z-10 w-full flex flex-col items-center mt-10">
-            <h1 class="te;xt-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-4 drop-shadow-2xl max-w-4xl tracking-wide" style="text-shadow: 2px 4px 10px rgba(0,0,0,0.9);">
+        <div class="text-center px-4 z-10 w-full flex flex-col items-center">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-4 drop-shadow-2xl max-w-4xl tracking-wide" style="text-shadow: 2px 4px 10px rgba(0,0,0,0.9);">
                 Lombok Premium <span class="text-orange-400">Transport</span>
             </h1>
             <p class="text-lg md:text-xl text-gray-200 font-bold max-w-2xl mb-8">
                 Airport Transfer Lombok to Senaru, Sembalun, Senggigi, Bangsal & Kuta Mandalika.
             </p>
-            <a href="#booking-form" class="bg-orange-500 hover:bg-orange-600 border-2 border-white text-white px-8 py-3 rounded-full font-extrabold transition shadow-lg transform hover:-translate-y-1 inline-block">
+            <div class="max-w-4xl w-full mb-10 rounded-3xl overflow-hidden shadow-2xl border-4 border-orange-500 transform hover:scale-[1.02] transition-transform duration-500">
+                <img src="images/transport-terios.jpeg" alt="Rinjani Eagle Transport" class="w-full h-auto object-cover">
+            </div>
+            <a href="#booking-form" class="bg-orange-500 hover:bg-orange-600 border-2 border-white text-white px-10 py-4 rounded-full font-extrabold transition shadow-2xl transform hover:-translate-y-1 inline-block">
                 BOOK NOW
             </a>
         </div>
     </section>
-
-
     <section id="fleet" class="py-20 fade-up">
         <div class="max-w-5xl mx-auto px-4">
             
@@ -184,7 +177,6 @@
 
         </div>
     </section>
-
 
     <section id="booking-form" class="pb-20 fade-up">
         <div class="max-w-4xl mx-auto px-4">
@@ -398,6 +390,30 @@
 
         document.querySelectorAll('.fade-up').forEach(el => {
             observer.observe(el);
+        });
+
+        // Script Menu Mobile Navbar
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const menuIcon = document.getElementById('menu-icon');
+            
+            // Buka atau tutup menu
+            menu.classList.toggle('hidden');
+            
+            // Ubah ikon dari garis tiga menjadi silang (X)
+            if (menu.classList.contains('hidden')) {
+                menuIcon.setAttribute('d', 'M4 6h16M4 12h16M4 18h16'); // Ikon Garis 3
+            } else {
+                menuIcon.setAttribute('d', 'M6 18L18 6M6 6l12 12'); // Ikon Silang (X)
+            }
+        }
+
+        // Tutup menu otomatis setelah salah satu link diklik di HP
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('mobile-menu').classList.add('hidden');
+                document.getElementById('menu-icon').setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+            });
         });
     </script>
 </body>
